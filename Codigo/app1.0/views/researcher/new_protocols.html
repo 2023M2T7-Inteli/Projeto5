@@ -5,39 +5,45 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Teste CRUD - Projeto Natura</title>
+        <link rel="stylesheet" href="new_protocols.css">
+        <img style="width: 5%;" src="https://img.icons8.com/material/96/null/left2--v1.png"/>
     </head>
-    <body>
-        <img style="width: 5%;" src="https://img.icons8.com/material/96/null/left2--v1.png"/>      
+    <body>   
         <main>
             <h1>Teste CRUD - Projeto Natura</h1>
             <section>
-                <h2>(C) Criar um novo protocolo</h2>
-                <form method="POST" action="/protocols">
+                <h3>(C) Criar um novo protocolo</h3>
+                <form method="POST" action="/protocols" ">
                     <label for="name">Nome do protocolo:</label>
+                    <br>
                     <input type="text" name="name" id="name" required>
-                    <br>
+                    <br><br>
                     <label for="objective">Objetivo do protocolo:</label>
+                    <br>
                     <input type="text" name="objective" id="objective" required>
-                    <br>
+                    <br><br>
                     <label for="collector">Coletor(a) responsável:</label>
-                    <input type="text" name="collector" id="collector" required>
                     <br>
+                    <input type="text" name="collector" id="collector" required>
+                    <br><br>
                     <button type="submit">Criar protocolo</button>
                 </form>
             </section>
-            <section>
-                <h2>(R) Protocolos criados</h2>
+            <section >
+                <h3>(R) Protocolos criados</h3>
                 <a href='/protocols'><button>Visualizar</button></a>
             </section>
             <section>
-                <h2>(U) Quero editar um protocolo já existente</h2>
+                <h3>(U) Quero editar um protocolo já existente</h3>
                 <a href='/editProtocols'><button>Editar protocolo</button></a>
             </section>
             <section>
-                <h2>(D) Quero excluir um protocolo</h2>
+                <h3>(D) Quero excluir um protocolo</h3>
                 <form onsubmit="deleteProtocol(event)" action="/protocols/:id">
                     <label for="id">Insira o ID do protocolo que deseja excluir:</label>
+                    <br><br>
                     <input type="number" name="id" id="id" required>
+                    <br>
                     <br>
                     <button type="submit">Deletar protocolo</button>
                 </form>
