@@ -81,11 +81,11 @@ app.use(express.static('./public/js'));
             res.sendFile(path.join(__dirname + "/views/researcher/editProtocol.html"));
         });
           
-        app.get('/editProtocols/updateValues', (req, res) => {
-            const id = req.query.id;
-            const name = req.query.name;
-            const objective = req.query.objective;
-            const collector = req.query.collector;
+        app.post('/editProtocols/updateValues', (req, res) => {
+            const id = req.body.id;
+            const name = req.body.name;
+            const objective = req.body.objective;
+            const collector = req.body.collector;
           
             db.run('UPDATE protocols SET name = ?, objective = ?, collector = ? WHERE id = ?', [
                 name, 
