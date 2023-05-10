@@ -30,6 +30,11 @@ app.use(express.static('./public/js'));
         app.get('/new_protocols', (req, res) => {
             res.sendFile(path.join(__dirname + '/views/researcher/new_protocols.html'))
         });
+
+        // 
+        app.get('/researcher_profile', (req, res) => {
+            res.sendFile(path.join(__dirname + '/views/researcher/researcher_profile.html'))
+        });
     //
 
     // CRUD endpoints
@@ -90,6 +95,25 @@ app.use(express.static('./public/js'));
             ]);
             
             res.redirect('/protocols');
+        });
+    //
+
+    // JOIN
+        app.get('/innerJoin', (req, res) => {
+            let protocolId = 3;
+            db.all(`SELECT collectors.name_collector
+                    FROM protocols
+                    INNER JOIN collectors ON protocols.id = collectors.protocol_id
+                    WHERE protocols.id = ?`, [protocolId], (err, rows) => {
+                if (err) {
+                    console.error(err.message);
+                    return;
+                }
+                res.json({
+                    "mensagem":"JOIN-> Feito com sucesso!",
+                    "dados":rows
+                });
+            });
         });
     //
 //
