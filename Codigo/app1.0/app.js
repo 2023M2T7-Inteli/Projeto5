@@ -31,7 +31,7 @@ app.use(express.static('./public/js'));
             res.sendFile(path.join(__dirname + '/views/researcher/new_protocols.html'))
         });
 
-        // 
+        // home_researcher.html --> researcher_profile.html
         app.get('/researcher_profile', (req, res) => {
             res.sendFile(path.join(__dirname + '/views/researcher/researcher_profile.html'))
         });
