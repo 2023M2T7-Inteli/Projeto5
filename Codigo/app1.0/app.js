@@ -38,6 +38,11 @@ app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname + '/views/researcher/new_protocols.html'))
     });
 
+    // Working......................................................................
+    app.get('/createProtocol', (req, res) => {
+        res.sendFile(path.join(__dirname + '/views/researcher/createProtocol.html'))
+    });
+
     // home_researcher.html --> researcher_profile.html
     app.get('/researcher_profile', (req, res) => {
         res.sendFile(path.join(__dirname + '/views/researcher/researcher_profile.html'))
