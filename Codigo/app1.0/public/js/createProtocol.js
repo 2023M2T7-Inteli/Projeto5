@@ -1,21 +1,28 @@
 // That codes will run in the file `createProtocol.html`
 
+let sampleCount = 0;
 let stepCount = 0;
 let fieldCount = 1;
 
-function getProtocolData(name_protocol, objective_protocol, name_step, description_step, name_field, type_field) {
+function getProtocolData(name_protocol, objective_protocol, name_sample, description_sample, name_step, description_step, name_field, type_field) {
     let protocol = {
         name_protocol: name_protocol,
         objective_protocol: objective_protocol,
-        steps: [
+        samples: [
             {
-                step_id: stepCount, // Mudar aqui para os estágios também serem adicionados dinamicamente
-                name_step: name_step,
-                description_step: description_step,
-                fields: [ // Adicionar aqui uma forma de adicionar os fields dinamicamente
+                name_sample: name_sample,
+                description_sample: description_sample,
+                steps: [
                     {
-                        name_field: name_field,
-                        type_field: type_field
+                        step_id: stepCount, // Mudar aqui para os estágios também serem adicionados dinamicamente
+                        name_step: name_step,
+                        description_step: description_step,
+                        fields: [ // Adicionar aqui uma forma de adicionar os fields dinamicamente
+                            {
+                                name_field: name_field,
+                                type_field: type_field
+                            }
+                        ]
                     }
                 ]
             }
@@ -27,10 +34,58 @@ function sendProtocolDataToDB() {
     console.log("Still have to work on this")
 }
 
+function createNewSample() {
+    sampleCount++;
+
+    const samplesContainer = document.querySelector(".samples-container"); // Is refering the <div class="samples-container"></div>
+
+    const divSampleContainer = document.createElement("div");
+    divSampleContainer.classList.add("sample-container");
+
+    const sampleFieldSet = document.createElement("fieldset");
+    sampleFieldSet.setAttribute('id', 'sampleFieldset');
+    sampleFieldSet.style.border = '1px solid black';
+
+    // Creating sampleFieldSet elments
+        const sampleLegend = document.createElement('legend');
+        sampleLegend.textContent = `Sample ${sampleCount}`;
+
+        const inputNameSample = document.createElement('input');
+        inputNameSample.type = "text";
+        inputNameSample.placeholder = "Enter sample name";
+
+        const inputDescriptionSample = document.createElement("input"); // ...
+        inputDescriptionSample.type = "text";
+        inputDescriptionSample.placeholder = "Enter sample description"
+
+        const createNewSampleButton = document.createElement("button"); // ...
+        createNewSampleButton.type = "button";
+        createNewSampleButton.onclick = createNewStep;
+        createNewSampleButton.textContent = "Add step";
+        createNewSampleButton.addEventListener("click", createNewStep);
+    //
+
+    sampleFieldSet.appendChild(sampleLegend);
+    sampleFieldSet.appendChild(inputNameSample);
+    sampleFieldSet.appendChild(inputDescriptionSample);
+    sampleFieldSet.appendChild(createNewSampleButton);
+
+    divSampleContainer.appendChild(sampleFieldSet);
+
+    // FIELD - Just to separete the things
+        const divStepContainer = document.createElement("div");
+        divStepContainer.className = "steps-container";
+        divSampleContainer.appendChild(divStepContainer);
+    //
+
+    // running
+    samplesContainer.appendChild(divSampleContainer); // ...
+}
+
 function createNewStep() {
     stepCount++;
 
-    const stepsContainer = document.querySelector(".steps-container"); // Is refering the <div id="stepsContainer"></div>
+    const stepsContainer = this.closest(".sample-container").querySelector(".steps-container"); // Is refering the <div id="stepsContainer"></div>
 
     const divStepContainer = document.createElement("div"); // Create a div to organize the step container
     divStepContainer.classList.add("step-container");
@@ -43,9 +98,9 @@ function createNewStep() {
         const stepLegend = document.createElement('legend');
         stepLegend.textContent = `Step ${stepCount}`;
 
-        const inputNameStep = document.createElement("input"); // ...
+        const inputNameStep = document.createElement('input'); // ...
         inputNameStep.type = "text";
-        inputNameStep.placeholder = "Enter step name"
+        inputNameStep.placeholder = "Enter step name";
 
         const inputDescriptionStep = document.createElement("input"); // ...
         inputDescriptionStep.type = "text";
