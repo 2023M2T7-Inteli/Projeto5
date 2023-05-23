@@ -7,8 +7,9 @@ const path = require('path');
 const db = require('./db.js');
 const protocols = require('./src/routes/protocols');
 
+// Defining instances of frameworks
 const app = express();
-const router = express.Router(); // It will help to define the express module endpoints;
+
 // BodyParser config
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,7 +20,7 @@ staticDirs.forEach(dir => {
     app.use(express.static(`./public/${dir}`));
 });
 
-// Endpoints
+//////// ENDPOINTS ////////
 
 // Main endpoint
 app.get('/', (req, res) => {
@@ -35,6 +36,11 @@ app.get('/', (req, res) => {
     // home_researcher.html --> new_protocol.html
     app.get('/new_protocols', (req, res) => {
         res.sendFile(path.join(__dirname + '/views/researcher/new_protocols.html'))
+    });
+
+    // Working......................................................................
+    app.get('/createProtocol', (req, res) => {
+        res.sendFile(path.join(__dirname + '/views/researcher/createProtocol.html'))
     });
 
     // home_researcher.html --> researcher_profile.html
@@ -89,19 +95,20 @@ app.get('/', (req, res) => {
     });
         
     app.post('/editProtocols/updateValues', (req, res) => {
-        const id = req.body.id;
-        const name = req.body.name;
-        const objective = req.body.objective;
-        const collector = req.body.collector;
+        const data = {
+            id: req.body.id,
+            name: req.body.name,
+            objective: req.body.objective,
+            collector: req.body.collector
+        };
         
-        db.run('UPDATE protocols SET name = ?, objective = ?, collector = ? WHERE id = ?', [
-            name, 
-            objective, 
-            collector, 
-            id
-        ]);
-        
-        res.redirect('/protocols');
+        protocols.update(db, data, (err, changes) => {
+            if (err) {
+                res.status(500).send(`Erro ao atualizar os valores.`);
+                return;
+            }
+            res.redirect('/protocols');
+        });
     });
 //
 

@@ -1,6 +1,6 @@
 // CRUD functions definition
 
-const table = 'protocols';
+const table = 'tbl_protocols';
 
 // READ
 function read(db, callback){
@@ -15,9 +15,9 @@ function read(db, callback){
 
 // CREATE
 function create(db, data, callback){
-    const { name, objective, collector } = data;
+    const { name, objective} = data;
 
-    db.run(`INSERT INTO ${table} (name, objective, collector) VALUES (?, ?, ?)`, [name, objective, collector], function (err) {
+    db.run(`INSERT INTO ${table} (name_protocols, objective_protocol) VALUES (?, ?)`, [name, objective], function (err) {
         if (err){
             callback(err, null);
             return;
@@ -28,9 +28,9 @@ function create(db, data, callback){
 
 // UPDATE
 function update(db, data, callback){
-    const { id, name, objective, collector } = data;
+    const { id, name, objective} = data;
 
-    db.run(`UPDATE ${table} SET name = ?, objective = ?, collector = ? WHERE id = ?`, [name, objective, collector, id], function (err) {
+    db.run(`UPDATE ${table} SET name_protocols = ?, objective_protocol = ? WHERE id = ?`, [name, objective, id], function (err) {
         if (err) {
             callback(err, null);
             return;

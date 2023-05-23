@@ -8,28 +8,55 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         throw err;
     } else {
         console.log('Conexão com o banco de dados estabelecida.')
-        db.run(`CREATE TABLE IF NOT EXISTS protocols (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name text, 
-                objective text, 
-                collector text)`,
+        db.run(`CREATE TABLE IF NOT EXISTS tbl_protocols (
+                id_protocol INTEGER PRIMARY KEY AUTOINCREMENT,
+                name_protocol text, 
+                objective_protocol)`,
         (err) => {
             if (err) {
-                console.log('Erro ao criar tabela protocols:', err.message);
+                console.log('Erro ao criar tbl_protocols:', err.message);
             } else {
-                console.log('A tabela protocols foi criada com sucesso.');
+                console.log('A tbl_protocols foi criada com sucesso.');
             } 
         });
-        db.run(`CREATE TABLE IF NOT EXISTS collectors (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                protocol_id integer, 
-                name_collector text,
-                FOREIGN KEY ( protocol_id ) REFERENCES protocols( id ))`,
+        db.run(`CREATE TABLE IF NOT EXISTS tbl_samples (
+                id_sample INTEGER PRIMARY KEY AUTOINCREMENT,
+                name_sample integer, 
+                description_sample text,
+                id_protocol integer,
+                FOREIGN KEY ( id_protocol ) REFERENCES tbl_protocols( id_protocol ))`,
         (err) => {
             if (err) {
-                console.log('Erro ao criar tabela collectors:', err.message);
+                console.log('Erro ao criar tbl_samples:', err.message);
             } else {
-                console.log('A tabela collectors foi criada com sucesso.');
+                console.log('A tbl_samples foi criada com sucesso.');
+            } 
+        });
+        db.run(`CREATE TABLE IF NOT EXISTS tbl_steps (
+                id_step INTEGER PRIMARY KEY AUTOINCREMENT,
+                name_step integer, 
+                description_step text,
+                id_sample integer,
+                FOREIGN KEY ( id_sample ) REFERENCES tbl_samples( id_sample ))`,
+        (err) => {
+            if (err) {
+                console.log('Erro ao criar tbl_steps:', err.message);
+            } else {
+                console.log('A tbl_steps foi criada com sucesso.');
+            }
+        });
+        db.run(`CREATE TABLE IF NOT EXISTS tbl_fields (
+                id_field INTEGER PRIMARY KEY AUTOINCREMENT,
+                name_field integer, 
+                description_field text,
+                answer_field text,
+                id_step integer,
+                FOREIGN KEY ( id_step ) REFERENCES tbl_steps( id_step ))`,
+        (err) => {
+            if (err) {
+                console.log('Erro ao criar tbl_fields:', err.message);
+            } else {
+                console.log('A tbl_fields foi criada com sucesso.');
             } 
         });
     };
