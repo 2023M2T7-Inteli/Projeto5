@@ -28,9 +28,9 @@ function create(db, data, callback){
 
 // UPDATE
 function update(db, data, callback){
-    const { id, name_protocol, objective_protocol } = data;
+    const { id, name, objective} = data;
 
-    db.run(`UPDATE ${table} SET name_protocol= ?, objective_protocol = ? WHERE id = ?`, [name_protocol, objective_protocol, id], function (err) {
+    db.run(`UPDATE ${table} SET name_protocols = ?, objective_protocol = ? WHERE id = ?`, [name, objective, id], function (err) {
         if (err) {
             callback(err, null);
             return;
