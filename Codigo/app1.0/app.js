@@ -112,6 +112,60 @@ app.get('/', (req, res) => {
     });
 //
 
+// Criando as rotas para interagir com a feature de criação de protocolos:
+
+    let id_protocol;
+
+    // C - Protocols
+    app.post('/create-protocols', (req, res) => {
+        const { name_protocol, objective_protocol } = req.body;
+        db.run(`INSERT INTO tbl_protocols (name_protocol, objective_protocol) VALUES (?, ?)`, [ name_protocol, objective_protocol ], function(err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Error creating protocol.');
+            };
+            id_protocol = this.lastID;
+        });
+    });
+
+    // C - Samples
+    app.post('/create-samples', (req, res) => {
+        const name_sample = req.body.name_sample;
+        const description_sample = req.body.description_sample;
+        db.run(`INSERT INTO tbl_samples (name_sample, description_sample, id_protocol) VALUES (?, ?, ?)`, [ name_sample, description_sample, id_protocol ], function(err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Error creating sample.');
+            };
+        });
+    });
+
+    // C - Steps
+    app.post('/create-steps', (req, res) => {
+        const name_step = req.body.name_step;
+        const description_step = req.body.description_step;
+        db.run(`INSERT INTO tbl_steps (name_step, description_step) VALUES (?, ?)`, [ name_step, description_step ], function(err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Error creating steps.');
+            };
+        });
+    });
+
+    // C - Fields
+    app.post('/create-fields', (req, res) => {
+        const name_field = req.body.name_field;
+        const description_field = req.body.description_field;
+        db.run(`INSERT INTO tbl_fields (name_field, description_field) VALUES (?, ?)`, [ name_field, description_field ], function(err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Error creating fields.');
+            };
+        });
+    });
+//
+
+
 // JOIN
     app.get('/innerJoin', (req, res) => {
         let protocolId = 3;

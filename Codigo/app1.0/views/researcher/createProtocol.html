@@ -13,24 +13,17 @@
                 <h3>Create protocol</h3>
             </section>
             <section>
-                <form method="POST" action="/protocols">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" required>
+                <form method="POST" action="/create-protocols">
+                    <label for="name_protocol">Name:</label>
+                    <input type="text" name="name_protocol" id="name_protocol" required>
                     <br>
-                    <label for="objective">Objective:</label>
-                    <input type="text" name="objective" id="objective" required>
-                    <br>
-                    <label for="collector">Responsible colector:</label>
-                    <input type="text" name="collector" id="collector" required>
+                    <label for="objective_protocol">Objective:</label>
+                    <input type="text" name="objective_protocol" id="objective_protocol" required>
                     <br>
                     <button type="button" onclick="createNewSample()">Add sample</button>
-                    <!-- <button type="button" onclick="createNewStep()">Add stage</button> -->
-                    <!-- <div id="stepsContainer"></div> -->
                     <div class="samples-container"></div>
-                    <!-- <div class="steps-container"></div> -->
                     <br>
-                    <br>
-                    <button type="submit">Create protocol</button>
+                    <button id="submitButton" type="submit">Create protocol</button>
                 </form>
             </section>
         </main>

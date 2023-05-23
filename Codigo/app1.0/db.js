@@ -45,6 +45,8 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 console.log('A tbl_steps foi criada com sucesso.');
             }
         });
+
+        // Change "description_field" to "type_field"
         db.run(`CREATE TABLE IF NOT EXISTS tbl_fields (
                 id_field INTEGER PRIMARY KEY AUTOINCREMENT,
                 name_field integer, 

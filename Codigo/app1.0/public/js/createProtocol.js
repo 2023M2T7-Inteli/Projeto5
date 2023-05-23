@@ -4,38 +4,28 @@ let sampleCount = 0;
 let stepCount = 0;
 let fieldCount = 1;
 
-function getProtocolData(name_protocol, objective_protocol, name_sample, description_sample, name_step, description_step, name_field, type_field) {
-    let protocol = {
-        name_protocol: name_protocol,
-        objective_protocol: objective_protocol,
-        samples: [
-            {
-                name_sample: name_sample,
-                description_sample: description_sample,
-                steps: [
-                    {
-                        step_id: stepCount, // Mudar aqui para os estágios também serem adicionados dinamicamente
-                        name_step: name_step,
-                        description_step: description_step,
-                        fields: [ // Adicionar aqui uma forma de adicionar os fields dinamicamente
-                            {
-                                name_field: name_field,
-                                type_field: type_field
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    };
-};
-
-function sendProtocolDataToDB() {
-    console.log("Still have to work on this")
-}
-
 function createNewSample() {
     sampleCount++;
+
+    // Function to send the data;
+        function sendDataSample(name_sample, description_sample, route) {
+            fetch(route, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name_sample, description_sample })
+            })
+            .then(response => {
+                console.log('Dados enviados com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+            });
+        };
+    //
+
+    const submitButton = document.getElementById("submitButton"); // Button to send the data to the db;
 
     const samplesContainer = document.querySelector(".samples-container"); // Is refering the <div class="samples-container"></div>
 
@@ -46,7 +36,7 @@ function createNewSample() {
     sampleFieldSet.setAttribute('id', 'sampleFieldset');
     sampleFieldSet.style.border = '1px solid black';
 
-    // Creating sampleFieldSet elments
+    // Creating sampleFieldSet elements
         const sampleLegend = document.createElement('legend');
         sampleLegend.textContent = `Sample ${sampleCount}`;
 
@@ -58,11 +48,18 @@ function createNewSample() {
         inputDescriptionSample.type = "text";
         inputDescriptionSample.placeholder = "Enter sample description"
 
+        // Sending data
+            submitButton.addEventListener("click", () => {
+                const nameValue = inputNameSample.value;
+                const descValue = inputDescriptionSample.value;
+                sendDataSample(nameValue, descValue, '/create-samples');
+            });
+        //
+
         const createNewSampleButton = document.createElement("button"); // ...
         createNewSampleButton.type = "button";
         createNewSampleButton.onclick = createNewStep;
         createNewSampleButton.textContent = "Add step";
-        createNewSampleButton.addEventListener("click", createNewStep);
     //
 
     sampleFieldSet.appendChild(sampleLegend);
@@ -80,10 +77,30 @@ function createNewSample() {
 
     // running
     samplesContainer.appendChild(divSampleContainer); // ...
-}
+};
 
 function createNewStep() {
     stepCount++;
+
+    // Function to send the data;
+        function sendDataStep(name_step, description_step, route) {
+            fetch(route, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name_step, description_step })
+            })
+            .then(response => {
+                console.log('Dados enviados com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+            });
+        };
+    //
+
+    const submitButton = document.getElementById("submitButton"); // Button to send the data to the db;
 
     const stepsContainer = this.closest(".sample-container").querySelector(".steps-container"); // Is refering the <div id="stepsContainer"></div>
 
@@ -105,6 +122,14 @@ function createNewStep() {
         const inputDescriptionStep = document.createElement("input"); // ...
         inputDescriptionStep.type = "text";
         inputDescriptionStep.placeholder = "Enter step description"
+
+        // Sending data
+            submitButton.addEventListener("click", () => {
+                const nameValue = inputNameStep.value;
+                const descValue = inputDescriptionStep.value;
+                sendDataStep(nameValue, descValue, '/create-steps');
+            });
+        //
 
         const createNewFieldButton = document.createElement("button"); // ...
         createNewFieldButton.type = "button";
@@ -133,6 +158,27 @@ function createNewStep() {
 };
 
 function createNewField() {
+
+    // Function to send the data;
+        function sendDataField(name_field, description_field, route) {
+            fetch(route, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name_field, description_field })
+            })
+            .then(response => {
+                console.log('Dados enviados com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+            });
+        };
+    //
+
+    const submitButton = document.getElementById("submitButton"); // Button to send the data to the db;
+
     // Is refering the <div id="fieldsContainer"></div>
     // This one was created in the function `createNewStep()` with the `const divFieldContainer`
     const fieldsContainer = this.closest(".step-container").querySelector(".fields-container"); // Select father elements...
@@ -169,6 +215,15 @@ function createNewField() {
             option3.value = "number";
             option3.text = "Number";
         //
+
+        // Sending data
+            submitButton.addEventListener("click", () => {
+                const dataValue = fieldInputData.value;
+                const typeValue = fieldInputType.value;
+                sendDataField(dataValue, typeValue, '/create-fields');
+            });
+        //
+
     //
 
     fieldInputType.appendChild(option1);
