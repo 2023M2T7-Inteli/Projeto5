@@ -15,9 +15,9 @@ function read(db, callback){
 
 // CREATE
 function create(db, data, callback){
-    const { name_protocol, objective_protocol } = data;
+    const { name, objective} = data;
 
-    db.run(`INSERT INTO ${table} (name_protocol, objective_protocol) VALUES (?, ?)`, [name_protocol, objective_protocol], function (err) {
+    db.run(`INSERT INTO ${table} (name_protocols, objective_protocol) VALUES (?, ?)`, [name, objective], function (err) {
         if (err){
             callback(err, null);
             return;
