@@ -223,7 +223,6 @@ function createNewField() {
                 sendDataField(dataValue, typeValue, '/create-fields');
             });
         //
-
     //
 
     fieldInputType.appendChild(option1);
