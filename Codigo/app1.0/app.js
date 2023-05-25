@@ -128,10 +128,26 @@ app.get('/', (req, res) => {
         });
     });
 
+    // R - Protocols - [id]
+    app.get('/read_id-protocols', (req, res) => {
+        db.get(`SELECT last_insert_rowid() AS lastId from tbl_protocols`, (err, row) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error reading protocols');
+                return;
+            }
+            const id_protocol = row.lastId;
+            res.json({ id_protocol });
+        });
+        // Faz essa rota pegar imediatamente o ID do último elemento criado
+        // Chama essa rota imediatamente após criar o formulário e envia essa informação direto pra um ajax
+        // Depois o ajax manda essa informação direto para o create samples
+        // Vai ter que ter esse mesmo esquema para os outros
+    });
+
     // C - Samples
     app.post('/create-samples', (req, res) => {
-        const name_sample = req.body.name_sample;
-        const description_sample = req.body.description_sample;
+        const { name_sample, description_sample, id_protocol } = req.body;
         db.run(`INSERT INTO tbl_samples (name_sample, description_sample, id_protocol) VALUES (?, ?, ?)`, [ name_sample, description_sample, id_protocol ], function(err) {
             if (err) {
                 console.error(err);

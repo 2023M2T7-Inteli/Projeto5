@@ -48,13 +48,40 @@ function createNewSample() {
         inputDescriptionSample.type = "text";
         inputDescriptionSample.placeholder = "Enter sample description"
 
-        // Sending data
-            submitButton.addEventListener("click", () => {
-                const nameValue = inputNameSample.value;
-                const descValue = inputDescriptionSample.value;
-                sendDataSample(nameValue, descValue, '/create-samples');
+        submitButton.addEventListener("click", () => {
+            let dados = {
+                name_sample: inputNameSample.value,
+                description_sample: inputDescriptionSample.value,
+            };
+
+            $.ajax({
+                url: '/read_id-protocols',
+                method: 'GET',
+                dataType: 'json'
+            }).done((res) => {
+                const id_protocol = res.id_protocol;
+                console.log(id_protocol);
+
+                dados.id_protocol = id_protocol;
+
+                $.ajax({
+                    url: '/create-samples',
+                    method: 'POST',
+                    data: dados,
+                    dataType: 'json'
+                }).done((res) => {
+                    console.log(res);
+                });
             });
-        //
+        });
+
+        // // Sending data
+        //     submitButton.addEventListener("click", () => {
+        //         const nameValue = inputNameSample.value;
+        //         const descValue = inputDescriptionSample.value;
+        //         sendDataSample(nameValue, descValue, '/create-samples');
+        //     });
+        // //
 
         const createNewSampleButton = document.createElement("button"); // ...
         createNewSampleButton.type = "button";
