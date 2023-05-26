@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Teste Criação dinâmica de protocolo</title>
+    </head>
+    <body>
+        <div class="criar-formulario"></div>
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function(event)  {
+            const protocoloContainer = document.querySelector(".criar-formulario");
+
+            const tituloProtocolo = document.createElement("h2");
+            tituloProtocolo.textContent = "Olá!"
+
+            protocoloContainer.appendChild(tituloProtocolo);
+
+            $.ajax({
+                url: '/teste_criacao_protocol',
+                method: 'GET',
+                dataType: 'json'
+            }).done((res) => {
+                console.log(res);
+
+                // Manipule os dados da resposta aqui
+                const row = res.row;
+
+                // Exemplo: exibir o ID do protocolo em um elemento <p>
+                const idProtocolo = document.createElement("p");
+                idProtocolo.textContent = "ID do protocolo: " + row.id_protocol;
+                protocoloContainer.appendChild(idProtocolo);
+            });
+        });
+        </script>
+    </body>
+</html>

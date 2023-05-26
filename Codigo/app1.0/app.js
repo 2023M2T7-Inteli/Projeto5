@@ -181,6 +181,26 @@ app.get('/', (req, res) => {
     });
 //
 
+// TESTE PARA CRIAÇÃO DE FORMULÁRIO:
+    app.get('/teste_criacao_protocol', (req, res) => {
+        db.get(`SELECT * FROM tbl_protocols ORDER BY id_protocol DESC LIMIT 1`, (err, row) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error reading protocols');
+                return;
+            }
+            // Criar um objeto JSON apenas com as informações relevantes
+            const protocolData = {
+                id: row.id_protocol,
+                nome: row.name_protocol,
+                // Adicione mais campos relevantes conforme necessário
+            };
+
+            res.json(protocolData.nome);
+        });
+    });
+//
+
 
 // JOIN
     app.get('/innerJoin', (req, res) => {
