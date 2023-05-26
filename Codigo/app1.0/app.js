@@ -112,9 +112,7 @@ app.get('/', (req, res) => {
     });
 //
 
-// Criando as rotas para interagir com a feature de criação de protocolos:
-
-    let id_protocol;
+// Creating the routes to interact with the protocol creation feature:
 
     // C - Protocols
     app.post('/create-protocols', (req, res) => {
@@ -139,10 +137,6 @@ app.get('/', (req, res) => {
             const id_protocol = row.lastId;
             res.json({ id_protocol });
         });
-        // Faz essa rota pegar imediatamente o ID do último elemento criado
-        // Chama essa rota imediatamente após criar o formulário e envia essa informação direto pra um ajax
-        // Depois o ajax manda essa informação direto para o create samples
-        // Vai ter que ter esse mesmo esquema para os outros
     });
 
     // C - Samples
@@ -180,7 +174,6 @@ app.get('/', (req, res) => {
         });
     });
 //
-
 
 // JOIN
     app.get('/innerJoin', (req, res) => {
