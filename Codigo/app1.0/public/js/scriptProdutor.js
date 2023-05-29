@@ -37,3 +37,10 @@ var infoElements = [
   ];
   generateDynamicForm(elementsInput);
 
+// Criando a função para gerar os protocolos com base no banco de dados:
+function getDinamicFormsData() {
+  // Criando aqui para substituir o elementsInput (depois mudo o nome)
+
+  
+};
+

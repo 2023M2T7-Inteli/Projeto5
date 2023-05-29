@@ -39,9 +39,14 @@ app.get('/', (req, res) => {
     });
 
     // Working......................................................................
-    app.get('/createProtocol', (req, res) => {
-        res.sendFile(path.join(__dirname + '/views/researcher/createProtocol.html'))
-    });
+        app.get('/createProtocol', (req, res) => {
+            res.sendFile(path.join(__dirname + '/views/researcher/createProtocol.html'));
+        });
+
+        app.get('/colectorProtocol', (req, res) => {
+            res.sendFile(path.join(__dirname + '/views/produtor/colectorProtocol.html'));
+        });
+    //
 
     // home_researcher.html --> researcher_profile.html
     app.get('/researcher_profile', (req, res) => {
