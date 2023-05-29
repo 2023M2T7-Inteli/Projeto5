@@ -119,7 +119,7 @@ app.get('/', (req, res) => {
 
 // Creating the routes to interact with the protocol creation feature:
 
-    // C - Protocols
+    // C - Protocols;
     app.post('/create-protocols', (req, res) => {
         const { name_protocol, objective_protocol } = req.body;
         db.run(`INSERT INTO tbl_protocols (name_protocol, objective_protocol) VALUES (?, ?)`, [ name_protocol, objective_protocol ], function(err) {
@@ -131,7 +131,7 @@ app.get('/', (req, res) => {
         });
     });
 
-    // R - Protocols - [id]
+    // R - Protocols - [id];
     app.get('/read_id-protocols', (req, res) => {
         db.get(`SELECT last_insert_rowid() AS lastId from tbl_protocols`, (err, row) => {
             if (err) {
@@ -144,7 +144,7 @@ app.get('/', (req, res) => {
         });
     });
 
-    // C - Samples
+    // C - Samples;
     app.post('/create-samples', (req, res) => {
         const { name_sample, description_sample, id_protocol } = req.body;
         db.run(`INSERT INTO tbl_samples (name_sample, description_sample, id_protocol) VALUES (?, ?, ?)`, [ name_sample, description_sample, id_protocol ], function(err) {
@@ -155,7 +155,7 @@ app.get('/', (req, res) => {
         });
     });
 
-    // C - Steps
+    // C - Steps;
     app.post('/create-steps', (req, res) => {
         const name_step = req.body.name_step;
         const description_step = req.body.description_step;
@@ -167,7 +167,7 @@ app.get('/', (req, res) => {
         });
     });
 
-    // C - Fields
+    // C - Fields;
     app.post('/create-fields', (req, res) => {
         const name_field = req.body.name_field;
         const description_field = req.body.description_field;
@@ -178,6 +178,24 @@ app.get('/', (req, res) => {
             };
         });
     });
+
+    // Getting the data to create the protocol table;
+    app.get('/read_protocol-data', (req, res) => {
+        db.get(`SELECT * FROM tbl_protocols ORDER BY id_protocol DESC LIMIT 1`, (err, row) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error reading protocols data');
+                return;
+            }
+
+            const protocolData = {
+                id: row.id_protocol,
+                name: row.name_protocol,
+            };
+            res.json(protocolData);
+        });
+    });
+
 //
 
 // JOIN
@@ -193,7 +211,7 @@ app.get('/', (req, res) => {
             }
             res.json({
                 "mensagem":"JOIN-> Feito com sucesso!",
-                "dados":rows
+                "dados": rows
             });
         });
     });
