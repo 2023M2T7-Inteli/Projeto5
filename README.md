@@ -17,15 +17,13 @@
 - <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Savoia</a>
 - <a href="https://www.linkedin.com/in/leonardokalid/">Leonardo Kalid</a>
 
-<img src="/imagens/FotoDoGrupo.png" alt="NOME DO JOGO" border="0">
-
-## Descrição
+## 📝 Descrição
 
 <br><br>
 Frase curta e de Impacto
 <br><br>
 <p align="center">
-<img src="/imagens/LogoDoJogo.png" alt="NOME DO JOGO" border="0">
+<img src="/Codigo/app1.0/public/img/LogoPotich.png"" alt="Logo Potich" border="0">
 
 
 <br><br>
@@ -35,7 +33,7 @@ Descrição mais profunda
 
 Nulla cursus nulla ut urna rhoncus convallis. Morbi sed elit pellentesque, ullamcorper sem sed, hendrerit metus. Duis quis convallis velit, eget ultricies turpis. In tincidunt, nulla id iaculis consequat, lectus neque eleifend urna, sed finibus elit felis a sapien. Duis ac orci metus. Vestibulum quis leo facilisis, egestas ante vitae, ultrices leo. In hac habitasse platea dictumst. Phasellus bibendum libero id risus consectetur laoreet. Ut sed tempus lacus. In rhoncus rhoncus felis eget sagittis. Nam eget augue interdum, imperdiet turpis sit amet, interdum ligula. Nulla rutrum risus id pellentesque porttitor. Aenean a ante vel nisi pretium dignissim vitae vitae magna. Nam pretium aliquam est.
 
-## 🛠 Estrutura de pastas
+## 📁 Estrutura de pastas
 
 -Raiz<br>
 |<br>
