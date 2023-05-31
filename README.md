@@ -4,11 +4,18 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do Projeto: Potich
+# Apotich
 
-## Nome do Grupo: Potich
+## Potich
 
-## Integrantes: <a href="https://www.linkedin.com/in/eduardo-hos/">Eduardo Henrique</a>, <a href="https://www.linkedin.com/in/gabrielcolettosilva/">Gabriel Coletto</a>, <a href="https://www.linkedin.com/in/isabella-fernandes-saldanha-138a631b4/">Andre Hutzler</a>, <a href="https://www.linkedin.com/in/mauro-das-chagas-junior-7306a71b9/">Mauro Chagas</a>, <a href="https://www.linkedin.com/in/lucasdeluccas/">Lucas de Luccas</a>, <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Savoia</a> e <a href="https://www.linkedin.com/in/leonardokalid/">Leonardo Kalid</a>
+## Integrantes: 
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Eduardo Henrique</a>
+- <a href="https://www.linkedin.com/in/gabrielcolettosilva/">Gabriel Coletto</a>
+- <a href="https://www.linkedin.com/in/isabella-fernandes-saldanha-138a631b4/">Andre Hutzler</a>
+- <a href="https://www.linkedin.com/in/mauro-das-chagas-junior-7306a71b9/">Mauro Chagas</a>
+- <a href="https://www.linkedin.com/in/lucasdeluccas/">Lucas de Luccas</a>
+- <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Savoia</a>
+- <a href="https://www.linkedin.com/in/leonardokalid/">Leonardo Kalid</a>
 
 <img src="/imagens/FotoDoGrupo.png" alt="NOME DO JOGO" border="0">
 
@@ -32,59 +39,50 @@ Nulla cursus nulla ut urna rhoncus convallis. Morbi sed elit pellentesque, ullam
 
 -Raiz<br>
 |<br>
-|-->docs<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|GDD.docx ou Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
+|-->Documentos<br>
+  &emsp;|-->Antigos<br>
+  &emsp;|WAD_Sprint3.docx
+  &emsp;|WAD_Sprint3.pdf
+|-->Codigo<br>
+  &emsp;|-->app1.0
+  &emsp;|db.sqlite
+|license.txt<br>
 |readme.md<br>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
+## 💻 Configuração para desenvolvimento
 
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+Aqui encontram-se todas as instruções necessárias para a instalação de todos os programas, bibliotecas e ferramentas imprescindíveis para a configuração do ambiente de desenvolvimento.
 
-Há também 4 pastas que seguem da seguinte forma:
+1.  Baixar e instalar o node.js: [https://nodejs.org/pt-br/](https://nodejs.org/pt-br/) (versão 16.15.1 LTS)
+2.  Clone o repositório em questão.
+3.  No modo administrador, abra o "prompt de comando" ou o "terminal" e, após, abra a pasta "src/backend" no diretório raiz do repositório clonado e digite o segundo comando:
 
-<b>docs</b>: Aqui serão colocados os arquivos compilados em HTML do jogo.
-<b>documentos</b>: Aqui estarão todos os documentos do projeto, mas principalmente o <b>GDD (Game Design Document)/Documentação do Sistema</b>. Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
+```sh
+npm install
+```
 
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar. Há no mínimo 3 pastas, uma para binários <b>Windows</b>, uma para binários <b>android</b> e uma para a <b>Web/HTML</b>
+Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
 
-<b>imagens</b>: Algumas imagens do jogo/sistema e logos prontos para serem utilizados e visualizados.
+```sh
+npm start
+```
 
-<b>src</b>: Nesta pasta irá todo o código fonte do jogo/sistema, pronto para para ser baixado e modificado.
+5. Agora você pode acessar a aplicação através do link http://localhost:1234/
+6. O servidor está online.
 
-## 🛠 Instalação
+```
+Alunos inteli (remover essa observação do readme.md após leitura e execução):
 
-<b>Android:</b>
+1. Certifique-se que há um arquivo "package.json" na pasta backend do projeto.
 
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
+2. Dentro deste arquivo, encontre a propriedade "scripts", e adicione um atributo de nome "start"
+com o valor "node <CAMINHO_DO_ARQUIVO_DO_SERVIDOR>." Atenção: "<CAMINHO_DO_ARQUIVO_DO_SERVIDOR>"
+deve ser substituído pelo caminho para o arquivo principal da aplicação, utilizado para subir o
+servidor. Por exemplo, se o arquivo utilizado para subir o servidor é "app.js", o atributo start
+deve possuir o valor "node app.js".
 
-<b>Windows:</b>
-
-Não há instalação! Apenas executável!
-Encontre o POTICH.exe na pasta executáveis e execute-o como qualquer outro programa.
-
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
-## 💻 Configuração para Desenvolvimento
-
-1 - Faça o download do GODOT e deste repositório.
-2 - Abra o GODOT, ao ser prontificado clique em IMPORTAR.
-3 - Selecione a pasta onde descompactou este repositório.
-
-Para abrir este projeto você necessita das seguintes ferramentas:
-
--<a href="https://godotengine.org/download">GODOT</a>
+3. No arquivo utilizado para subir a aplicação, defina a porta padrão de execução para "1234".
+```
 
 ## 🗃 Histórico de lançamentos
 
@@ -139,14 +137,10 @@ A cada atualização os detalhes devem ser lançados aqui.
 
 ## 📋 Licença/License
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">INTELI, VICTOR BRUNO ALEXANDER ROSETTI DE QUIROZ</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
 
 ## 🎓 Referências
 
-Aqui estão as referências usadas no projeto.
+Aqui estão as referências usadas no projeto:
 
-1. <https://github.com/iuricode/readme-template>
-2. <https://github.com/gabrieldejesus/readme-model>
-3. <https://creativecommons.org/share-your-work/>
-4. <https://freesound.org/>
-5. Músicas por: <a href="https://freesound.org/people/DaveJf/sounds/616544/"> DaveJf </a> e <a href="https://freesound.org/people/DRFX/sounds/338986/"> DRFX </a> ambas com Licença CC 0.
+1. <https://creativecommons.org/share-your-work/>
