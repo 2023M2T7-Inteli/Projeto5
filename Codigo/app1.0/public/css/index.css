@@ -39,6 +39,28 @@
     margin-right: 300px;
   }
 
+  nav{
+    /* background-color: #52B362; */
+    border: #4D8556;
+    border-style: dashed;
+    width: 70%;
+    border-radius: 15px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+
+  .notificacao, .home, .perfil{
+    width: 30%;
+  }
+
+  .notificacao:hover, .home:hover, .perfil:hover{
+    width: 40%;
+  }
+
   form{
     margin: 25px;
     border-radius: 15px;
