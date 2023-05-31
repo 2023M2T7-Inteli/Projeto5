@@ -1,118 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index2.css" />
     <title>Home pesquisa</title>
 
     <style type="text/css">
-		h1{
-			text-align: center;
-		}
-		body{
-			font-family: arial, sans-serif;
-		}
-		p{
-			color: white;
-			text-align: center;
+      button {
+        border-radius: 15px;
+        border: 2px solid #f1d857;
+        background-color: white;
+        padding: 16px;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #f1d857;
+        transition-duration: 0.4s;
+        color: white;
+      }
+      .botao {
+        position: relative;
+        right: 350px;
+        margin-left: 185px;
+      }
+      h1 {
+        text-align: center;
+      }
+      body {
+        font-family: arial, sans-serif;
+      }
+      p {
+        color: white;
+        text-align: center;
+      }
+      main {
+        width: 1000px;
+        margin: auto;
+      }
 
-		}
-		main{
-			width: 1000px;
-			margin: auto;
-		}
+      .preto {
+        width: 300px;
+        height: 300px;
+        background-color: black;
+      }
+      .amarelo {
+        width: 300px;
+        height: 300px;
+        background-color: yellow;
+      }
+      .amarelo p {
+        color: black;
+      }
 
-		.preto{
-			width: 300px;
-			height: 300px;
-			background-color: black;			
-		}
-		.amarelo{
-			width: 300px;
-			height: 300px;
-			background-color: yellow;			
-		} 
-		.amarelo p{
-			color: black;
-		}
+      .laranja {
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+      }
 
-		.laranja{
-			width: 300px;
-			height: 300px;
-			background-color: orange;			
-		}
+      .linha1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+      }
 
-		.linha1{
-			display: flex;
-			justify-content: space-between ;
-			margin-bottom: 50px;
-		}
+      .magenta {
+        width: 300px;
+        height: 300px;
+        background-color: magenta;
+      }
 
-        .magenta{
-			width: 300px;
-			height: 300px;
-			background-color: magenta;			
-		}
+      .vermelho {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
 
-		.vermelho{
-			width: 300px;
-			height: 300px;
-			background-color: red;			
-		}
+      .azulescuro {
+        width: 300px;
+        height: 300px;
+        background-color: darkblue;
+      }
 
-		.azulescuro{
-			width: 300px;
-			height: 300px;
-			background-color: darkblue;			
-		}
+      .linha2 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+      }
 
-        .linha2{
-			display: flex;
-			justify-content: space-between ;
-			margin-bottom: 50px;
-		}
-
-        div{
-			border-radius: 10px;
-		}
-
+      div {
+        border-radius: 10px;
+      }
+      img {
+        position: relative;
+        right: 190px;
+      }
     </style>
-</head>
-	<body> 
+  </head>
+  <body>
+    <img
+      width="60"
+      height="60"
+      src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png"
+      alt="u-turn-to-left"
+    />
 
-		<img width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png" alt="u-turn-to-left"/>
-		
-		<main>
-			<a href='/new_protocols'><button>New Protocol</button></a>
-			<a href='/researcher_profile'><button>Researcher_profile</button></a>
+    <main>
+      <a href="/createProtocol"><button class="botao">New Protocol</button></a>
+      <a href="/researcher_profile"><button class="botao">Profile</button></a>
 
-			<h3>Protocolos Ativos</h3>
-				<div class="linha1">
-					<div class="preto">
-						<p>Prot 1 </p>
-					</div>
-					<div class="amarelo">
-						<p>Prot 2</p>
-					</div>
-					<div class="laranja">
-						<p>Prot 3</p>
-					</div>
-				</div>    
+      <h3>Protocolos Ativos</h3>
+      <div class="linha1">
+        <div class="preto">
+          <p>Prot 1</p>
+        </div>
+        <div class="amarelo">
+          <p>Prot 2</p>
+        </div>
+        <div class="laranja">
+          <p>Prot 3</p>
+        </div>
+      </div>
 
-			<h3>Protocolos Finalizados</h3>
+      <h3>Protocolos Finalizados</h3>
 
-			<div class="linha2">
-				<div class="magenta">
-					<p>Prot 4</p>
-				</div>
-				<div class="vermelho">
-					<p>Prot 5</p>
-				</div>
-				<div class="azulescuro">
-					<p>Prot 6</p>
-				</div>	
-			</div>
-		</main>
-	</body>
+      <div class="linha2">
+        <div class="magenta">
+          <p>Prot 4</p>
+        </div>
+        <div class="vermelho">
+          <p>Prot 5</p>
+        </div>
+        <div class="azulescuro">
+          <p>Prot 6</p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

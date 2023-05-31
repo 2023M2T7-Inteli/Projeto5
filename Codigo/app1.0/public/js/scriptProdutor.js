@@ -1,3 +1,5 @@
+getDinamicFormsData()
+
 function generateDynamicForm(elements) {
     var form = document.getElementById("dynamic-form");
     // Interaction with each element using for
@@ -36,4 +38,19 @@ var infoElements = [
     { name: "TESTE", placeholder: "Enter anything you want"}
   ];
   generateDynamicForm(elementsInput);
+
+
+// Criando a função para gerar os protocolos com base no banco de dados:
+function getDinamicFormsData() {
+  document.addEventListener("DOMContentLoaded", function(event)  {
+    $.ajax({
+      url: '/read_protocol-data',
+      method: 'GET',
+      dataType: 'json'
+    }).done((res) => {
+      const nomeProtocoloElement = document.getElementById("nome-do-protocolo");
+      nomeProtocoloElement.textContent = res.name;
+    });
+  });
+};
 

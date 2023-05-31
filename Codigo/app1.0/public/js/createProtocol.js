@@ -7,24 +7,6 @@ let fieldCount = 1;
 function createNewSample() {
     sampleCount++;
 
-    // Function to send the data;
-        function sendDataSample(name_sample, description_sample, route) {
-            fetch(route, {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name_sample, description_sample })
-            })
-            .then(response => {
-                console.log('Dados enviados com sucesso!');
-            })
-            .catch(error => {
-                console.error('Erro ao enviar os dados:', error);
-            });
-        };
-    //
-
     const submitButton = document.getElementById("submitButton"); // Button to send the data to the db;
 
     const samplesContainer = document.querySelector(".samples-container"); // Is refering the <div class="samples-container"></div>
@@ -74,14 +56,6 @@ function createNewSample() {
                 });
             });
         });
-
-        // // Sending data
-        //     submitButton.addEventListener("click", () => {
-        //         const nameValue = inputNameSample.value;
-        //         const descValue = inputDescriptionSample.value;
-        //         sendDataSample(nameValue, descValue, '/create-samples');
-        //     });
-        // //
 
         const createNewSampleButton = document.createElement("button"); // ...
         createNewSampleButton.type = "button";
