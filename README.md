@@ -23,7 +23,7 @@
 Frase curta e de Impacto
 <br><br>
 <p align="center">
-<img src="/Codigo/app1.0/public/img/LogoPotich.png"" alt="Logo Potich" border="0">
+<img src="/Codigo/app1.0/public/img/LogoPotich.png"" alt="Logo Potich" border="0" width="200">
 
 
 <br><br>
