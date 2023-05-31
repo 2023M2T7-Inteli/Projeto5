@@ -1,8 +1,38 @@
-// That codes will run in the file `createProtocol.html`
+// That codes will run in the file `createProtocol.html`...
 
 let sampleCount = 0;
 let stepCount = 0;
 let fieldCount = 1;
+
+function callbackCreateProtocol() {
+    createNewSample()
+}
+
+function createProtocol() {
+    const submitButton = document.getElementById("submitButton"); 
+    const protocolForm = document.getElementById('protocolForm');
+    submitButton.addEventListener("click", () => {
+        // event.preventDefault(); // Evita o comportamento padrão de enviar o formulário
+
+        var name_protocol = document.querySelector('input[name="name_protocol"]').value;
+        var objective_protocol = document.querySelector('input[name="objective_protocol"]').value;
+
+    
+        $.ajax({
+            url: '/create-protocols',
+            method: 'POST',
+            data: {
+                name_protocol: name_protocol,
+                objective_protocol: objective_protocol
+            },
+            dataType: 'json'
+        }).done((res) => {
+            console.log(res);
+        })
+
+        callbackCreateProtocol();
+    });
+}
 
 function createNewSample() {
     sampleCount++;
@@ -32,6 +62,7 @@ function createNewSample() {
 
         submitButton.addEventListener("click", () => {
             let dados = {
+                id_protocol: "",
                 name_sample: inputNameSample.value,
                 description_sample: inputDescriptionSample.value,
             };
@@ -42,7 +73,7 @@ function createNewSample() {
                 dataType: 'json'
             }).done((res) => {
                 const id_protocol = res.id_protocol;
-                console.log(id_protocol);
+                console.log("ID protocolo depois que volta do ajax: " + id_protocol);
 
                 dados.id_protocol = id_protocol;
 

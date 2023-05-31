@@ -5,16 +5,17 @@ const db = require('../../db');
 
 function getProtocolId(req, res) {
     // R - Protocols - [id];
-    db.get(`SELECT last_insert_rowid() AS lastId from tbl_protocols`, (err, row) => {
+    db.get(`SELECT * FROM tbl_protocols ORDER BY id_protocol DESC LIMIT 1`, (err, row) => {
         if (err) {
             console.error(err);
             res.status(500).send('Error reading protocols');
             return;
         }
-        const id_protocol = row.lastId;
-        res.json({ id_protocol });
+        const id_protocol = row.id_protocol;
+        console.log("id_protocol: " + id_protocol)
+        res.json({ id_protocol: id_protocol });
     });
-}
+};
 
 function getAllProtocolData(req, res) {
     // Getting the data to create the protocol table;

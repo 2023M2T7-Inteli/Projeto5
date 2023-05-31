@@ -1,22 +1,33 @@
+function getProtocolData(inputName, inputDesc) {
+    let protocolData = {
+        name_sample: inputName,
+        description_sample: inputDesc
+    }
+    return protocolData
+};
 
-function sendData(data, route) {
-    return fetch(route, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(res => {
-        console.log('Data sent successfully!');
-        return res.json();
-    })
-    .catch(err => {
-        console.error('Error sending data:', err);
+function readIdProtocols() {
+    $.ajax({
+        url: '/read_id-protocols',
+        method: 'GET',
+        dataType: 'json'
+    }).done((res) => {
+        const id_protocol = res.id_protocol;
+        protocolData.id_protocol = id_protocol;
+        createSamples()
     });
+};
+
+function createSamples() {
+    $.ajax({
+        url: '/create-samples',
+        method: 'POST',
+        data: protocolData, 
+        dataType: 'json'
+    })
 }
 
 // Exporting modularized functions;
 module.exports = {
-    sendData
+    read_id_protocols
 };
