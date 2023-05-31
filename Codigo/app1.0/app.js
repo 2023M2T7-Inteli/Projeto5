@@ -1,18 +1,21 @@
-// Importing node modules
+// Importing node modules and configuring they;
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-// Importing built-in modules
-const db = require('./db.js');
-const protocols = require('./src/routes/protocols');
-
-// Defining instances of frameworks
 const app = express();
 
-// BodyParser config
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Importing built-in modules;
+const db = require('./db.js');
+
+// Importing controllers;
+const researcherController = require('./src/controllers/researcherController.js');
+const protocolCreationController = require('./src/controllers/protocolCreationController.js');
+const collectorController = require('./src/controllers/collectorController.js');
+const protocolDataController = require('./src/controllers/protocolDataController.js');
 
 // Serving static files
 const staticDirs = ['img', 'css', 'js'];
@@ -20,203 +23,30 @@ staticDirs.forEach(dir => {
     app.use(express.static(`./public/${dir}`));
 });
 
-//////// ENDPOINTS ////////
+// ENDPOINTS //
 
 // Main endpoint
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/views/main/index.html'));
 });
 
-// Researchers endpoints
-    // index.html --> home_researcher.html
-    app.get('/home_researcher', (req, res) => {
-        res.sendFile(path.join(__dirname + '/views/researcher/home_researcher.html'))
-    });
+// Researchers endpoints;
+app.get('/home_researcher', researcherController.getHome);
+app.get('/createProtocol', researcherController.getCreateProtocol);
+app.get('/researcher_profile', researcherController.getResearcherProfile);
 
-    // home_researcher.html --> new_protocol.html
-    app.get('/new_protocols', (req, res) => {
-        res.sendFile(path.join(__dirname + '/views/researcher/new_protocols.html'))
-    });
+// Colectors endpoints;
+app.get('/colectorProtocol', collectorController.protocolGenerationPage);
 
-    // Working......................................................................
-        app.get('/createProtocol', (req, res) => {
-            res.sendFile(path.join(__dirname + '/views/researcher/createProtocol.html'));
-        });
+// Protocol creation (sending all the protocol to the database);
+app.post('/create-protocols', protocolCreationController.creatingProtocol);
+app.post('/create-samples', protocolCreationController.creatingSamples);
+app.post('/create-steps', protocolCreationController.creatingSteps);
+app.post('/create-fields', protocolCreationController.creatingFields);
 
-        app.get('/colectorProtocol', (req, res) => {
-            res.sendFile(path.join(__dirname + '/views/produtor/colectorProtocol.html'));
-        });
-    //
-
-    // home_researcher.html --> researcher_profile.html
-    app.get('/researcher_profile', (req, res) => {
-        res.sendFile(path.join(__dirname + '/views/researcher/researcher_profile.html'))
-    });
-//
-
-// CRUD endpoints
-    // CRUD -> R
-    app.get('/protocols', (req, res) => {
-        protocols.read(db, (err, rows) => {
-            if (err){
-                res.status(400).json({ error: err.message });
-                return;
-            }
-            res.json({
-                mensagem: "CRUD (R) - Feito com sucesso!",
-                dados: rows,
-            });
-        });
-    });
-
-    // CRUD -> C
-    app.post('/protocols', (req, res) => {
-        const data = req.body;
-        protocols.create(db, data, (err, lastID) => {
-            if (err) {
-                console.error(err.message);
-                return res.status(500).send("Erro ao criar protocolo");
-            }
-            res.redirect('/protocols');
-        });
-    });
-
-    // CRUD -> D
-    app.delete('/protocols/:id', (req, res) => {
-        const id = req.params.id;
-        protocols.remove(db, id, (err, changes) => {
-            if (err) {
-                console.error(err.message);
-                return res.status(500).send("Erro ao excluir protocolo.");
-            }
-            console.log(`Protocolo com id ${id} excluído com sucesso.`);
-            return res.status(204).send();
-        });
-    });
-
-    // CRUD -> U
-    app.get('/editProtocols', (req, res) => {
-        res.sendFile(path.join(__dirname + "/views/researcher/editProtocol.html"));
-    });
-        
-    app.post('/editProtocols/updateValues', (req, res) => {
-        const data = {
-            id: req.body.id,
-            name: req.body.name,
-            objective: req.body.objective,
-            collector: req.body.collector
-        };
-        
-        protocols.update(db, data, (err, changes) => {
-            if (err) {
-                res.status(500).send(`Erro ao atualizar os valores.`);
-                return;
-            }
-            res.redirect('/protocols');
-        });
-    });
-//
-
-// Creating the routes to interact with the protocol creation feature:
-
-    // C - Protocols;
-    app.post('/create-protocols', (req, res) => {
-        const { name_protocol, objective_protocol } = req.body;
-        db.run(`INSERT INTO tbl_protocols (name_protocol, objective_protocol) VALUES (?, ?)`, [ name_protocol, objective_protocol ], function(err) {
-            if (err) {
-                console.error(err);
-                return res.status(500).send('Error creating protocol.');
-            };
-            id_protocol = this.lastID;
-        });
-    });
-
-    // R - Protocols - [id];
-    app.get('/read_id-protocols', (req, res) => {
-        db.get(`SELECT last_insert_rowid() AS lastId from tbl_protocols`, (err, row) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error reading protocols');
-                return;
-            }
-            const id_protocol = row.lastId;
-            res.json({ id_protocol });
-        });
-    });
-
-    // C - Samples;
-    app.post('/create-samples', (req, res) => {
-        const { name_sample, description_sample, id_protocol } = req.body;
-        db.run(`INSERT INTO tbl_samples (name_sample, description_sample, id_protocol) VALUES (?, ?, ?)`, [ name_sample, description_sample, id_protocol ], function(err) {
-            if (err) {
-                console.error(err);
-                return res.status(500).send('Error creating sample.');
-            };
-        });
-    });
-
-    // C - Steps;
-    app.post('/create-steps', (req, res) => {
-        const name_step = req.body.name_step;
-        const description_step = req.body.description_step;
-        db.run(`INSERT INTO tbl_steps (name_step, description_step) VALUES (?, ?)`, [ name_step, description_step ], function(err) {
-            if (err) {
-                console.error(err);
-                return res.status(500).send('Error creating steps.');
-            };
-        });
-    });
-
-    // C - Fields;
-    app.post('/create-fields', (req, res) => {
-        const name_field = req.body.name_field;
-        const description_field = req.body.description_field;
-        db.run(`INSERT INTO tbl_fields (name_field, description_field) VALUES (?, ?)`, [ name_field, description_field ], function(err) {
-            if (err) {
-                console.error(err);
-                return res.status(500).send('Error creating fields.');
-            };
-        });
-    });
-
-    // Getting the data to create the protocol table;
-    app.get('/read_protocol-data', (req, res) => {
-        db.get(`SELECT * FROM tbl_protocols ORDER BY id_protocol DESC LIMIT 1`, (err, row) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error reading protocols data');
-                return;
-            }
-
-            const protocolData = {
-                id: row.id_protocol,
-                name: row.name_protocol,
-            };
-            res.json(protocolData);
-        });
-    });
-
-//
-
-// JOIN
-    app.get('/innerJoin', (req, res) => {
-        let protocolId = 3;
-        db.all(`SELECT collectors.name_collector
-                FROM protocols
-                INNER JOIN collectors ON protocols.id = collectors.protocol_id
-                WHERE protocols.id = ?`, [protocolId], (err, rows) => {
-            if (err) {
-                console.error(err.message);
-                return;
-            }
-            res.json({
-                "mensagem":"JOIN-> Feito com sucesso!",
-                "dados": rows
-            });
-        });
-    });
-//
-
+// Reading protocol data;
+app.get('/read_id-protocols', protocolDataController.getProtocolId);
+app.get('/read_protocol-data', protocolDataController.getAllProtocolData);
 
 // Server listening
 app.listen(8081, function(){
