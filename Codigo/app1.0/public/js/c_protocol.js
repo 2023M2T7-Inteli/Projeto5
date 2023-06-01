@@ -10,72 +10,47 @@
     let inputDescriptionSample;
 //
 
-function sendDataProtocol(callback) {
-    const form = document.getElementById("formProtocol");
-
+function sendDataProtocol() {
     const nameProtocolInput = document.getElementById('name_protocol');
     const objectiveProtocolInput = document.getElementById('objective_protocol');
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+    const nameProtocolValue = nameProtocolInput.value;
+    const objectiveProtocolValue = objectiveProtocolInput.value;
 
-        const nameProtocolValue = nameProtocolInput.value;
-        const objectiveProtocolValue = objectiveProtocolInput.value;
+    data = {
+        name_protocol: nameProtocolValue,
+        objective_protocol: objectiveProtocolValue
+    };
 
-        $.ajax({
-            url: '/create-protocols',
-            method: 'POST',
-            data: {
-                name_protocol: nameProtocolValue,
-                objective_protocol: objectiveProtocolValue
-            },
-            success: (res) => {
-                console.log("Formulário enviado com sucesso!");
-
-                // Aqui vai o `getIdProtocol()`;
-                callback()
-            },
-            error: () => {
-                console.log("Pra variar, deu algo errado...", error)
-            }
-        });
-    });
+    $.post('/create-protocols', data, getIdProtocol, "text");
 };
 
 function getIdProtocol() {
-    $.ajax({
-        url: '/read_id-protocols',
-        method: 'GET',
-        dataType: 'json'
-    }).done((res) => {
+    $.get('/read_id-protocols', (res) => {
         id_protocol = res.id_protocol;
-
         console.log("ID do último protocolo criado: ", id_protocol);
-
-        // Aqui vai o sendDataSample() como callback
-        sendDataSample(id_protocol);
-    })
+    }).done(() => {
+        sendDataSample(id_protocol)
+    });
 };
 
 function sendDataSample(id) {
-    let dados = {
+    let data = {
         id_protocol: id,
         name_sample: inputNameSample.value,
         description_sample: inputDescriptionSample.value
     };
 
-    $.ajax({
-        url: '/create-samples',
-        method: 'POST',
-        data: dados,
-        dataType: 'json'
-    }).done((res) => {
-        console.log(res);
-    });
+    $.post('/create-samples', data, () => {
+        console.log("Aqui está o res da criação de sample: " + res);
+    }, "text");
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    sendDataProtocol(getIdProtocol);
+    const submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', () => {
+        sendDataProtocol();
+    });
 });
 
 // --> dynamicHTMLcreation <-- //
@@ -83,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function createSamples() {
     sampleCount++;
 
-    const samplesContainer = document.querySelector(".samples-container"); // Is refering the <div class="samples-container"></div>
+    const samplesContainer = document.querySelector(".samples-container");
 
     const divSampleContainer = document.createElement("div");
     divSampleContainer.classList.add("sample-container");
@@ -100,11 +75,11 @@ function createSamples() {
         inputNameSample.type = "text";
         inputNameSample.placeholder = "Enter sample name";
 
-        inputDescriptionSample = document.createElement("input"); // ...
+        inputDescriptionSample = document.createElement("input");
         inputDescriptionSample.type = "text";
         inputDescriptionSample.placeholder = "Enter sample description"
 
-        const createNewSampleButton = document.createElement("button"); // ...
+        const createNewSampleButton = document.createElement("button");
         createNewSampleButton.type = "button";
         // createNewSampleButton.onclick = createNewStep;
         createNewSampleButton.textContent = "Add step";
@@ -124,5 +99,5 @@ function createSamples() {
     //
 
     // running
-    samplesContainer.appendChild(divSampleContainer); // ...
+    samplesContainer.appendChild(divSampleContainer);
 };

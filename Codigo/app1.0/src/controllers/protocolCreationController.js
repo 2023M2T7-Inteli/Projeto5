@@ -11,7 +11,7 @@ function creatingProtocol(req, res) {
             console.error(err);
             return res.status(500).send('Error creating protocol.');
         };
-        id_protocol = this.lastID;
+        return res.status(200).send("Olá!");
     });
 };
 

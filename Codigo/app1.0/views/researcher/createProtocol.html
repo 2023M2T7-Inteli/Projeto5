@@ -7,7 +7,6 @@
         <link rel= 'stylesheet' href="index.css">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <!-- <script src="createProtocol.js"></script> -->
-        <script src="c_protocol.js"></script>
         <title>Create protocol</title>
     </head>
     <body>
@@ -16,7 +15,7 @@
                 <h3>Create protocol</h3>
             </section>
             <section>
-                <form id="formProtocol" method="POST" action="/create-protocols">
+                <div id="formProtocol">
                     <label for="name_protocol">Name:</label>
                     <input type="text" name="name_protocol" id="name_protocol" required>
                     <br>
@@ -27,8 +26,9 @@
                     <div class="samples-container"></div>
                     <br>
                     <button id="submitButton" type="submit">Create protocol</button>
-                </form>
+                </div>
             </section>
         </main>
+        <script src="c_protocol.js"></script>
     </body>
 </html>
