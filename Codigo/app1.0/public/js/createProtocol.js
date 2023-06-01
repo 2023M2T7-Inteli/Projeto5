@@ -17,7 +17,6 @@ function createProtocol() {
         var name_protocol = document.querySelector('input[name="name_protocol"]').value;
         var objective_protocol = document.querySelector('input[name="objective_protocol"]').value;
 
-    
         $.ajax({
             url: '/create-protocols',
             method: 'POST',
