@@ -9,7 +9,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
     } else {
         console.log('Conexão com o banco de dados estabelecida.')
         db.run(`CREATE TABLE IF NOT EXISTS tbl_protocols (
-                id_protocol INTEGER PRIMARY KEY AUTOINCREMENT,
+                id_protocol INTEGER PRIMARY KEY,
                 name_protocol text, 
                 objective_protocol)`,
         (err) => {
