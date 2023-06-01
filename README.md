@@ -84,54 +84,82 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-A cada atualização os detalhes devem ser lançados aqui.
-  
-* 4.0.1 - 06/04/2023
-    * MUDANÇA: Finalização dos comentários.
-    * MUDANÇA: Finalização dos códigos.
-    * ADD: Finalizaçao do APK
-* 4.0.0 - 05/04/2023
-    * MUDANÇA: Fases 1 e 2 completas.
-    * ADD: Versão final do jogo.
-* 3.1.0 - 01/04/2023
-    * ADD: Implementação da base dos minigames da fase 2.
-* 3.0.0 - 31/03/2023
-    * MUDANÇA: Organização do código em pastas.
-    * ADD: Introdução da fase 2.
-* 2.2.0 - 28/03/2023
-    * MUDANÇA: Mudança da música para uma sem direitos autorais.
-    * ADD: Implementação de mais efeitos sonoros.
-* 2.1.1 - 24/03/2023
-    * ADD: Entrega dos artefatos 7, 8 e 9.
-* 2.1.0 - 23/03/2023
-    * MUDANÇA: Atualização das fases 2, 3 e 4.
-    * ADD: Fase de tutorial.
-    * MUDANÇA: Atualizações do design para ficar mais intuitivo.
-    * MUDANÇA: Arrumamos o bug do jogo finalizar sem realizar todas as tarefas.
-    * MUDANÇA: Arrumamos o bug do jogo não pertimir voltar para a tela inicial.
-    * MUDANÇA: Última atualização do jogo para a sprint 4. 
-* 2.0.0 - 22/03/2023
-    * ADD: Implementação dos minigames 2, 3 e 4.
-    * MUDANÇA: Atualização do HTML.
-* 1.4.0 - 21/03/2023
-    * MUDANÇA: Atualização dos testes de colisão do minigame 1.
-    * ADD: Sistema de configurações de áudio
-* 1.3.0 - 17/03/2023
-    * MUDANÇA: Atualização do INDEX.html.
-    * ADD: Sistema de áudio.
-* 1.2.0 - 10/03/2023
-    * ADD: Artefatos 5 e 6 da sprint 3.
-* 1.1.0 - 07/03/2023
-    * ADD: Versão para teste do jogo Bodin.
-* 1.0.0 - 24/02/2023
-    * ADD: Colocando o GDD.
-    * MUDANÇA: Atualização de algumas sprites.
-    * ADD: Implementação de alguns efeitos sonoros.
-    * MUDANÇA: Alteração do INDEX.
-    * MUDANÇA: Atualização do gitpage do grupo.
-    * ADD: Adicionando algumas sprites.
-    * ADD: Adicionando funcionalidades de movimentação do personagem.
-    * ADD: Implementação de alguns efeitos sonoros.
+1.0:
+-  ADD página de notificações
+-  ADD Logo Potich
+-  ADD Home Pesquisador
+-  ADD Home Produtor
+
+1.1:
+-  ADD Join
+
+1.2:
+-  Comentário do Código
+-  Atualização do UPDATE
+- Colocou o método POST na requisição
+
+1.3: 
+- Modularização das funções de CRUD 
+- Melhorar a estrutura no futuro
+
+1.4: 
+- Update SqLite
+
+1.5:  
+- Atualização do documento WAD
+- Documentação Aplicação 2.0
+
+1.6: 
+- ADD feature de criação de formulario
+
+2.0:
+-  Backend with Jeronimo
+- Update e desenvolver a criação de usuários
+
+ 2.1:
+- Melhorar a estrutura dos forms criados
+- Melhorar a database
+
+2.2:
+- Commit frontend
+
+2.3:
+- Paleta de cores
+- Merge branch
+- ADD de design e altercates nas paginas principais pensando em questões heuristicas
+
+3.0:
+- Melhorou a ferramenta de criações do protocolo
+- Integrou com a database
+- Arquitetura de software da parte do coletor
+- Arrumar o merge
+- Fazer a ligação dos samples, steps e fields
+
+3.1:
+- Implementações de CSS 
+- pequenas alterações de HTML
+
+4.0:
+- CSS novo
+- Implementação de dois HTML
+
+4.1: 
+- Fazendo ajustamento do código, para fazer a padronização
+- Desenvolver a dinâmica de protocolos no collector size
+
+4.2: 
+- refatorando os endpoints e a estrutura de pastas 
+- Criando a refatoração do protocolo de criação
+
+4.3: 
+- Alterações no CSS e HTML
+- Adicionando formatações em gerais
+- E design
+
+4.4:
+-Apagar as pastas que não estão sendo usadas
+
+
 
 ## 📋 Licença/License
 
