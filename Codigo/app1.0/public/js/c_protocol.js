@@ -13,6 +13,9 @@
 
     // Arrays para organizar vetores;
     let arraySamples;
+
+    // Arrays para guardar os IDs de cada vetor;
+    let arrayIDSamples = [];
 //
 
 function sendDataProtocol() {
@@ -85,7 +88,8 @@ function sendDataSample(id, sample, callback) {
 };
 
 function getIdSample(id_sample) {
-    console.log("ID da sample criada: ", id_sample);
+    arrayIDSamples.push(id_sample)
+    console.log("Lista de IDs das samples criadas: ", arrayIDSamples);
 };
 
 document.addEventListener('DOMContentLoaded', function() {
