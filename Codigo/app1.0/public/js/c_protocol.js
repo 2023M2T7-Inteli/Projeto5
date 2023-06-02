@@ -1,9 +1,11 @@
 // Variáveis globais;
     //IDs
     let id_protocol;
+    let id_sample;
 
     // Variáveis de contagem;
     let sampleCount = 0;
+    let stepCount = 0;
 
     // Variáveis de elementos criados dinâmicamente;
     let inputNameSample;
@@ -116,7 +118,7 @@ function createSamples() {
 
         const createNewSampleButton = document.createElement("button");
         createNewSampleButton.type = "button";
-        // createNewSampleButton.onclick = createNewStep;
+        createNewSampleButton.onclick = createNewStep;
         createNewSampleButton.textContent = "Add step";
     //
 
@@ -136,4 +138,50 @@ function createSamples() {
     // running
     samplesContainer.appendChild(divSampleContainer);
 };
-  
+
+function createNewStep() {
+    stepCount++;
+
+    const stepsContainer = document.querySelector(".steps-container");
+
+    const divStepContainer = document.createElement("div");
+    divStepContainer.classList.add("step-container");
+
+    const stepFieldSet = document.createElement("fieldset");
+    stepFieldSet.setAttribute('id', 'stepFieldset');
+    stepFieldSet.style.border = '1px solid black';
+
+    //Creating stepFieldSet elements
+        const stepLegend = document.createElement('legend');
+        stepLegend.textContent = `Step ${stepCount}`;
+
+        const inputNameStep = document.createElement('input');
+        inputNameStep.type = "text";
+        inputNameStep.placeholder = "Enter step name";
+
+        const inputDescriptionStep = document.createElement("input");
+        inputDescriptionStep.type = "text";
+        inputDescriptionStep.placeholder = "Enter step description"
+
+        const createNewFieldButton = document.createElement("button");
+        createNewFieldButton.type = "button";
+        // createNewFieldButton.onclick = createNewField;
+        createNewFieldButton.textContent = "Add field";
+    //
+
+    stepFieldSet.appendChild(stepLegend);
+    stepFieldSet.appendChild(inputNameStep);
+    stepFieldSet.appendChild(inputDescriptionStep);
+    stepFieldSet.appendChild(createNewFieldButton);
+
+    divStepContainer.appendChild(stepFieldSet);
+
+    // FIELD - Just to separete the things
+        const divFieldContainer = document.createElement("div");
+        divFieldContainer.className = "fields-container";
+        divStepContainer.appendChild(divFieldContainer);
+    //
+
+    // running
+    stepsContainer.appendChild(divStepContainer); // ...
+};
