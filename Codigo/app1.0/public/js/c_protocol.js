@@ -8,6 +8,9 @@
     // Variáveis de elementos criados dinâmicamente;
     let inputNameSample;
     let inputDescriptionSample;
+
+    // Arrays para organizar vetores;
+    let arraySamples;
 //
 
 function sendDataProtocol() {
@@ -30,21 +33,51 @@ function getIdProtocol() {
         id_protocol = res.id_protocol;
         console.log("ID do último protocolo criado: ", id_protocol);
     }).done(() => {
-        sendDataSample(id_protocol)
+        getNamesAndDescsSamples()
     });
 };
 
-function sendDataSample(id) {
+function getNamesAndDescsSamples() {
+    arraySamples = [];
+    const sampleContainers = document.querySelectorAll(".sample-container");
+
+    sampleContainers.forEach((container) => {
+        const sample = {
+            name_sample: "",
+            description_sample: "",
+        };
+
+        const inputName = container.querySelector("input[type='text'][id^='nameToFunc']");
+        if (inputName) {
+            sample.name_sample = inputName.value;
+        };
+
+        const inputDescription = container.querySelector("input[type='text'][id^='descToFunc']");
+        if (inputDescription) {
+            sample.description_sample = inputDescription.value;
+        };
+
+        arraySamples.push(sample);
+    });
+
+    console.log(arraySamples);
+
+    arraySamples.forEach((sample) => {
+        sendDataSample(id_protocol, sample);
+    });
+};
+
+function sendDataSample(id, sample) {
     let data = {
         id_protocol: id,
-        name_sample: inputNameSample.value,
-        description_sample: inputDescriptionSample.value
+        name_sample: sample.name_sample,
+        description_sample: sample.description_sample
     };
 
-    $.post('/create-samples', data, () => {
+    $.post('/create-samples', data, (res) => {
         console.log("Aqui está o res da criação de sample: " + res);
     }, "text");
-}
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.getElementById('submitButton');
@@ -72,10 +105,12 @@ function createSamples() {
         sampleLegend.textContent = `Sample ${sampleCount}`;
 
         inputNameSample = document.createElement('input');
+        inputNameSample.id = "nameToFunc" + sampleCount;
         inputNameSample.type = "text";
         inputNameSample.placeholder = "Enter sample name";
 
         inputDescriptionSample = document.createElement("input");
+        inputDescriptionSample.id = "descToFunc" + sampleCount;
         inputDescriptionSample.type = "text";
         inputDescriptionSample.placeholder = "Enter sample description"
 
@@ -101,3 +136,4 @@ function createSamples() {
     // running
     samplesContainer.appendChild(divSampleContainer);
 };
+  

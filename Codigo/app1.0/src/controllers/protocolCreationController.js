@@ -23,7 +23,37 @@ function creatingSamples(req, res) {
             console.error(err);
             return res.status(500).send('Error creating sample.');
         };
+        console.log("Cheguei aqui");
+        res.send("Algo");
     });
+
+
+    // const samples = req.body.samples;
+
+    // samples.forEach((sample) => {
+    //     const { name_sample, description_sample, id_protocol } = sample;
+    
+    //     db.run(`INSERT INTO tbl_samples (name_sample, description_sample, id_protocol) VALUES (?, ?, ?)`,[ name_sample, description_sample, id_protocol ], function (err) {
+    //         if (err) {
+    //           console.error(err);
+    //           return res.status(500).send('Error creating sample.');
+    //         }
+    //         console.log("Sample criada com sucesso");
+    //       }
+    //     );
+    // });
+    
+    // res.send("Samples criadas com sucesso");
+
+    // const { name_sample, description_sample, id_protocol } = req.body;
+    // db.run(`INSERT INTO tbl_samples (name_sample, description_sample, id_protocol) VALUES (?, ?, ?)`, [ name_sample, description_sample, id_protocol ], function(err) {
+    //     if (err) {
+    //         console.error(err);
+    //         return res.status(500).send('Error creating sample.');
+    //     };
+    //     console.log("Cheguei aqui");
+    //     res.send("Algo");
+    // });
 };
 
 function creatingSteps(req, res) {
