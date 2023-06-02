@@ -149,7 +149,7 @@ function createSamples() {
 function createNewStep() {
     stepCount++;
 
-    const stepsContainer = document.querySelector(".steps-container");
+    const stepsContainer = this.closest(".sample-container").querySelector(".steps-container");
 
     const divStepContainer = document.createElement("div");
     divStepContainer.classList.add("step-container");
