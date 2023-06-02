@@ -69,7 +69,7 @@ function getNamesAndDescsSamples() {
     });
 };
 
-function sendDataSample(id, sample) {
+function sendDataSample(id, sample, callback) {
     let data = {
         id_protocol: id,
         name_sample: sample.name_sample,
@@ -77,8 +77,15 @@ function sendDataSample(id, sample) {
     };
 
     $.post('/create-samples', data, (res) => {
-        console.log("Aqui está o res da criação de sample: " + res);
-    }, "text");
+        id_sample = res.id_sample;
+        console.log("Aqui está o res da criação de sample: " + id_sample);
+    }, "json").done(() => {
+        getIdSample(id_sample);
+    }, "json");
+};
+
+function getIdSample(id_sample) {
+    console.log("ID da sample criada: ", id_sample);
 };
 
 document.addEventListener('DOMContentLoaded', function() {

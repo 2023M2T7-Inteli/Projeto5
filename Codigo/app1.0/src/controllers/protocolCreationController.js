@@ -23,8 +23,9 @@ function creatingSamples(req, res) {
             console.error(err);
             return res.status(500).send('Error creating sample.');
         };
+        const id = this.lastID;
         console.log("Cheguei aqui");
-        res.send("Algo");
+        res.send({ id_sample: id });
     });
 };
 
