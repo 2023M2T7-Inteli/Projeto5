@@ -113,3 +113,23 @@ input{
 footer{
   display: block;
   }
+
+.primary{
+  background-color: #52B362;
+}
+
+.infoProdutor{
+  background-color: #73FC8A;
+}
+
+.successProdutor{
+  background-color: #63d776;
+}
+
+.warning{
+  background-color: #ced746;
+}
+
+.error{
+  color: #eb5757;
+}

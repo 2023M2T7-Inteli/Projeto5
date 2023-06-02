@@ -53,7 +53,7 @@
   }
 
   .envia{
-    background-color: #CED746;
+    background-color: #abb352;
     transition-duration: 0.4s;
     font-size: 16px;
     color: white;
@@ -64,7 +64,7 @@
   }
 
   .envia:hover{
-    background-color: #ced746;
+    background-color: #abb352;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
@@ -75,8 +75,8 @@
   left: 550px;
 }
 
-.verde{
-  background-color: #ced746;
+.amarelo{
+  background-color: #abb352;
   color: white;
   border-radius: 15px;
   padding: 15px;
@@ -84,10 +84,30 @@
 
 input{
   border-radius: 15px;
-  border-color: #ced746;
+  border-color: #abb352;
   border-style: solid;
 }
 
 footer{
   display: block;
   }
+
+.seconday{
+  background-color: #abb352;
+}
+
+.infoResearcher{
+  background-color: #f1d857;
+}
+
+.successResearcher{
+  background-color: #f1e962;
+}
+
+.warning{
+  background-color: #ced746;
+}
+
+.error{
+  color: #eb5757;
+}
