@@ -13,7 +13,7 @@
 
     // Arrays para organizar vetores;
     let arraySamples;
-    let arraySteps;
+    let arrayStepsData;
 
     // Arrays para guardar os IDs de cada vetor;
     let arrayIDSamples = [];
@@ -44,97 +44,68 @@ function getIdProtocol() {
 };
 
 function getNamesAndDescsSamples() {
-    arraySamples = [];
     const sampleContainers = document.querySelectorAll(".sample-container");
 
     sampleContainers.forEach((container) => {
-        const sample = {
-            name_sample: "",
-            description_sample: "",
+    const inputName = container.querySelector("input[type='text'][id^='nameToFunc']");
+    const inputDescription = container.querySelector("input[type='text'][id^='descToFunc']");
+
+    const sample = {
+        id_sample: null,
+        name_sample: inputName.value,
+        description_sample: inputDescription.value,
+        steps: []
+    };
+
+    arrayStepsData = [];
+
+    const stepContainers = container.querySelectorAll(".step-container");
+
+    stepContainers.forEach((stepContainer) => {
+        const inputNameStep = stepContainer.querySelector("input[type='text'][id^='stepNameID']");
+        const inputDescriptionStep = stepContainer.querySelector("input[type='text'][id^='stepDescriptionID']");
+
+        const step = {
+            id_step: null,
+            name_step: inputNameStep.value,
+            description_step: inputDescriptionStep.value
         };
 
-        const inputName = container.querySelector("input[type='text'][id^='nameToFunc']");
-        if (inputName) {
-            sample.name_sample = inputName.value;
-        };
-
-        const inputDescription = container.querySelector("input[type='text'][id^='descToFunc']");
-        if (inputDescription) {
-            sample.description_sample = inputDescription.value;
-        };
-
-        arraySamples.push(sample);
+        sample.steps.push(step);
     });
 
-    console.log(arraySamples);
-
-    arraySamples.forEach((sample) => {
-        sendDataSample(id_protocol, sample);
+    sendDataSample(sample);
     });
 };
 
-function sendDataSample(id, sample) {
+function sendDataSample(sample) {
     let data = {
-        id_protocol: id,
+        id_protocol: id_protocol,
         name_sample: sample.name_sample,
         description_sample: sample.description_sample
     };
 
     $.post('/create-samples', data, (res) => {
-        id_sample = res.id_sample;
-        console.log("Aqui está o res da criação de sample: " + id_sample);
-    }, "json").done(() => {
-        getIdSample(id_sample);
+        sample.id_sample = res.id_sample;
+        console.log("Aqui está o res da criação de sample: " + sample.id_sample);
+        arrayIDSamples.push(sample.id_sample);
+
+        sample.steps.forEach((step) => {
+            sendDataStep(sample.id_sample, step);
+        })
     }, "json");
 };
 
-function getIdSample(id_sample) {
-    arrayIDSamples.push(id_sample)
-    console.log("Lista de IDs das samples criadas: ", arrayIDSamples);
-    getAllDataFromSteps()
-};
-
-// Like the getNamesAndDescsSamples()
-function getAllDataFromSteps() {
-    arraySteps = [];
-    const stepContainers = document.querySelectorAll(".steps-container");
-
-    stepContainers.forEach((container) => {
-        const step = {
-            name_step: "",
-            description_step: ""
-        };
-
-        const inputName = container.querySelector("input[type='text'][id^='stepNameID']");
-        if (inputName) {
-            step.name_step = inputName.value;
-        };
-
-        const inputDescription = container.querySelector("input[type='text'][id^='stepDescriptionID']");
-        if (inputDescription) {
-            step.description_step = inputDescription.value;
-        };
-
-        arraySteps.push(step);
-    });
-
-    console.log(arraySteps);
-
-    arraySteps.forEach((step) => {
-        sendDataStep(id_sample, step)
-    });
-};
-
-function sendDataStep(id, step) {
+function sendDataStep(id_sample, step) {
     let data = {
-        id_sample: id,
+        id_sample: id_sample,
         name_step: step.name_step,
         description_step: step.description_step
     };
 
     $.post('/create-steps', data, (res) => {
-        id_step = res.id_step;
-        console.log("Aqui está o res da criação de step: " + id_sample);
+        step.id_step = res.id_step;
+        console.log("Aqui está o res da criação de step: " + step.id_sample);
     }, "json");
 };
 
