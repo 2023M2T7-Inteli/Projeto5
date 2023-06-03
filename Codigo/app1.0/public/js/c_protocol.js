@@ -13,6 +13,7 @@
 
     // Arrays para organizar vetores;
     let arraySamples;
+    let arraySteps;
 
     // Arrays para guardar os IDs de cada vetor;
     let arrayIDSamples = [];
@@ -72,7 +73,7 @@ function getNamesAndDescsSamples() {
     });
 };
 
-function sendDataSample(id, sample, callback) {
+function sendDataSample(id, sample) {
     let data = {
         id_protocol: id,
         name_sample: sample.name_sample,
@@ -90,6 +91,51 @@ function sendDataSample(id, sample, callback) {
 function getIdSample(id_sample) {
     arrayIDSamples.push(id_sample)
     console.log("Lista de IDs das samples criadas: ", arrayIDSamples);
+    getAllDataFromSteps()
+};
+
+// Like the getNamesAndDescsSamples()
+function getAllDataFromSteps() {
+    arraySteps = [];
+    const stepContainers = document.querySelectorAll(".steps-container");
+
+    stepContainers.forEach((container) => {
+        const step = {
+            name_step: "",
+            description_step: ""
+        };
+
+        const inputName = container.querySelector("input[type='text'][id^='stepNameID']");
+        if (inputName) {
+            step.name_step = inputName.value;
+        };
+
+        const inputDescription = container.querySelector("input[type='text'][id^='stepDescriptionID']");
+        if (inputDescription) {
+            step.description_step = inputDescription.value;
+        };
+
+        arraySteps.push(step);
+    });
+
+    console.log(arraySteps);
+
+    arraySteps.forEach((step) => {
+        sendDataStep(id_sample, step)
+    });
+};
+
+function sendDataStep(id, step) {
+    let data = {
+        id_sample: id,
+        name_step: step.name_step,
+        description_step: step.description_step
+    };
+
+    $.post('/create-steps', data, (res) => {
+        id_step = res.id_step;
+        console.log("Aqui está o res da criação de step: " + id_sample);
+    }, "json");
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -167,10 +213,12 @@ function createNewStep() {
         stepLegend.textContent = `Step ${stepCount}`;
 
         const inputNameStep = document.createElement('input');
+        inputNameStep.id = "stepNameID" + stepCount;
         inputNameStep.type = "text";
         inputNameStep.placeholder = "Enter step name";
 
         const inputDescriptionStep = document.createElement("input");
+        inputDescriptionStep.id = "stepDescriptionID" + stepCount;
         inputDescriptionStep.type = "text";
         inputDescriptionStep.placeholder = "Enter step description"
 

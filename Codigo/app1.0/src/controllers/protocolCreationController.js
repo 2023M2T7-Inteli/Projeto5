@@ -24,20 +24,22 @@ function creatingSamples(req, res) {
             return res.status(500).send('Error creating sample.');
         };
         const id = this.lastID;
-        console.log("Cheguei aqui");
+        console.log("Cheguei aqui: Sample!");
         res.send({ id_sample: id });
     });
 };
 
 function creatingSteps(req, res) {
     // C - Steps;
-    const name_step = req.body.name_step;
-    const description_step = req.body.description_step;
-    db.run(`INSERT INTO tbl_steps (name_step, description_step) VALUES (?, ?)`, [ name_step, description_step ], function(err) {
+    const { name_step, description_step, id_sample } = req.body;
+    db.run(`INSERT INTO tbl_steps (name_step, description_step, id_sample) VALUES (?, ?, ?)`, [ name_step, description_step, id_sample ], function(err) {
         if (err) {
             console.error(err);
             return res.status(500).send('Error creating steps.');
         };
+        const id = this.lastID;
+        console.log("Cheguei aqui: Step!");
+        res.send({ id_step: id });
     });
 };
 
