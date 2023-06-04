@@ -14,7 +14,6 @@
 
     // Arrays para organizar vetores;
     let arraySamples;
-    let arrayStepsData;
 //
 
 function sendDataProtocol() {
@@ -45,34 +44,53 @@ function getNamesAndDescsSamples() {
     const sampleContainers = document.querySelectorAll(".sample-container");
 
     sampleContainers.forEach((container) => {
-    const inputName = container.querySelector("input[type='text'][id^='nameToFunc']");
-    const inputDescription = container.querySelector("input[type='text'][id^='descToFunc']");
+        const inputName = container.querySelector("input[type='text'][id^='nameToFunc']");
+        const inputDescription = container.querySelector("input[type='text'][id^='descToFunc']");
 
-    const sample = {
-        id_sample: null,
-        name_sample: inputName.value,
-        description_sample: inputDescription.value,
-        steps: []
-    };
-
-    arrayStepsData = [];
-
-    const stepContainers = container.querySelectorAll(".step-container");
-
-    stepContainers.forEach((stepContainer) => {
-        const inputNameStep = stepContainer.querySelector("input[type='text'][id^='stepNameID']");
-        const inputDescriptionStep = stepContainer.querySelector("input[type='text'][id^='stepDescriptionID']");
-
-        const step = {
-            id_step: null,
-            name_step: inputNameStep.value,
-            description_step: inputDescriptionStep.value
+        const sample = {
+            id_sample: null,
+            name_sample: inputName.value,
+            description_sample: inputDescription.value,
+            steps: []
         };
 
-        sample.steps.push(step);
-    });
+        const stepContainers = container.querySelectorAll(".step-container");
 
-    sendDataSample(sample);
+        stepContainers.forEach((stepContainer) => {
+            const inputNameStep = stepContainer.querySelector("input[type='text'][id^='stepNameID']");
+            const inputDescriptionStep = stepContainer.querySelector("input[type='text'][id^='stepDescriptionID']");
+
+            console.log(inputNameStep);
+            console.log(inputDescriptionStep);
+
+            const step = {
+                id_step: null,
+                name_step: inputNameStep.value,
+                description_step: inputDescriptionStep.value,
+                fields: []
+            };
+
+            sample.steps.push(step);
+
+            const fieldContainers = stepContainer.querySelectorAll(".field-container");
+
+            fieldContainers.forEach((fieldContainer) => {
+                const inputNameField = fieldContainer.querySelector("input[type='text'][id^='fieldNameID']");
+                const inputTypeField = fieldContainer.querySelector("[id^='fieldTypeID']");
+
+                console.log(inputNameField);
+                console.log(inputTypeField);
+
+                const field = {
+                    id_field: null,
+                    name_field: inputNameField.value,
+                    description_field: inputTypeField.value
+                }
+
+                step.fields.push(field);
+            });
+        });
+        sendDataSample(sample);
     });
 };
 
@@ -103,6 +121,10 @@ function sendDataStep(id_sample, step) {
     $.post('/create-steps', data, (res) => {
         step.id_step = res.id_step;
         console.log("Aqui está o res da criação de step: " + step.id_step);
+
+        step.fields.forEach((field) => {
+            sendDataField(step.id_step, field)
+        });
     }, "json");
 };
 
@@ -113,7 +135,7 @@ function sendDataField(id_step, field) {
         description_field: field.description_field
     };
 
-    $.post('/create-field', data, (res) => {
+    $.post('/create-fields', data, (res) => {
         field.id_field = res.id_field;
         console.log("Aqui está o res da criação de field: " + field.id_field);
     }, "json");
@@ -244,11 +266,13 @@ function createNewField() {
         fieldLegend.textContent = `Field ${fieldCount}: `;
 
         const fieldInputData = document.createElement("input");
+        fieldInputData.id = "fieldNameID" + fieldCount;
         fieldInputData.type = "text";
         fieldInputData.placeholder = "Enter the desired data";
         divFieldContainer.appendChild(fieldInputData);
 
         const fieldInputType = document.createElement("select");
+        fieldInputType.id = "fieldTypeID" + fieldCount;
 
         //Creating fieldInputType options
             const option1 = document.createElement("option");
