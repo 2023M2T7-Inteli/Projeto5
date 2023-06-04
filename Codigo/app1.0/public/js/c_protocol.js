@@ -15,9 +15,6 @@
     // Arrays para organizar vetores;
     let arraySamples;
     let arrayStepsData;
-
-    // Arrays para guardar os IDs de cada vetor;
-    let arrayIDSamples = [];
 //
 
 function sendDataProtocol() {
@@ -89,7 +86,6 @@ function sendDataSample(sample) {
     $.post('/create-samples', data, (res) => {
         sample.id_sample = res.id_sample;
         console.log("Aqui está o res da criação de sample: " + sample.id_sample);
-        arrayIDSamples.push(sample.id_sample);
 
         sample.steps.forEach((step) => {
             sendDataStep(sample.id_sample, step);
@@ -106,7 +102,20 @@ function sendDataStep(id_sample, step) {
 
     $.post('/create-steps', data, (res) => {
         step.id_step = res.id_step;
-        console.log("Aqui está o res da criação de step: " + step.id_sample);
+        console.log("Aqui está o res da criação de step: " + step.id_step);
+    }, "json");
+};
+
+function sendDataField(id_step, field) {
+    let data = {
+        id_step: id_step,
+        name_field: field.name_field,
+        description_field: field.description_field
+    };
+
+    $.post('/create-field', data, (res) => {
+        field.id_field = res.id_field;
+        console.log("Aqui está o res da criação de field: " + field.id_field);
     }, "json");
 };
 
