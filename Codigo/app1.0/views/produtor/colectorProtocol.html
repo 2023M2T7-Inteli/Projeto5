@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,11 +10,17 @@
     <link rel="stylesheet" href="stylesProdutor.css" />
     <script src="scriptProdutor.js" defer></script>
     <!--  defer: read the js file last -->
+    <style>
+      fieldset {
+        margin: 15px;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
     <header></header>
     <section id="" class="main-section">
-      <form id=""></form>
+      <p id="id-protocolo" hidden></p>
       <div class="image-section">
         <div class="image-div"></div>
         <div
@@ -29,19 +35,28 @@
         >
           
         </div>
+        <div id="objetivo-protocolo">
+
+        </div>
       </div>
       <section id="dynamic-form">
         <!-- Here would be the forms -->
-        <fieldset>
-          <legend>Info</legend>
-          <div id="bloco-central">
-            <label>Nome</label>
-            <br />
-            <input type="text" />
-          </div>
+        <!-- <fieldset id="amostra"> -->
+          <!-- <legend id="nome-amostra"></legend>
+          <p id="id-amostra" hidden></p>
+          <p id="descricao-amostra"></p>
+          <fieldset>
+            <legend id="nome-etapa"></legend>
+            <p id="id-etapa" hidden></p>
+            <p id="descricao-etapa"></p>
+            <div id="campos">
+              <p id="id-campo" hidden></p>
+            </div>
+          </fieldset> -->
         </fieldset>
       </section>
     </section>
     <footer></footer>
   </body>
+  
 </html>

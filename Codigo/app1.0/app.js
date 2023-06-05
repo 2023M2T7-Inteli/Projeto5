@@ -24,6 +24,9 @@ staticDirs.forEach(dir => {
     app.use(express.static(`./public/${dir}`));
 });
 
+// Analisar o corpo da requisição
+app.use(express.urlencoded({ extended: false }))
+
 // ENDPOINTS //
 
 // Main endpoint
@@ -55,6 +58,13 @@ app.post('/create-fields', protocolCreationController.creatingFields);
 // Reading protocol data;
 app.get('/read_id-protocols', protocolDataController.getProtocolId);
 app.get('/read_protocol-data', protocolDataController.getAllProtocolData);
+
+// Reading samples data;
+app.post('/read_samples', protocolDataController.getSamplesWithId);
+// Reading steps data;
+app.post('/read_steps', protocolDataController.getStepWithId);
+// Reading field data;
+app.post('/read_field', protocolDataController.getFieldWithId);
 
 // Server listening
 app.listen(8081, function(){
