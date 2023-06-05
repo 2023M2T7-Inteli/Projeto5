@@ -16,6 +16,7 @@ const researcherController = require('./src/controllers/researcherController.js'
 const protocolCreationController = require('./src/controllers/protocolCreationController.js');
 const collectorController = require('./src/controllers/collectorController.js');
 const protocolDataController = require('./src/controllers/protocolDataController.js');
+const loginRegisterController = require('./src/controllers/loginRegisterController.js');
 
 // Serving static files
 const staticDirs = ['img', 'css', 'js'];
@@ -30,13 +31,18 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/views/main/index.html'));
 });
 
+// login / register endpoints;
+app.post('/logging', loginRegisterController.logging);
+
 // Researchers endpoints;
 app.get('/home_researcher', researcherController.getHome);
 app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
 
 // Colectors endpoints;
-app.get('/colectorProtocol', collectorController.protocolGenerationPage);
+app.get('/home_collector', collectorController.getHome);
+app.get('/collectorProtocol', collectorController.protocolGenerationPage);
+app.get('/collector_profile', collectorController.getCollectorProfile);
 
 // Protocol creation (sending all the protocol to the database);
 app.post('/create-protocols', protocolCreationController.creatingProtocol);
