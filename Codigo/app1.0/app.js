@@ -49,6 +49,8 @@ app.get('/home_collector', collectorController.getHome);
 app.get('/collectorProtocol', collectorController.protocolGenerationPage);
 app.get('/collector_profile', collectorController.getCollectorProfile);
 
+app.get('/colectorProtocol', collectorController.protocolGenerationPage);
+
 // Protocol creation (sending all the protocol to the database);
 app.post('/create-protocols', protocolCreationController.creatingProtocol);
 app.post('/create-samples', protocolCreationController.creatingSamples);
