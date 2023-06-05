@@ -61,6 +61,20 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 console.log('A tbl_fields foi criada com sucesso.');
             } 
         });
+
+        // Table for creating a simple registration and login system
+        db.run(`CREATE TABLE IF NOT EXISTS tbl_users (
+                id_user INTEGER PRIMARY KEY AUTOINCREMENT,
+                name_user text, 
+                password_user text,
+                type_user text)`,
+        (err) => {
+            if (err) {
+                console.log('Erro ao criar tbl_users:', err.message);
+            } else {
+                console.log('A tbl_users foi criada com sucesso.');
+            } 
+        });
     };
 });
 

@@ -19,15 +19,20 @@
                         <div class="formulario">
                             <h2>Sign in</h2>
                             <br>
-                            <form method="GET" action="/fazer_signin"></form>
-                                <label for="fname">Login:</label><br>
-                                <input type="text" id="fname" name="fname"><br>
-                                <label for="lname">Senha:</label><br>
-                                <input type="text" id="lname" name="lname"><br>
-                                <label for="lname">Corfirmar senha:</label><br>
-                                <input type="text" id="lname" name="lname"><br>
+                            <form method="POST" action="/registering">
+                                <label for="name_user">Login:</label><br>
+                                <input type="text" id="name_user" name="name_user"><br>
+                                <label for="password_user">Senha:</label><br>
+                                <input type="text" id="password_user" name="password_user"><br>
+                                <label for="confirm_password_user">Confirmar senha:</label><br>
+                                <input type="text" id="confirm_password_user" name="confirm_password_user"><br>
+
+                                <input type="radio" id="type_user" name="type_user" value="Pesquisador">
+                                <label for="type_user">Researcher</label><br>
+                                <!-- <input type="radio" id="type_user" name="type_user" value="Coletor">
+                                <label for="type_user">Colector</label><br> -->
                                 <br><br>
-                                <input type="submit" class="envia" value="Cadastrar">
+                                <button type="submit" class="envia">Register</button>
                             </form>
                         </div>
                     </div>
