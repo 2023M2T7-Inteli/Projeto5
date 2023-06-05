@@ -1,12 +1,24 @@
 // Importing node modules;
 const db = require('../../db');
-// Importar o módulo de criptografia dos dados para criar um sistema de login mais seguro
-// Fazer os dados serem enviados para o banco de dados de forma criptografada
-// Descriptografar os dados quando eles retornarem para o sistema de login efetivamente
-// Salvar essas informações do usuário por meio da session
-// Ver se as sessions são afetadas pelo localstorage
+const path = require('path');
 
 // Register
+
+function getRegisterPage(req, res) {
+    res.sendFile(path.join(__dirname, '..', '..' + '/views/main/register.html'));
+}
+
+function registering(req, res) {
+    const { name_user, password_user, type_user } = req.body;
+    db.run('INSERT INTO tbl_users (name_user, password_user, type_user) VALUES (?, ?, ?)', [name_user, password_user, type_user], (err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error creating user');
+        } else {
+            res.send('User creation successful!');
+        }
+    });
+};
 
 // Login
 
@@ -30,5 +42,7 @@ function logging(req, res) {
 };
 
 module.exports = {
+    getRegisterPage,
+    registering,
     logging
 };

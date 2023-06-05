@@ -32,6 +32,8 @@ app.get('/', (req, res) => {
 });
 
 // login / register endpoints;
+app.get('/registerPage', loginRegisterController.getRegisterPage);
+app.post('/registering', loginRegisterController.registering);
 app.post('/logging', loginRegisterController.logging);
 
 // Researchers endpoints;
