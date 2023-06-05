@@ -84,80 +84,86 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-1.0:
+0.1.0 - 8/05/2023 
 -  ADD página de notificações
 -  ADD Logo Potich
 -  ADD Home Pesquisador
 -  ADD Home Produtor
 
-1.1:
+0.1.1 - 9/05/2023 
 -  ADD Join
 
-1.2:
+0.1.2 - 10/05/2023 
 -  Comentário do Código
 -  Atualização do UPDATE
 - Colocou o método POST na requisição
 
-1.3: 
+0.1.3 - 11/05/2023 
 - Modularização das funções de CRUD 
 - Melhorar a estrutura no futuro
 
-1.4: 
+0.1.4 - 15/05/2023
 - Update SqLite
 
-1.5:  
+0.1.5 - 15/05/2023   
 - Atualização do documento WAD
 - Documentação Aplicação 2.0
 
-1.6: 
+0.1.6 - 16/05/2023  
 - ADD feature de criação de formulario
 
-2.0:
+0.2.0 - 16/05/2023 
 -  Backend with Jeronimo
 - Update e desenvolver a criação de usuários
 
- 2.1:
+0.2.1 - 21/05/2023 
 - Melhorar a estrutura dos forms criados
 - Melhorar a database
 
-2.2:
+0.2.2 - 22/05/2023 
 - Commit frontend
 
-2.3:
+0.2.3 - 23/05/2023 
 - Paleta de cores
 - Merge branch
 - ADD de design e altercates nas paginas principais pensando em questões heuristicas
 
-3.0:
+0.3.0 - 23/05/2023 
 - Melhorou a ferramenta de criações do protocolo
 - Integrou com a database
 - Arquitetura de software da parte do coletor
 - Arrumar o merge
 - Fazer a ligação dos samples, steps e fields
 
-3.1:
+0.3.1 - 25/05/2023 
 - Implementações de CSS 
 - pequenas alterações de HTML
 
-4.0:
+0.4.0 - 29/05/2023 
 - CSS novo
 - Implementação de dois HTML
 
-4.1: 
+0.4.1 - 30/05/2023  
 - Fazendo ajustamento do código, para fazer a padronização
 - Desenvolver a dinâmica de protocolos no collector size
 
-4.2: 
+0.4.2 - 30/05/2023  
 - refatorando os endpoints e a estrutura de pastas 
 - Criando a refatoração do protocolo de criação
 
-4.3: 
+0.4.3 - 01/06/2023  
 - Alterações no CSS e HTML
 - Adicionando formatações em gerais
 - E design
 
-4.4:
+0.4.4 - 01/06/2023 
 -Apagar as pastas que não estão sendo usadas
+ 
+0.5.0 - 05/06.2023
+ - Implementacao da criação de passos
+ - Finalizacao do protocolo de criação
+ - Uplode da tela de login
+ 
 
 
 
