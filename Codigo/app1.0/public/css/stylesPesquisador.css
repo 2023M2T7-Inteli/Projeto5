@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: auto;
+}
+
+.noti{
+    color: white;
+    margin-right: 350px;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1080px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    background-color: #abb352;
+  }
+
+.linha1{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
+}
+
+div{
+    padding: 5px;
+    margin: 15px;
+}
