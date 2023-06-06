@@ -4,6 +4,12 @@
   
   html {
     font-family: 'Poppins', sans-serif;
+    /* Fontes font-weight  
+        Thin 100
+        Light 300
+        Regular 400
+        Medium 500
+        Bold 700 */
     max-width: 1080px;
     text-align: center;
     align-items: center;
@@ -17,11 +23,12 @@
   }
 
   picture{
-    margin: 25px;
+    margin: 10px;
   }
 
   h1{
-    margin: 25px;
+    margin-top: 10px;
+    margin-bottom: 10PX;
   }
 
   h2,h3{
@@ -32,8 +39,8 @@
   body{
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 15px;
     margin-left: 300px;
     margin-right: 300px;
@@ -62,16 +69,50 @@
   }
 
   form{
-    margin: 25px;
+    margin: 20px;
     border-radius: 15px;
-    border: #73FC8A;
-    border-style: dashed;
-    padding: 15px;
+    /* border: #73FC8A;
+    border-style: dashed; */
+    text-align: left;
+    font-weight: 400;
     }
 
+  legend{
+      text-align: left;
+      color: white;
+      background-color: #52B362;
+      border-radius: 15px;
+      font-size: 16px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+  fieldset{
+    border-color:#BDBDBD;
+    border-radius: 15px ;
+    margin-bottom: 10px;
+  }
+
+  legend{
+    margin-left: 10px;
+    padding: 5px;
+  }
+
   input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 15px;
-    border-color: black;
+    border-color: white;
+    border-style: solid;
+    background: #dfdfdf;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .button_login{
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
   }
 
   .envia{
@@ -103,12 +144,6 @@
   border-radius: 15px;
   padding: 15px;
 } 
-
-input{
-  border-radius: 15px;
-  border-color: #4D8556;
-  border-style: solid;
-}
 
 footer{
   display: block;

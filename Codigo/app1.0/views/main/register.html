@@ -20,14 +20,28 @@
                             <h2>Sign in</h2>
                             <br>
                             <form method="GET" action="/fazer_signin"></form>
-                                <label for="fname">Login:</label><br>
-                                <input type="text" id="fname" name="fname"><br>
-                                <label for="lname">Senha:</label><br>
-                                <input type="text" id="lname" name="lname"><br>
-                                <label for="lname">Corfirmar senha:</label><br>
-                                <input type="text" id="lname" name="lname"><br>
-                                <br><br>
-                                <input type="submit" class="envia" value="Cadastrar">
+
+                            <fieldset>
+                                <legend><label for="login"><strong> Login:</strong></label></legend><br>
+                                <input type="text" id="login" name="login"><br>
+                            </fieldset>
+
+                                <fieldset>
+                                <legend><label for="senha"><strong>Senha:</strong> </label></legend><br>
+                                <input type="text" id="senha" name="senha"><br>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend><label for="senha_confirmar"><strong> Corfirmar senha:</strong></label></legend><br>
+                                <input type="password" id="senha_confirmar" name="senha_confirmar">
+                            </fieldset>
+                                <br>
+                                
+                                <div class="button_login">
+                                    <input type="submit" class="envia" value="Cadastrar">
+                                 </div>
+
+                            </fieldset>    
                             </form>
                         </div>
                     </div>

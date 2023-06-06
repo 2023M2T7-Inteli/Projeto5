@@ -6,137 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index2.css" />
     <title>Home pesquisa</title>
-
-    <style type="text/css">
-      button {
-        border-radius: 15px;
-        border: 2px solid #f1d857;
-        background-color: white;
-        padding: 16px;
-        font-size: 16px;
-      }
-      button:hover {
-        background-color: #f1d857;
-        transition-duration: 0.4s;
-        color: white;
-      }
-      .botao {
-        position: relative;
-        right: 350px;
-        margin-left: 185px;
-      }
-      h1 {
-        text-align: center;
-      }
-      body {
-        font-family: arial, sans-serif;
-      }
-      p {
-        color: white;
-        text-align: center;
-      }
-      main {
-        width: 1000px;
-        margin: auto;
-      }
-
-      .preto {
-        width: 300px;
-        height: 300px;
-        background-color: black;
-      }
-      .amarelo {
-        width: 300px;
-        height: 300px;
-        background-color: yellow;
-      }
-      .amarelo p {
-        color: black;
-      }
-
-      .laranja {
-        width: 300px;
-        height: 300px;
-        background-color: orange;
-      }
-
-      .linha1 {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50px;
-      }
-
-      .magenta {
-        width: 300px;
-        height: 300px;
-        background-color: magenta;
-      }
-
-      .vermelho {
-        width: 300px;
-        height: 300px;
-        background-color: red;
-      }
-
-      .azulescuro {
-        width: 300px;
-        height: 300px;
-        background-color: darkblue;
-      }
-
-      .linha2 {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50px;
-      }
-
-      div {
-        border-radius: 10px;
-      }
-      img {
-        position: relative;
-        right: 190px;
-      }
-    </style>
   </head>
+
+  <nav id="mySidenav" class="sidenav">
+    <a href="#" > <img src="logo_menu_inativa.png" alt="Apotich"></a>
+    <a href="/researcher_profile" > <img src="profile_icon_menu.png" alt="Perfil"></a>
+    <a href="#" > <img src="home_icone_menu.png" alt="Home"></a>
+    <a href="#" > <img src="bell_icon_inativo_menu.png" alt="Notificações"></a>
+    <a href="#" > <img src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
+    <p id="logo_fim_rodape">Apotich</p>
+  </nav>
+
+  <section class="busca_caixa">
+    <div class="barra_busca">
+      <input  id="espaco_busca" type="search" placeholder="Busca">
+      <button  id="button_search" type="search"><img src="busca_icon.png" alt="Busca"></button>
+    </div>
+  </section>
+
   <body>
-    <img
-      width="60"
-      height="60"
-      src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png"
-      alt="u-turn-to-left"
-    />
 
-    <main>
-      <a href="/createProtocol"><button class="botao">New Protocol</button></a>
-      <a href="/researcher_profile"><button class="botao">Profile</button></a>
+    <main id="main">
+    <div class="caixa_maior">
+      
+          <div class="titulo_home">
+              <h1>Seus <br>
+                  Protocolos
+              </h1>
+          </div>
 
-      <h3>Protocolos Ativos</h3>
-      <div class="linha1">
-        <div class="preto">
-          <p>Prot 1</p>
-        </div>
-        <div class="amarelo">
-          <p>Prot 2</p>
-        </div>
-        <div class="laranja">
-          <p>Prot 3</p>
-        </div>
+          <div class="animacao_home">
+              <picture><img src="broto.jpg" alt="imagem ilustrativa" style="width: 65%; border-radius: 15px;"></picture>
+          </div>
+
       </div>
 
-      <h3>Protocolos Finalizados</h3>
+      <div class="tipos_protocolo">
+        <div class="card">
+          <img class="protocolo_opcao" style="width: 100%;" src="banana.jpg" alt="imagem_protocolo_finalizado">
+          <div class="container">
+          <p> Finalizados <img src="protocolo_finalizado_pesquisador.png" alt="Protocolos finalizados"></p>
+          </div>
+        </div>
 
-      <div class="linha2">
-        <div class="magenta">
-          <p>Prot 4</p>
+        <div class="card">
+          <img class="protocolo_opcao" style="width: 100%;" src="banana.jpg" alt="imagem_protocolo_finalizado">
+          <div class="container">
+          <p> Em andamento <img src="protocolo_pesquisador.png" alt="Protocolos em andamento"></p>
+          </div>
         </div>
-        <div class="vermelho">
-          <p>Prot 5</p>
-        </div>
-        <div class="azulescuro">
-          <p>Prot 6</p>
-        </div>
+
       </div>
+
+
+      <div class="botao_criar_protocolo">
+        <button class="botao_criar"> <img   href="/createProtocol" src="add_protocolo_pesquisador.png" alt="criar protocolo"> <p> Criar Protocolo</p></button>
+      </div>
+
+    </div>
+
     </main>
+
   </body>
 </html>

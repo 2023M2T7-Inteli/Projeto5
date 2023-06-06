@@ -12,7 +12,156 @@
     background-color: #ced746;
   }
 
-  div{
+/* Menu */
+  .sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 50px;
+  }
+  
+  .sidenav a {
+    padding: 15px 15px 8px 15px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    opacity: 100%;
+  }
+
+  #logo_fim_rodape{
+    position: absolute;
+    bottom: 60px;
+    left: 16px;
+  }
+
+  /* Barra busca */
+
+.busca_caixa{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.barra_busca{
+  max-width: 785px;
+  margin: auto;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  border-style: none;
+}
+
+#button_search{
+  margin-left: 0%;
+  border-radius: 0px 15pc 15pc 0px;
+  border-style: none;
+}
+
+.barra_busca input{
+  width: 735px;
+  height: 30px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+#espaco_busca{
+  border-style: none;
+}
+
+
+
+  main{
+    max-width: 785px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin: 15px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    margin: auto;
+  }
+
+  .caixa_maior{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    color: #ced746;
+    padding-left: 100px;
+    margin-bottom: 20px;
+  }
+
+  h1{
+    text-align: left;
+
+  }
+
+/* Tipos de protocolo  */
+
+  .tipos_protocolo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .protocolo_opcao{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .tipos_protocolo p{
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+div.card{
+  width: 300px;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+/* Botão Criar Protocolo */
+
+
+.botao_criar{
+  max-width: 315px;
+  max-height: 70px;
+  padding: 20px;
+  background-color: white;
+  transition-duration: 0.4s;
+  display: flex;
+  font-size: 16px;
+  color: black;
+  border: #ced746;
+  border-style: solid;
+  border-radius: 15px;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  margin: auto;
+}
+
+.botao_criar p{
+  margin-left: 10px;
+}
+
+.botao_criar:hover{
+  background-color: #4D8556;
+  color: white;
+  border-color: #4D8556;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+  /* div{
     margin: 15px;
   }
 
@@ -26,17 +175,6 @@
 
   h2,h3{
     margin: 15px;
-  }
-
-
-  body{
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin: 15px;
-    margin-left: 300px;
-    margin-right: 300px;
   }
 
   form{
@@ -92,22 +230,65 @@ footer{
   display: block;
   }
 
-.seconday{
-  background-color: #abb352;
+button {
+  border-radius: 15px;
+  border: 2px solid #f1d857;
+  background-color: white;
+  padding: 16px;
+  font-size: 16px;
 }
-
-.infoResearcher{
+button:hover {
   background-color: #f1d857;
+  transition-duration: 0.4s;
+  color: white;
+}
+.botao {
+  position: relative;
+  right: 350px;
+  margin-left: 185px;
+}
+h1 {
+  text-align: center;
+}
+body {
+  font-family: arial, sans-serif;
+}
+p {
+  color: white;
+  text-align: center;
 }
 
-.successResearcher{
-  background-color: #f1e962;
+
+.preto {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+}
+.amarelo {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+}
+.amarelo p {
+  color: black;
 }
 
-.warning{
-  background-color: #ced746;
+.laranja {
+  width: 300px;
+  height: 300px;
+  background-color: orange;
 }
 
-.error{
-  background-color: #eb5757;
+.linha1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
+
+div {
+  border-radius: 10px;
+}
+img {
+  position: relative;
+  right: 190px;
+} */
