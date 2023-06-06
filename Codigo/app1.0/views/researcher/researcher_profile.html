@@ -8,8 +8,14 @@
     <title>Perfil Pesquisador</title>
 </head>
 <body>
-  <img width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png" alt="u-turn-to-left"/> 
-
+  <script>
+    function voltar() {
+      history.back();
+    }
+  </script>
+  <button onclick="voltar()">
+    <img width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png" alt="u-turn-to-left"/> 
+  </button>
     <style>
 
         .button {
@@ -44,7 +50,7 @@
 
 <body>
     <main>
-    <img class="perfil" style="width: 10%;" src="https://img.icons8.com/material/96/null/user-male-circle--v1.png"/>
+        <img class="perfil" style="width: 10%;" src="https://img.icons8.com/material/96/null/user-male-circle--v1.png" alt="Voltar">
     <br>
     <h3>Perfil Pesquisador</h3>
 <section style="margin-bottom: 15px;">

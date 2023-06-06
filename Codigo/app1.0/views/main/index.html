@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link das forntes  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="index.css" />
-    <title>Potich - home</title>
-  </head>
-  <body>
-    <div class="Teste.1">
-      <h2>Seja bem vindo</h2>
-      <h1>Apotich</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link das forntes  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css" />
+  <title>Potich - home</title>
+</head>
+
+<body>
+  <div class="Teste.1">
+    <h2>Seja bem vindo</h2>
+    <h1>Apotich</h1>
+  </div>
+
+  <picture><img class="logooo" style="width: 30%" src="LogoPotich.png" /></picture>
+  <main>
+    <div class="login">
+      <form method="POST" action="/logging">
+        <h1>Log-in</h1>
+
+        <fieldset>
+
+          <legend><strong>User:</strong></legend>
+          <input type="text" name="name_user"/>
+
+        </fieldset>
+
+        <fieldset>
+
+          <legend><strong>Password:</strong></legend>
+          <input type="password" name="password_user" />
+
+        </fieldset>
+        <div class="button_login">
+          <button type="submit" class="envia">Enter</button>
+        </div>
+      </form>
     </div>
+  </main>
+  <footer id="roda_pe" style="font-family: Georgia, Times, Times New Roman, serif">
+    <p>©2023 por Potich</p>
+  </footer>
+</body>
 
-    <picture
-      ><img class="logooo" style="width: 30%" src="LogoPotich.png"
-    /></picture>
-    <main>
-      <div class="login">    
-          <form method="POST" action="/logging">
-            
-              <h1>Log-in</h1>
-
-              <fieldset>
-
-              <legend><strong>User:</strong></legend>
-              <input type="text" name="name_user" />
-              
-              </fieldset>
-
-              <fieldset>
-
-              <legend><strong>Password:</strong></legend>
-              <input type="password" name="password_user" />
-
-             </fieldset>
-              <a href=""> </a>
-             <div class="button_login">
-              <button type="submit" class="envia">Enter</button>
-            </div>
-          </form>
-      </div>
-    </main>
-    <footer
-      id="roda_pe"
-      style="font-family: Georgia, Times, Times New Roman, serif"
-    >
-      <p>©2023 por Potich</p>
-    </footer>
-  </body>
 </html>
