@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: auto;
+}
+
+.noti{
+    color: white;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1080px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    background-color: #abb352;
+  }
+
+.linha1{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
+}
+
+.main-section {
+    background-color:rgb(240, 223, 146);
+    max-width: 50%;
+    display:block;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+.input-el {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 15px;
+    border-color: rgba(255, 255, 255, 0);
+    max-width: 300px;
+    width: 100%;
+}
+
+div{
+    padding: 5px;
+    margin: 15px;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.image-div {
+    display: grid;
+    background-image: url('https://images.unsplash.com/photo-1501777814630-33bc4a3c3ee7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" alt="acaí" width="100px');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    height:400px;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    /* margin:10px; */
+    
+}
+
+.caption {
+    font-family: 'Poppins', italic, sans-serif;
+    width: fit-content;
+    color: white;
+    background-color: rgba(141, 140, 140, 0.537);
+    font-size: 16px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caption1 {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.image-section {
+    position: relative;
+}
+
+.caption2 {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 14px;
+    margin-left: 20px;
+    padding: 10px;
+    position: relative;
+    top: 80%;
+    width: 60%;
+    background-color: white;
+    color: black;
+}
+
+#bloco-central {
+    display: flex;
+    margin-left: auto;
+    margin-left: auto;
+}
