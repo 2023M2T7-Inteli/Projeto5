@@ -19,29 +19,29 @@
                         <div class="formulario">
                             <h2>Sign in</h2>
                             <br>
-                            <form method="GET" action="/fazer_signin"></form>
-
-                            <fieldset>
-                                <legend><label for="login"><strong> Login:</strong></label></legend><br>
-                                <input type="text" id="login" name="login"><br>
-                            </fieldset>
+                            <form method="POST" action="/registering">
 
                                 <fieldset>
-                                <legend><label for="senha"><strong>Senha:</strong> </label></legend><br>
-                                <input type="text" id="senha" name="senha"><br>
-                            </fieldset>
+                                    <legend><label for="name_user"><strong> Login:</strong></label></legend><br>
+                                    <input type="text" id="name_user" name="name_user"><br>
+                                </fieldset>
 
-                            <fieldset>
-                                <legend><label for="senha_confirmar"><strong> Corfirmar senha:</strong></label></legend><br>
-                                <input type="password" id="senha_confirmar" name="senha_confirmar">
-                            </fieldset>
-                                <br>
-                                
-                                <div class="button_login">
-                                    <input type="submit" class="envia" value="Cadastrar">
-                                 </div>
+                                    <fieldset>
+                                    <legend><label for="password_user"><strong>Senha:</strong> </label></legend><br>
+                                    <input type="text" id="password_user" name="password_user"><br>
+                                </fieldset>
 
-                            </fieldset>    
+                                <fieldset>
+                                    <legend><label for="confirm_password_user"><strong> Corfirmar senha:</strong></label></legend><br>
+                                    <input type="password" id="confirm_password_user" name="confirm_password_user">
+                                </fieldset>
+                                    <br>
+                                    
+                                    <div class="button_login">
+                                        <button type="submit" class="envia">Register</button>
+                                    </div>
+
+                                </fieldset>
                             </form>
                         </div>
                     </div>
