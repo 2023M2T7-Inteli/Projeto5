@@ -1,25 +1,9 @@
 // Importing node modules;
 const db = require('../../db');
 const path = require('path');
-const crypto = require("crypto-js");
 
-// Data cryptography
-
-// Windows: set ENCRYPTION_KEY=MinhaChaveDeCriptografia
-// const encryptionKey = process.env.ENCRYPTION_KEY;
-
-const encryptionKey = "apotichEncryptionKey";
-
-function crypt(data) {
-    const encryptedData = crypto.AES.encrypt(data, encryptionKey).toString();
-    return encryptedData;
-};
-
-function decrypt(encryptedData) {
-    const decryptedData = crypto.AES.decrypt(encryptedData, encryptionKey).toString(crypto.enc.Utf8);
-    return decryptedData;
-};
-
+// Importing controllers;
+const cryptographyController = require('../security/cryptographyController');
 
 // Register
 function getRegisterPage(req, res) {
@@ -28,8 +12,8 @@ function getRegisterPage(req, res) {
 
 function registering(req, res) {
     const { name_user, password_user, type_user } = req.body;
-    const encryptedName = crypt(name_user);
-    const encryptedPassword = crypt(password_user);
+    const encryptedName = cryptographyController.crypt(name_user);
+    const encryptedPassword = cryptographyController.crypt(password_user);
     
     db.run('INSERT INTO tbl_users (name_user, password_user, type_user) VALUES (?, ?, ?)', [encryptedName, encryptedPassword, type_user], (err) => {
         if (err) {
@@ -49,8 +33,8 @@ function logging(req, res) {
         if (err) {
             console.error(err.message);
         } else {
-            const decryptedName = decrypt(row.name_user);
-            const decryptedPassword = decrypt(row.password_user);
+            const decryptedName = cryptographyController.decrypt(row.name_user);
+            const decryptedPassword = cryptographyController.decrypt(row.password_user);
 
             db.run('UPDATE tbl_users SET name_user = ?, password_user = ? WHERE id_user = ?', [decryptedName, decryptedPassword, row.id_user], (err) => {
                 if (err) {
@@ -74,8 +58,8 @@ function logging(req, res) {
                                 if (err) {
                                     console.error(err.message);
                                 } else {
-                                    const encryptedName = crypt(name_user);
-                                    const encryptedPassword = crypt(password_user);
+                                    const encryptedName = cryptographyController.crypt(name_user);
+                                    const encryptedPassword = cryptographyController.crypt(password_user);
 
                                     db.run('UPDATE tbl_users SET name_user = ?, password_user = ? WHERE id_user = ?', [encryptedName, encryptedPassword, row.id_user], (err) => {
                                         if (err) {
@@ -85,7 +69,7 @@ function logging(req, res) {
                                         }
                                     });
                                 }
-                            })
+                            });
                         }
                     });
                 }
