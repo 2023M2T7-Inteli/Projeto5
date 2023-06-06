@@ -49,6 +49,7 @@ app.get('/home_collector', collectorController.getHome);
 app.get('/collectorProtocol', collectorController.protocolGenerationPage);
 app.get('/collector_profile', collectorController.getCollectorProfile);
 
+// Colectors html
 app.get('/colectorProtocol', collectorController.protocolGenerationPage);
 
 // Protocol creation (sending all the protocol to the database);
@@ -67,6 +68,9 @@ app.post('/read_samples', protocolDataController.getSamplesWithId);
 app.post('/read_steps', protocolDataController.getStepWithId);
 // Reading field data;
 app.post('/read_field', protocolDataController.getFieldWithId);
+
+// Updating input data
+app.post('/updateFields', protocolDataController.updateFields);
 
 // Server listening
 app.listen(8081, function(){

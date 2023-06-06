@@ -106,6 +106,17 @@ function getFieldWithId(req, res) {
     })
 }
 
+function updateFields(req, res) {
+    // Getting the data to create the samples table
+    db.run('UPDATE tbl_fields SET answer_field = ? WHERE id_field = ?', [req.body.answer, req.body.id_field], (err, row) => {
+        if (err) {
+            res.status(500).send('Error updating database');
+        } else {
+            res.status(200).send('Update performed successfully');
+        }
+    })
+}
+
 function isObject(variable) {
     return typeof variable === 'object' && variable !== null && !Array.isArray(variable);
   }
@@ -118,4 +129,5 @@ module.exports = {
     getSamplesWithId,
     getStepWithId,
     getFieldWithId,
+    updateFields,
 };
