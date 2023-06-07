@@ -4,28 +4,32 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel= 'stylesheet' href="index.css">
+        <link rel= 'stylesheet' href="index2.css">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <!-- <script src="createProtocol.js"></script> -->
         <title>Create protocol</title>
     </head>
-    <body>
+    <body class="body_creat_protocol">
+        <section class="titulo_creat_protocolo">
+            <h1>Create protocol</h1>
+            <img src="creat_protocol_icon.png" alt="creat_protocol_icon">
+        </section>
         <main>
-            <section>
-                <h3>Create protocol</h3>
-            </section>
-            <section>
+            
+            <section class="main_creation">
                 <div id="formProtocol">
-                    <label for="name_protocol">Name:</label>
-                    <input type="text" name="name_protocol" id="name_protocol" required>
+                    <label for="name_protocol"><strong>Name:</strong> </label>
+                    <input type="text" class="inputs_creation" name="name_protocol" id="name_protocol" required>
                     <br>
-                    <label for="objective_protocol">Objective:</label>
-                    <input type="text" name="objective_protocol" id="objective_protocol" required>
+                    <label for="objective_protocol"><strong>Objective:</strong> </label>
+                    <input type="text" class="inputs_creation" name="objective_protocol" id="objective_protocol" required>
                     <br>
-                    <button type="button" onclick="createSamples()">Add sample</button>
+                    <button type="button" class="button_sample" onclick="createSamples()">Add sample</button>
                     <div class="samples-container"></div>
                     <br>
-                    <button id="submitButton" type="submit">Create protocol</button>
+                    <div class="botao_criar_protocolo">
+                        <button class="botao_criar" id="submitButton" type="submit"><img  width="20%" src="add_protocolo_pesquisador.png" alt="criar protocolo"><p> Criar Protocolo</p></button>
+                    </div>
                 </div>
             </section>
         </main>

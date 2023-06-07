@@ -4,12 +4,16 @@
   
   html {
     font-family: 'Poppins', sans-serif;
-    max-width: 1080px;
+    max-width: 1024px;
     text-align: center;
     align-items: center;
     align-content: center;
     margin: auto;
-    background-color: #ced746;
+    background-color: #abb352;
+  }
+
+  body{
+    margin-bottom: 30px;
   }
 
 /* Menu */
@@ -47,26 +51,28 @@
 .busca_caixa{
   margin-top: 15px;
   margin-bottom: 15px;
+  align-items: center;
+
 }
 
 .barra_busca{
   max-width: 785px;
   margin: auto;
-  align-items: center;
-  align-content: center;
-  align-self: center;
+  display: flex;
   border-style: none;
+  border-radius: 15px;
 }
 
 #button_search{
-  margin-left: 0%;
-  border-radius: 0px 15pc 15pc 0px;
   border-style: none;
+  border-radius: 0px 15px 15px 0px;
+
+  
 }
 
 .barra_busca input{
   width: 735px;
-  height: 30px;
+  height: 37px;
   border-radius: 15px 0px 0px 15px;
 }
 
@@ -76,31 +82,35 @@
 
 
 
-  main{
-    max-width: 785px;
-    background-color: white;
-    border-radius: 15px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin: 15px;
-    align-items: center;
-    align-content: center;
-    align-self: center;
-    margin: auto;
+main{
+  max-width: 785px;
+  background-color: white;
+  border-radius: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin: auto;
+  }
+
+  /* Cabeçalho inicial*/
+  .head_home{
+    margin: 30px;
   }
 
   .caixa_maior{
     display: flex;
+    max-width: 645px;
     justify-content: space-between;
-    align-items: center;
-    align-content: center;
     color: #ced746;
-    padding-left: 100px;
-    margin-bottom: 20px;
+    align-items: center;
+    margin: auto;
   }
 
   h1{
     text-align: left;
+    font-size: 2em;
 
   }
 
@@ -109,23 +119,33 @@
   .tipos_protocolo{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin: 30px;
+    max-width: 750px;
   }
 
   .protocolo_opcao{
     width: 100%;
     border-radius: 15px 15px 0px 0px;
+
+
   }
 
-  .tipos_protocolo p{
-    border-radius: 0px 0px 15px 15px;
+  .card{
+    width: 250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 15px;
+
+  }
+
+  div.container {
+    padding: 10px;
   }
 
 div.card{
   width: 300px;
-  margin-left: 75px;
-  margin-right: 75px;
+  margin-left: 35px;
+  margin-right: 45px;
 }
 
 /* Botão Criar Protocolo */
@@ -155,11 +175,121 @@ div.card{
 }
 
 .botao_criar:hover{
-  background-color: #4D8556;
+  background-color: #AD961D;
   color: white;
-  border-color: #4D8556;
+  border-color: #AD961D;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+
+/* Creat Protocol */
+
+.body_creat_protocol{
+  max-width: 730px;
+  margin: auto;
+}
+
+.titulo_creat_protocolo{
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.main_creation{
+  max-width: 380px;
+  margin: auto;
+  align-content: flex-start;
+}
+
+strong{
+  text-align: left;
+}
+
+.inputs_creation{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.button_sample{
+  background-color:#abb352;
+  transition-duration: 0.4s;
+  font-size: 16px;
+  color: black;
+  width: 150px;
+  border: none;
+  height: 30px;
+  margin: 15px;
+  border-radius: 15px;
+  
+}
+
+.button_sample:hover{
+  background-color: #AD961D;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button_step{
+  background-color: white;
+  transition-duration: 0.4s;
+  font-size: 14px;
+  color: black;
+  width: 100px;
+  border:#abb352;
+  border-style: solid;
+  height: 25px;
+  border-radius: 15px;
+  margin: 10px;
+}
+.button_step:hover{
+  background-color: #F1D857;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border: none;
+}
+
+
+form{
+  margin: 20px;
+  border-radius: 15px;
+  text-align: left;
+  font-weight: 400;
+  }
+
+legend{
+    text-align: left;
+    color: white;
+    background-color: #abb352;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+fieldset{
+  border-color:#BDBDBD;
+  border-radius: 15px ;
+  margin-bottom: 10px;
+}
+
+legend{
+  margin-left: 10px;
+  padding: 5px;
+}
+
+input{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px;
+  border-color: white;
+  border-style: solid;
+  background: #dfdfdf;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/*  */
 
   /* div{
     margin: 15px;

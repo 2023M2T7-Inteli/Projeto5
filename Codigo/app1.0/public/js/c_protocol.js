@@ -170,16 +170,19 @@ function createSamples() {
 
         inputNameSample = document.createElement('input');
         inputNameSample.id = "nameToFunc" + sampleCount;
+        inputNameSample.className = "inputs_creation";
         inputNameSample.type = "text";
         inputNameSample.placeholder = "Enter sample name";
 
         inputDescriptionSample = document.createElement("input");
         inputDescriptionSample.id = "descToFunc" + sampleCount;
+        inputDescriptionSample.className = "inputs_creation";
         inputDescriptionSample.type = "text";
         inputDescriptionSample.placeholder = "Enter sample description"
 
         const createNewSampleButton = document.createElement("button");
         createNewSampleButton.type = "button";
+        createNewSampleButton.className = "button_step";
         createNewSampleButton.onclick = createNewStep;
         createNewSampleButton.textContent = "Add step";
     //
@@ -219,16 +222,19 @@ function createNewStep() {
 
         const inputNameStep = document.createElement('input');
         inputNameStep.id = "stepNameID" + stepCount;
+        inputNameStep.className = "inputs_creation";
         inputNameStep.type = "text";
         inputNameStep.placeholder = "Enter step name";
 
         const inputDescriptionStep = document.createElement("input");
         inputDescriptionStep.id = "stepDescriptionID" + stepCount;
+        inputDescriptionStep.className = "inputs_creation";
         inputDescriptionStep.type = "text";
         inputDescriptionStep.placeholder = "Enter step description"
 
         const createNewFieldButton = document.createElement("button");
         createNewFieldButton.type = "button";
+        createNewFieldButton.className = "button_step";
         createNewFieldButton.onclick = createNewField;
         createNewFieldButton.textContent = "Add field";
     //
@@ -269,12 +275,14 @@ function createNewField() {
 
         const fieldInputData = document.createElement("input");
         fieldInputData.id = "fieldNameID" + fieldCount;
+        fieldInputData.className = "inputs_creation";
         fieldInputData.type = "text";
         fieldInputData.placeholder = "Enter the desired data";
         divFieldContainer.appendChild(fieldInputData);
 
         const fieldInputType = document.createElement("select");
         fieldInputType.id = "fieldTypeID" + fieldCount;
+        fieldInputType.className = "inputs_creation";
 
         //Creating fieldInputType options
             const option1 = document.createElement("option");

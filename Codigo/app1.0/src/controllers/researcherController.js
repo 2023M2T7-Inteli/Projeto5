@@ -18,9 +18,14 @@ function getResearcherProfile(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcher_profile.html'));
 };
 
+function getNotificationsPage(req, res) {
+    res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/notificacao_pesquisador.html'));
+}
+
 // Exporting modularized functions;
 module.exports = {
     getHome,
     getCreateProtocol,
-    getResearcherProfile
+    getResearcherProfile,
+    getNotificationsPage
 };

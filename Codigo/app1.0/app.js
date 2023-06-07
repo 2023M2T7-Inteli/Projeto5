@@ -43,6 +43,8 @@ app.post('/logging', loginRegisterController.logging);
 app.get('/home_researcher', researcherController.getHome);
 app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
+app.get('/notificationsResearchers', researcherController.getNotificationsPage);
+app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
 
 // Colectors endpoints;
 app.get('/home_collector', collectorController.getHome);

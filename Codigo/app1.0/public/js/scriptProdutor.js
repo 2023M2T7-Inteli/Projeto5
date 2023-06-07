@@ -69,7 +69,8 @@ function getDinamicFormsData() {
                   label.text(res[i].name_field);
                   if (res[i].description_field === 'image') {
                     input.attr('type', 'file');
-                    input.attr('accept', 'image/*');
+                    input.attr('accept', '".jpg, .jpeg, .png"');
+                    input.attr('capture', "camera");
                   } else if (res[i].description_field === 'number') {
                     input.attr('type', 'number');
                   } else {
