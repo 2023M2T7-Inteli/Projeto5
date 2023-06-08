@@ -197,7 +197,7 @@ function createSamples() {
     // FIELD - Just to separete the things
         const divStepContainer = document.createElement("div");
         divStepContainer.className = "steps-container";
-        divSampleContainer.appendChild(divStepContainer);
+        sampleFieldSet.appendChild(divStepContainer);
     //
 
     // running
@@ -249,7 +249,7 @@ function createNewStep() {
     // FIELD - Just to separete the things
         const divFieldContainer = document.createElement("div");
         divFieldContainer.className = "fields-container";
-        divStepContainer.appendChild(divFieldContainer);
+        stepFieldSet.appendChild(divFieldContainer);
     //
 
     // running
