@@ -18,18 +18,20 @@ function getProtocolId(req, res) {
 
 function getAllProtocolData(req, res) {
     // Getting the data to create the protocol table;
-    db.get(`SELECT * FROM tbl_protocols ORDER BY id_protocol DESC LIMIT 1`, (err, row) => {
+    db.all(`SELECT * FROM tbl_protocols`, (err, rows) => {
         if (err) {
             console.error(err);
             res.status(500).send('Error reading protocols data');
             return;
         }
 
-        const protocolData = {
+        const protocolData = rows.map(row => ({
             id: row.id_protocol,
             name: row.name_protocol,
             objective: row.objective_protocol
-        };
+        }));
+        
+        console.log(protocolData);
         res.json(protocolData);
     });
 }

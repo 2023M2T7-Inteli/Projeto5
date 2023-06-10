@@ -44,7 +44,10 @@ app.get('/home_researcher', researcherController.getHome);
 app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
 app.get('/notificationsResearchers', researcherController.getNotificationsPage);
-app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
+
+// Working on this feature:
+    app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
+//
 
 // Colectors endpoints;
 app.get('/home_collector', collectorController.getHome);
@@ -64,11 +67,9 @@ app.post('/create-fields', protocolCreationController.creatingFields);
 app.get('/read_id-protocols', protocolDataController.getProtocolId);
 app.get('/read_protocol-data', protocolDataController.getAllProtocolData);
 
-// Reading samples data;
+// Reading { samples, steps, field } data;
 app.post('/read_samples', protocolDataController.getSamplesWithId);
-// Reading steps data;
 app.post('/read_steps', protocolDataController.getStepWithId);
-// Reading field data;
 app.post('/read_field', protocolDataController.getFieldWithId);
 
 // Updating input data

@@ -22,10 +22,15 @@ function getNotificationsPage(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/notificacao_pesquisador.html'));
 }
 
+function getProtocolsInProgress(req, res) {
+    res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcherProtocolsProgress.html'))
+}
+
 // Exporting modularized functions;
 module.exports = {
     getHome,
     getCreateProtocol,
     getResearcherProfile,
-    getNotificationsPage
+    getNotificationsPage,
+    getProtocolsInProgress
 };
