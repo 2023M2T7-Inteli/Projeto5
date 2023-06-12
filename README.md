@@ -9,13 +9,24 @@
 ## Potich
 
 ## Integrantes: 
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Eduardo Henrique</a>
-- <a href="https://www.linkedin.com/in/gabrielcolettosilva/">Gabriel Coletto</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Eduardo Henrique Oliveira Santos</a>
+- <a href="https://www.linkedin.com/in/gabrielcolettosilva/">Gabriel Coletto Silva</a>
 - <a href="https://www.linkedin.com/in/isabella-fernandes-saldanha-138a631b4/">Andre Hutzler</a>
-- <a href="https://www.linkedin.com/in/mauro-das-chagas-junior-7306a71b9/">Mauro Chagas</a>
-- <a href="https://www.linkedin.com/in/lucasdeluccas/">Lucas de Luccas</a>
-- <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Savoia</a>
+- <a href="https://www.linkedin.com/in/mauro-das-chagas-junior-7306a71b9/">Mauro Das Chagas Junior</a>
+- <a href="https://www.linkedin.com/in/lucasdeluccas/">Lucas Nogueira Storelli de Luccas</a>
+- <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Brett Savoia</a>
 - <a href="https://www.linkedin.com/in/leonardokalid/">Leonardo Kalid</a>
+
+## Profesorres: 
+- <a href="https://www.linkedin.com/in/eduardo-hos/">André Luiz Braga</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Egon Daxbacher</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Filipe Gonçalves</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Francisco Escobar</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Geraldo...</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Julia Stateri</a>
+- <a href="https://www.linkedin.com/in/eduardo-hos/">Sergio Venancio</a>
+
+
 
 ## 📝 Descrição
 
