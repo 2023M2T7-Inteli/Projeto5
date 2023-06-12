@@ -66,6 +66,7 @@ app.post('/create-fields', protocolCreationController.creatingFields);
 // Reading protocol data;
 app.get('/read_id-protocols', protocolDataController.getProtocolId);
 app.get('/read_protocol-data', protocolDataController.getAllProtocolData);
+app.get('/read_protocols-progress', protocolDataController.getProtocolsInProgress);
 
 // Reading { samples, steps, field } data;
 app.post('/read_samples', protocolDataController.getSamplesWithId);

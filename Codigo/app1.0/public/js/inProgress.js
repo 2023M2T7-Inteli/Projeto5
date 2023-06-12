@@ -2,7 +2,7 @@ let getProtocolTitle;
 let getProtocolDesc;
 
 function getAllProtocols() {
-    $.get('/read_protocol-data', (res) => {
+    $.get('/read_protocols-progress', (res) => {
         res.forEach(protocol => {
             const getProtocolTitle = protocol.name;
             const getProtocolDesc = protocol.objective;
