@@ -162,7 +162,6 @@ function createSamples() {
 
     const sampleFieldSet = document.createElement("fieldset");
     sampleFieldSet.setAttribute('id', 'sampleFieldset');
-    sampleFieldSet.style.border = '1px solid black';
 
     // Creating sampleFieldSet elements
         const sampleLegend = document.createElement('legend');
@@ -214,7 +213,6 @@ function createNewStep() {
 
     const stepFieldSet = document.createElement("fieldset");
     stepFieldSet.setAttribute('id', 'stepFieldset');
-    stepFieldSet.style.border = '1px solid black';
 
     //Creating stepFieldSet elements
         const stepLegend = document.createElement('legend');
@@ -266,8 +264,7 @@ function createNewField() {
     divFieldContainer.classList.add("field-container");
 
     const fieldFieldSet = document.createElement("fieldset");
-    fieldFieldSet.setAttribute('id', 'stepFieldset');
-    fieldFieldSet.style.border = '1px solid black';
+    fieldFieldSet.setAttribute('id', 'fieldFieldset');
 
     //Creating stepFieldSet elements
         const fieldLegend = document.createElement('legend');
