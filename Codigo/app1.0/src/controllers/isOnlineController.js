@@ -13,14 +13,14 @@ function hasInternetConnection() {
 };
 
 // Exemplo de uso:
-async function checkOnlineStatus() {
+async function checkOnlineStatus(req, res) {
   const isConnected = await hasInternetConnection();
   if (isConnected) {
     console.log("Connected!");
-    return true;
+    res.status(200).json({ isConnected: true });
   } else {
     console.log("Disconnected!");
-    return false;
+    res.status(500).json({ isConnected: false });
   }
 };
 

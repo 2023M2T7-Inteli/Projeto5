@@ -106,8 +106,18 @@ function sendAnswers() {
   for (let i = 0; i < inputs.length; i++) {
     let id_field = inputs[i].id;
     let answer = inputs[i].value;
-    $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
-      console.log("Status" + res);
-    }, 'json')
+
+    let isConnected = fetch('/isConnected');
+    isConnected.then((response) => {
+      if (response.ok) {
+        $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
+          console.log("Status" + res);
+        }, 'json');
+      } else {
+        console.log("Sem conexão, irmão");
+      }
+    }).catch((error) => {
+      console.log("Error checking connection: " + error);
+    });
   }
-}
+};
