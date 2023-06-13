@@ -266,7 +266,7 @@ function createNewField() {
     divFieldContainer.classList.add("field-container");
 
     const fieldFieldSet = document.createElement("fieldset");
-    fieldFieldSet.setAttribute('id', 'stepFieldset');
+    fieldFieldSet.setAttribute('id', 'fieldFieldset');
     fieldFieldSet.style.border = '1px solid black';
 
     //Creating stepFieldSet elements

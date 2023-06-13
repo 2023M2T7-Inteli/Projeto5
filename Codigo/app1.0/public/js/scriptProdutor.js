@@ -1,6 +1,9 @@
 alert("Here you can see the protocol you created! (You can answer it, but nothing will happen. We are still working on data integration!)");
 getDinamicFormsData()
 
+// window.addEventListener('online', function(e) {
+//   location.reload();
+// });
 
 // Criando a função para gerar os protocolos com base no banco de dados:
 function getDinamicFormsData() {
@@ -101,17 +104,18 @@ $('#send-button').click(sendAnswers);
 
 function sendAnswers() {
   // take inputs
-  let inputs = $('input');
+  let protocolInfo = JSON.parse(localStorage.getItem("protocolInfo"));
   // console.log(inputs);
-  for (let i = 0; i < inputs.length; i++) {
-    let id_field = inputs[i].id;
-    let answer = inputs[i].value;
+  for (let i = 0; i < protocolInfo.input.length; i++) {
+    let id_field = protocolInfo.input[i].id;
+    let answer = protocolInfo.input[i].value;
 
     let isConnected = fetch('/isConnected');
     isConnected.then((response) => {
       if (response.ok) {
         $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
           console.log("Status" + res);
+          // localStorage.clear(); -> Isso aqui faz os dados serem apagados, tenho que ver porque essas funções de callback não estão sendo chamadas;
         }, 'json');
       } else {
         console.log("Sem conexão, irmão");
@@ -120,4 +124,24 @@ function sendAnswers() {
       console.log("Error checking connection: " + error);
     });
   }
+};
+
+function funcDeTesteParaPegarOLocalStorage() {
+  // for (let i = 0; i < localStorage.length; i++) {
+  //   let key = localStorage.key(i);
+  //   let value = localStorage.getItem(key);
+  //   console.log("Aqui está o negócio: ")
+  //   console.log(`${key}: ${value}`);
+  //   console.log(`${key}`);
+  //   console.log(`${value}`);
+  // };
+
+  let protocolInfo = JSON.parse(localStorage.getItem("protocolInfo"));
+
+  for (let i = 0; i < protocolInfo.input.length; i++) {
+    let value = protocolInfo.input[i].value;
+    let id = protocolInfo.input[i].id;
+    console.log("Aqui ó:");
+    console.log({value, id});
+  };
 };

@@ -21,6 +21,14 @@ async function checkOnlineStatus(req, res) {
   } else {
     console.log("Disconnected!");
     res.status(500).json({ isConnected: false });
+    setInterval(() => {
+      if (navigator.onLine) {
+        console.log("Reconnected");
+        location.reload();
+      } else {
+        console.log("Still Disconnected");
+      }
+    }, 5000);
   }
 };
 
