@@ -11,7 +11,7 @@
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/eduardo-hos/">Eduardo Henrique Oliveira Santos</a>
 - <a href="https://www.linkedin.com/in/gabrielcolettosilva/">Gabriel Coletto Silva</a>
-- <a href="https://www.linkedin.com/in/isabella-fernandes-saldanha-138a631b4/">Andre Hutzler</a>
+- <a href="https://www.linkedin.com/in/andr%C3%A9-hutzler-60aa28277/?originalSubdomain=br">Andre Hutzler</a>
 - <a href="https://www.linkedin.com/in/mauro-das-chagas-junior-7306a71b9/">Mauro Das Chagas Junior</a>
 - <a href="https://www.linkedin.com/in/lucasdeluccas/">Lucas Nogueira Storelli de Luccas</a>
 - <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Brett Savoia</a>
@@ -19,12 +19,12 @@
 
 ## Profesorres: 
 - <a href="https://www.linkedin.com/in/eduardo-hos/">André Luiz Braga</a>
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Egon Daxbacher</a>
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Filipe Gonçalves</a>
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Francisco Escobar</a>
+- <a href="https://www.linkedin.com/in/egondaxbacher/?locale=pt_BR">Egon Daxbacher</a>
+- <a href="https://www.linkedin.com/in/filipe-gon%C3%A7alves-08a55015b/">Filipe Gonçalves</a>
+- <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>
 - <a href="https://www.linkedin.com/in/eduardo-hos/">Geraldo...</a>
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Julia Stateri</a>
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Sergio Venancio</a>
+- <a href="https://www.linkedin.com/in/juliastateri/">Julia Stateri</a>
+- <a href="https://www.linkedin.com/in/sergio-venancio-a509b342/">Sergio Venancio</a>
 
 
 
