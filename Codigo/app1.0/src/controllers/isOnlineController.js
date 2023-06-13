@@ -16,9 +16,11 @@ function hasInternetConnection() {
 async function checkOnlineStatus() {
   const isConnected = await hasInternetConnection();
   if (isConnected) {
-    console.log("De fato, tem conexão!")
+    console.log("Connected!");
+    return true;
   } else {
-    console.log("Sem conexão")
+    console.log("Disconnected!");
+    return false;
   }
 };
 

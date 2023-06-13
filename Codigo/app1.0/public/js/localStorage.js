@@ -30,7 +30,8 @@ function getFieldsAnswers() {
         } else {
             const inputObj = {
                 type: input.type,
-                value: input.value
+                value: input.value,
+                id: input.id
             };
             protocolInfo.input.push(inputObj); 
         }
