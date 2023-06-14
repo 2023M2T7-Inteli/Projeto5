@@ -1,5 +1,6 @@
 alert("Here you can see the protocol you created! (You can answer it, but nothing will happen. We are still working on data integration!)");
 getDinamicFormsData()
+
 // Criando a função para gerar os protocolos com base no banco de dados:
 function getDinamicFormsData() {
   document.addEventListener("DOMContentLoaded", function(event)  {
@@ -83,33 +84,19 @@ function getDinamicFormsData() {
                     input.addClass('input-el');
                   }
                   input.attr('id', res[i].id_field);
-                }
-              }, 'json')
-            }
-          }, 'json')
-        }
-      }, 'json')
+                };
+              }, 'json');
+            };
+          }, 'json');
+        };
+      }, 'json');
     });
-    // The files in here are inside the DOMLoadedContent
   });
 };
 function typeImage(input) {
   input.attr('type', 'file');
-}
-// When send button clicked
-$('#send-button').click(sendAnswers);
-function sendAnswers() {
-  // take inputs
-  let inputs = $('input');
-  // console.log(inputs);
-  for (let i = 0; i < inputs.length; i++) {
-    let id_field = inputs[i].id;
-    let answer = inputs[i].value;
-    $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
-      console.log("Status" + res);
-    }, 'json')
-  }
-}
+};
+
 // function that add the listeners to the dropbox
 function AddDropImage(){
   document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
@@ -141,6 +128,7 @@ function AddDropImage(){
     });
   });
 }
+
 // Update the drop image to the image that was chosen
 function updateThumbnail(dropZoneElement, file) {
   let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
@@ -164,4 +152,4 @@ function updateThumbnail(dropZoneElement, file) {
   } else {
     thumbnailElement.style.backgroundImage = null;
   }
-}
+};

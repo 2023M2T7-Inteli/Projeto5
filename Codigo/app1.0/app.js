@@ -17,6 +17,7 @@ const protocolCreationController = require('./src/controllers/protocolCreationCo
 const collectorController = require('./src/controllers/collectorController.js');
 const protocolDataController = require('./src/controllers/protocolDataController.js');
 const loginRegisterController = require('./src/controllers/loginRegisterController.js');
+const isOnlineController = require('./src/controllers/isOnlineController.js');
 
 // Serving static files
 const staticDirs = ['img', 'css', 'js'];
@@ -44,10 +45,7 @@ app.get('/home_researcher', researcherController.getHome);
 app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
 app.get('/notificationsResearchers', researcherController.getNotificationsPage);
-
-// Working on this feature:
-    app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
-//
+app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
 
 // Colectors endpoints;
 app.get('/home_collector', collectorController.getHome);
@@ -75,6 +73,9 @@ app.post('/read_field', protocolDataController.getFieldWithId);
 
 // Updating input data
 app.post('/updateFields', protocolDataController.updateFields);
+
+// Route to check the internet connection
+app.get('/isConnected', isOnlineController.checkOnlineStatus);
 
 // Server listening
 app.listen(8081, function(){
