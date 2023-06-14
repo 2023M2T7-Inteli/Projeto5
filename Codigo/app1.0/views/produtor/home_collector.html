@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index2.css" />
+    <title>Home pesquisa</title>
+    <script>
+      function creatProtocol() {
+        window.location.href = "/createProtocol"
+      }
+    </script>
+  </head>
+
+  <nav id="mySidenav" class="sidenav">
+    <a href="/home_collector" > <img src="logo_menu_inativa.png" alt="Apotich"></a>
+    <a href="/collector_profile" > <img src="profile_icon_menu.png" alt="Perfil"></a>
+    <a href="/home_collector" > <img src="home_icone_menu.png" alt="Home"></a>
+    <a href="/notificationsCollectors" > <img src="bell_icon_inativo_menu.png" alt="Notificações"></a>
+    <p id="logo_fim_rodape">Apotich</p>
+  </nav>
+
+  <form class="busca_caixa">
+    <div class="barra_busca">
+      <input  id="espaco_busca" type="search" placeholder="     Busca">
+      <button  id="button_search" type="search"><img  class="busca_icon" src="busca_icon.png" alt="Busca"></button>
+    </div>
+  </form>
+
+  <body>
+
+    <main id="main">
+    <section class="head_home">
+      <div class="caixa_maior">
+        
+            <div class="titulo_home">
+                <h1>Seus <br>
+                    Protocolos
+                </h1>
+            </div>
+                <img src="broto.jpg" alt="imagem ilustrativa" style="width: 55%; border-radius: 15px;">
+
+      </div>
+  </section>
+
+      <section class="tipos_protocolo">
+        <div class="card">
+          <img class="protocolo_opcao" style="width: 100%;" src="banana.jpg" alt="imagem_protocolo_finalizado">
+          <div class="container">
+          <p> Finalizados <img class="icon_home" src="protocolo_finalizado_pesquisador.png" alt="Protocolos finalizados"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="protocolo_opcao" style="width: 100%;" src="banana.jpg" alt="imagem_protocolo_finalizado">
+          <div class="container">
+          <p> Em andamento <img class="icon_home" src="protocolo_pesquisador.png" alt="Protocolos em andamento"></p>
+          </div>
+        </div>
+
+      </section>
+
+
+      <div class="botao_criar_protocolo">
+        <button class="botao_criar" onclick="creatProtocol()" ><img src="add_protocolo_pesquisador.png" alt="criar protocolo"><p> Criar Protocolo</p></button>
+      </div>
+
+    </div>
+
+    </main>
+
+  </body>
+</html>

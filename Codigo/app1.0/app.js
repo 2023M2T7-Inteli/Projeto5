@@ -51,6 +51,7 @@ app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgr
 app.get('/home_collector', collectorController.getHome);
 app.get('/collectorProtocol', collectorController.protocolGenerationPage);
 app.get('/collector_profile', collectorController.getCollectorProfile);
+app.get('/notificationsCollectors', collectorController.getCollectorNotifications);
 
 // Colectors html
 app.get('/colectorProtocol', collectorController.protocolGenerationPage);
