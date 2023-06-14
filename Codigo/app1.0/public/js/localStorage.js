@@ -39,4 +39,30 @@ function getFieldsAnswers() {
     
     console.log(protocolInfo);
     localStorage.setItem('protocolInfo', JSON.stringify(protocolInfo));
+
+    sendAnswers()
+};
+
+function sendAnswers() {
+    // take inputs
+    let protocolInfo = JSON.parse(localStorage.getItem("protocolInfo"));
+    // console.log(inputs);
+    for (let i = 0; i < protocolInfo.input.length; i++) {
+        let id_field = protocolInfo.input[i].id;
+        let answer = protocolInfo.input[i].value;
+
+        let isConnected = fetch('/isConnected');
+        isConnected.then((response) => {
+        if (response.ok) {
+            $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
+            console.log("Status" + res);
+            // localStorage.clear(); -> Isso aqui faz os dados serem apagados, tenho que ver porque essas funções de callback não estão sendo chamadas;
+            }, 'json');
+        } else {
+            console.log("Sem conexão, irmão");
+        }
+        }).catch((error) => {
+        console.log("Error checking connection: " + error);
+        });
+    }
 };
