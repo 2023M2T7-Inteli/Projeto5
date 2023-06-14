@@ -7,30 +7,10 @@
     <title>Colectors Protocols</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"/>
-    <link rel="stylesheet" href="stylesProdutor.css" />
+    <!-- <link rel="stylesheet" href="stylesProdutor.css" /> -->
+    <link rel="stylesheet" href="index.css" />
     <!--  defer: read the js file last -->
     <style>
-      fieldset {
-        margin: 15px;
-        padding: 10px;
-      }
-      #send-button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 10px;
-        border-radius: 15px ;
-        width: 100px;
-      }
-      #send-button:hover {
-        background-color: #2b642d;
-      }
-      #send-button:active {
-        background-color: white;
-        color:#4CAF50;
-      }
-
-      
     </style>
   </head>
   <body>
@@ -38,21 +18,11 @@
     <section id="" class="main-section">
       <p id="id-protocolo" hidden></p>
       <div class="image-section">
-        <div class="image-div"></div>
-        <div
-          id="nome-do-protocolo"
-          class=""
-          style="
-            position: absolute;
-            top: 85%;
-            left: 10%;
-            background-color: aliceblue;
-          "
-        >
-          
-        </div>
+        <picture>
+          <img src="https://images.unsplash.com/photo-1501777814630-33bc4a3c3ee7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" style="width: 50%; border-radius: 15px" alt="">
+        </picture>
+        <div id="nome-do-protocolo"></div>
         <div id="objetivo-protocolo">
-
         </div>
       </div>
       <section id="dynamic-form">
@@ -65,11 +35,9 @@
           }
         </script>
       </div>
-      
     </section>
     <footer></footer>
     <script src="scriptProdutor.js" defer></script>
     <script src="localStorage.js"></script>
   </body>
-  
 </html>
