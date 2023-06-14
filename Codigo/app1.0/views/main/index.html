@@ -36,32 +36,7 @@
         <fieldset>
 
           <legend><strong>Password:</strong></legend>
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-
-    <body>
-        <div class="carrinho">
-            <form method="post">
-                <p>
-                  <input type="password" name="password_user"  id="password" />
-                    <i class="bi bi-eye-slash" id="togglePassword"></i>
-                </p>
-            </form>
-        </div>
-        <script>
-            const togglePassword = document.querySelector("#togglePassword");
-            const password = document.querySelector("#password");
-    
-            togglePassword.addEventListener("click", function () {
-                const type = password.getAttribute("type") === "password" ? "text" : "password";
-                password.setAttribute("type", type);
-                this.classList.toggle("bi-eye");
-            });
-            
-        </script>
-    </body>
+          <input type="password" name="password_user" />
 
         </fieldset>
         <div class="button_login">
