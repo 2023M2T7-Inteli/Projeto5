@@ -4,18 +4,20 @@ let getProtocolDesc;
 function getAllProtocols() {
     $.get('/read_protocols-progress', (res) => {
         res.forEach(protocol => {
+            const getProtocolId = protocol.id;
             const getProtocolTitle = protocol.name;
             const getProtocolDesc = protocol.objective;
-            createCard(getProtocolTitle, getProtocolDesc);
+            createCard(getProtocolId, getProtocolTitle, getProtocolDesc);
         });
     });
-}
+};
 
-function createCard(title, description) {
+function createCard(id, title, description) {
     const main = document.getElementById("main")
 
     const divCard = document.createElement("div");
     divCard.className = "card";
+    divCard.setAttribute('data-id', id);
 
     const imageCapaProtocol = document.createElement("img");
     imageCapaProtocol.className = "protocolo_opcao";
@@ -46,8 +48,19 @@ function createCard(title, description) {
     divCard.appendChild(divContainer);
 
     main.appendChild(divCard);
-}
+
+    clickCard();
+};
+
+function clickCard() {
+    let cards = document.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('click', () => {
+            const protocolId = cards[i].getAttribute('data-id');
+            window.location.href = `/protocols/${protocolId}`;
+        });
+    };
+};
 
 getAllProtocols();
-
-

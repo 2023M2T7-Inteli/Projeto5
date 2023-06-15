@@ -47,6 +47,12 @@
     left: 16px;
   }
 
+  .icon_menu:hover{
+    scale: 1.1;
+  }
+
+
+
   /* Barra busca */
 
 .busca_caixa{
@@ -101,6 +107,31 @@ main{
   margin: auto;
   }
 
+
+/* Barra Usabilidade */
+.icones_usabilidade{
+  position: absolute;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  right: 16px;
+  z-index: 1;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 15px;
+  padding-inline: 15px;
+}
+
+.usabilidade_icone{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.usabilidade_icone:hover{
+  scale: 1.1;
+}
+
   /* Cabeçalho inicial*/
   .head_home{
     margin: 30px;
@@ -138,9 +169,14 @@ main{
 
   .card{
     width: 250px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+  .card:hover{
+    box-shadow: 0 10px 10px 0 rgba(175, 177, 37, 0.518), 0 6px 20px 0 rgba(175, 177, 37, 0.518);
 
   }
 
@@ -321,6 +357,37 @@ input{
   font-size: 14px;
 }
 
+/* Options of form  */
+.icons_options{
+  background-color: #dfdfdf;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 2em;
+}
+
+.form_type_icons{
+  margin-inline: 10px;
+  margin-top: 15px;
+}
+
+.form_type_icons:hover{
+  scale: 1.1;
+}
+
+
+/* Perfil aba */
+.perfil_icone{
+  margin-inline: 15px;
+  margin-top: 15px;
+  border-radius: 15px;
+
+}
+
+.perfil_icone:hover{
+  scale: 1.1;
+  box-shadow: 0 10px 10px 0 rgba(175, 177, 37, 0.518), 0 6px 20px 0 rgba(175, 177, 37, 0.518);
+}
+
 .button {
   border: none;
   width: 250px;
@@ -330,7 +397,7 @@ input{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 20px;
@@ -398,11 +465,14 @@ input{
   background: #AD961D; 
   border-radius: 15px;
   
+
+  
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #F1D857; 
+  background:#F1D857; 
+
 }
 
 
