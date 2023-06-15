@@ -146,6 +146,10 @@ main{
     margin: auto;
   }
 
+  .coletor {
+    color: #52B362
+  }
+
   h1{
     text-align: left;
     font-size: 2em;
