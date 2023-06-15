@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
@@ -46,6 +47,42 @@ app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
 app.get('/notificationsResearchers', researcherController.getNotificationsPage);
 app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
+
+// Working on this feature
+    app.get('/protocols/:id', (req, res) => {
+        const protocolId = req.params.id;
+
+        db.get('SELECT * FROM tbl_protocols WHERE id_protocol = ?', [protocolId], (err, row) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error getting info from db');
+            } else {
+                if (row) {
+                    fs.readFile(path.join(__dirname + '/views/produtor/listingProtocols.html'), 'utf8', (err, data) => {
+                        if (err) {
+                            console.error(err);
+                            res.status(500).send('Error reading HTML file');
+                        } else {
+                            const modifiedHTML = data
+                                .replace('{{id_protocol}}', row.id_protocol)
+                                .replace('{{name_protocol}}', row.name_protocol)
+                                .replace('{{objective_protocol}}', row.objective_protocol);
+                            res.set('Content-Type', 'text/html');
+                            res.send(modifiedHTML);
+                            // fs.writeFile(path.join(__dirname + '/views/produtor/listingProtocols.html'), modifiedHTML, (err) => {
+                            //     if (err) throw err;
+
+                            //     res.sendFile(path.join(__dirname + '/views/produtor/listingProtocols.html'));
+                            // });
+                        }
+                    });
+                } else {
+                    res.status(404).send('Protocol not found');
+                }
+            }
+        });
+    });
+//
 
 // Colectors endpoints;
 app.get('/home_collector', collectorController.getHome);
