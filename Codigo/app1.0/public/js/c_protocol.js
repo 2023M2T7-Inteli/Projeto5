@@ -162,7 +162,6 @@ function createSamples() {
 
     const sampleFieldSet = document.createElement("fieldset");
     sampleFieldSet.setAttribute('id', 'sampleFieldset');
-    sampleFieldSet.style.border = '1px solid black';
 
     // Creating sampleFieldSet elements
         const sampleLegend = document.createElement('legend');
@@ -170,16 +169,19 @@ function createSamples() {
 
         inputNameSample = document.createElement('input');
         inputNameSample.id = "nameToFunc" + sampleCount;
+        inputNameSample.className = "inputs_creation";
         inputNameSample.type = "text";
         inputNameSample.placeholder = "Enter sample name";
 
         inputDescriptionSample = document.createElement("input");
         inputDescriptionSample.id = "descToFunc" + sampleCount;
+        inputDescriptionSample.className = "inputs_creation";
         inputDescriptionSample.type = "text";
         inputDescriptionSample.placeholder = "Enter sample description"
 
         const createNewSampleButton = document.createElement("button");
         createNewSampleButton.type = "button";
+        createNewSampleButton.className = "button_step";
         createNewSampleButton.onclick = createNewStep;
         createNewSampleButton.textContent = "Add step";
     //
@@ -194,7 +196,7 @@ function createSamples() {
     // FIELD - Just to separete the things
         const divStepContainer = document.createElement("div");
         divStepContainer.className = "steps-container";
-        divSampleContainer.appendChild(divStepContainer);
+        sampleFieldSet.appendChild(divStepContainer);
     //
 
     // running
@@ -211,7 +213,6 @@ function createNewStep() {
 
     const stepFieldSet = document.createElement("fieldset");
     stepFieldSet.setAttribute('id', 'stepFieldset');
-    stepFieldSet.style.border = '1px solid black';
 
     //Creating stepFieldSet elements
         const stepLegend = document.createElement('legend');
@@ -219,16 +220,19 @@ function createNewStep() {
 
         const inputNameStep = document.createElement('input');
         inputNameStep.id = "stepNameID" + stepCount;
+        inputNameStep.className = "inputs_creation";
         inputNameStep.type = "text";
         inputNameStep.placeholder = "Enter step name";
 
         const inputDescriptionStep = document.createElement("input");
         inputDescriptionStep.id = "stepDescriptionID" + stepCount;
+        inputDescriptionStep.className = "inputs_creation";
         inputDescriptionStep.type = "text";
         inputDescriptionStep.placeholder = "Enter step description"
 
         const createNewFieldButton = document.createElement("button");
         createNewFieldButton.type = "button";
+        createNewFieldButton.className = "button_step";
         createNewFieldButton.onclick = createNewField;
         createNewFieldButton.textContent = "Add field";
     //
@@ -243,7 +247,7 @@ function createNewStep() {
     // FIELD - Just to separete the things
         const divFieldContainer = document.createElement("div");
         divFieldContainer.className = "fields-container";
-        divStepContainer.appendChild(divFieldContainer);
+        stepFieldSet.appendChild(divFieldContainer);
     //
 
     // running
@@ -260,8 +264,7 @@ function createNewField() {
     divFieldContainer.classList.add("field-container");
 
     const fieldFieldSet = document.createElement("fieldset");
-    fieldFieldSet.setAttribute('id', 'stepFieldset');
-    fieldFieldSet.style.border = '1px solid black';
+    fieldFieldSet.setAttribute('id', 'fieldFieldset');
 
     //Creating stepFieldSet elements
         const fieldLegend = document.createElement('legend');
@@ -269,12 +272,14 @@ function createNewField() {
 
         const fieldInputData = document.createElement("input");
         fieldInputData.id = "fieldNameID" + fieldCount;
+        fieldInputData.className = "inputs_creation";
         fieldInputData.type = "text";
         fieldInputData.placeholder = "Enter the desired data";
         divFieldContainer.appendChild(fieldInputData);
 
         const fieldInputType = document.createElement("select");
         fieldInputType.id = "fieldTypeID" + fieldCount;
+        fieldInputType.className = "inputs_creation";
 
         //Creating fieldInputType options
             const option1 = document.createElement("option");

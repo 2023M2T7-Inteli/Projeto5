@@ -4,28 +4,59 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel= 'stylesheet' href="index.css">
+        <link rel= 'stylesheet' href="index2.css">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <!-- <script src="createProtocol.js"></script> -->
         <title>Create protocol</title>
     </head>
-    <body>
-        <main>
-            <section>
-                <h3>Create protocol</h3>
-            </section>
-            <section>
+
+    <nav id="mySidenav" class="sidenav">
+        <a href="/home_researcher" > <img class="icon_menu" src="logo_menu_inativa.png" alt="Apotich"></a>
+        <a href="/researcher_profile" > <img class="icon_menu" src="profile_icon_menu.png" alt="Perfil"></a>
+        <a href="/home_researcher" > <img class="icon_menu" src="home_icone_menu.png" alt="Home"></a>
+        <a href="/notificationsResearchers" > <img class="icon_menu" src="bell_icon_inativo_menu.png" alt="Notificações"></a>
+        <a href="/createProtocol" > <img class="icon_menu" src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
+        <p id="logo_fim_rodape">Apotich</p>
+    </nav>
+
+
+    
+    <section class="icones_usabilidade">
+        <img class="usabilidade_icone" src="export_icon.png" alt="Usabilidade Icone" onclick="">
+        <img class="usabilidade_icone" src="trash_icon.png" alt="Usabilidade Icone" onclick="">
+    </section>
+
+    <body class="body_creat_protocol">
+        <section class="titulo_creat_protocolo">
+            <h1>Create protocol</h1>
+            <img src="creat_protocol_icon.png" alt="creat_protocol_icon">
+        </section>
+        <main class="main_creat_protocol">
+            
+            <section class="main_creation">
                 <div id="formProtocol">
-                    <label for="name_protocol">Name:</label>
-                    <input type="text" name="name_protocol" id="name_protocol" required>
+                    <label for="name_protocol"><strong>Name:</strong> </label>
+                    <input type="text" class="inputs_creation" name="name_protocol" id="name_protocol" required>
                     <br>
-                    <label for="objective_protocol">Objective:</label>
-                    <input type="text" name="objective_protocol" id="objective_protocol" required>
+                    <label for="objective_protocol"><strong>Objective:</strong> </label>
+                    <input type="text" class="inputs_creation" name="objective_protocol" id="objective_protocol" required>
                     <br>
-                    <button type="button" onclick="createSamples()">Add sample</button>
-                    <div class="samples-container"></div>
+                    <button type="button" class="button_sample" onclick="createSamples()">Add sample</button>
+                        <div class="samples-container">
+                            <!-- Where inserts the html dynamic -->
+                        </div>
                     <br>
-                    <button id="submitButton" type="submit">Create protocol</button>
+                        <div class="icons_options">
+                            <img class="form_type_icons" src="text_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="check_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="alternatives_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="local_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="images_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="amplitude_icon.png" alt="Forms tipos Icone" onclick="">
+                        </div>
+                    <div class="botao_criar_protocolo">
+                        <button class="botao_criar" id="submitButton" type="submit"><img  width="20%" src="add_protocolo_pesquisador.png" alt="criar protocolo"><p> Criar Protocolo</p></button>
+                    </div>
                 </div>
             </section>
         </main>

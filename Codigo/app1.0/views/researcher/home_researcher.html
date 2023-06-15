@@ -6,61 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index2.css" />
     <title>Home pesquisa</title>
+    <script>
+      function creatProtocol() {
+        window.location.href = "/createProtocol"
+      }
+    </script>
   </head>
 
   <nav id="mySidenav" class="sidenav">
-    <a href="#" > <img src="logo_menu_inativa.png" alt="Apotich"></a>
-    <a href="/researcher_profile" > <img src="profile_icon_menu.png" alt="Perfil"></a>
-    <a href="#" > <img src="home_icone_menu.png" alt="Home"></a>
-    <a href="#" > <img src="bell_icon_inativo_menu.png" alt="Notificações"></a>
-    <a href="#" > <img src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
+    <a href="/home_researcher" > <img class="icon_menu" src="logo_menu_inativa.png" alt="Apotich"></a>
+    <a href="/researcher_profile" > <img class="icon_menu" src="profile_icon_menu.png" alt="Perfil"></a>
+    <a href="/home_researcher" > <img class="icon_menu" src="home_icone_menu.png" alt="Home"></a>
+    <a href="/notificationsResearchers" > <img class="icon_menu" src="bell_icon_inativo_menu.png" alt="Notificações"></a>
+    <a href="/createProtocol" > <img class="icon_menu" src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
     <p id="logo_fim_rodape">Apotich</p>
-  </nav>
+</nav>
 
   <form class="busca_caixa">
     <div class="barra_busca">
-      <input  id="espaco_busca" type="search" placeholder="Busca">
-      <button  id="button_search" type="search"><img src="busca_icon.png" alt="Busca"></button>
+      <input  id="espaco_busca" type="search" placeholder="     Busca">
+      <button  id="button_search" type="search"><img  class="busca_icon" src="busca_icon.png" alt="Busca"></button>
     </div>
   </form>
 
   <body>
 
     <main id="main">
-    <div class="caixa_maior">
-      
-          <div class="titulo_home">
-              <h1>Seus <br>
-                  Protocolos
-              </h1>
-          </div>
-
-          <div class="animacao_home">
-              <picture><img src="broto.jpg" alt="imagem ilustrativa" style="width: 65%; border-radius: 15px;"></picture>
-          </div>
+    <section class="head_home">
+      <div class="caixa_maior">
+        
+            <div class="titulo_home">
+                <h1>Seus <br>
+                    Protocolos
+                </h1>
+            </div>
+                <img src="broto.jpg" alt="imagem ilustrativa" style="width: 55%; border-radius: 15px;">
 
       </div>
+  </section>
 
-      <div class="tipos_protocolo">
+      <section class="tipos_protocolo">
         <div class="card">
           <img class="protocolo_opcao" style="width: 100%;" src="banana.jpg" alt="imagem_protocolo_finalizado">
           <div class="container">
-          <p> Finalizados <img src="protocolo_finalizado_pesquisador.png" alt="Protocolos finalizados"></p>
+          <p> Finalizados <img class="icon_home" src="protocolo_finalizado_pesquisador.png" alt="Protocolos finalizados"></p>
           </div>
         </div>
 
         <div class="card">
           <img class="protocolo_opcao" style="width: 100%;" src="banana.jpg" alt="imagem_protocolo_finalizado">
           <div class="container">
-          <p> Em andamento <img src="protocolo_pesquisador.png" alt="Protocolos em andamento"></p>
+          <p> Em andamento <img class="icon_home" src="protocolo_pesquisador.png" alt="Protocolos em andamento"></p>
           </div>
         </div>
 
-      </div>
+      </section>
 
 
       <div class="botao_criar_protocolo">
-        <button class="botao_criar"> <img src="add_protocolo_pesquisador.png" alt="criar protocolo"><a href='/createProtocol'> <p> Criar Protocolo</p></button></a>
+        <button class="botao_criar" onclick="creatProtocol()" ><img src="add_protocolo_pesquisador.png" alt="criar protocolo"><p> Criar Protocolo</p></button>
       </div>
 
     </div>

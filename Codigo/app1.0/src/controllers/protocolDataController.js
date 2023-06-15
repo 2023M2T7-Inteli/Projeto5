@@ -30,9 +30,30 @@ function getAllProtocolData(req, res) {
             name: row.name_protocol,
             objective: row.objective_protocol
         };
+
         res.json(protocolData);
     });
 }
+
+function getProtocolsInProgress(req, res) {
+    // Getting the data to create the protocol table;
+    db.all(`SELECT * FROM tbl_protocols`, (err, rows) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error reading protocols data');
+            return;
+        }
+
+        const protocolData = rows.map(row => ({
+            id: row.id_protocol,
+            name: row.name_protocol,
+            objective: row.objective_protocol
+        }));
+        
+        console.log(protocolData);
+        res.json(protocolData);
+    });
+};
 
 function getSamplesWithId(req, res) {
     // Getting the data to create the samples table
@@ -129,5 +150,6 @@ module.exports = {
     getSamplesWithId,
     getStepWithId,
     getFieldWithId,
+    getProtocolsInProgress,
     updateFields,
 };
