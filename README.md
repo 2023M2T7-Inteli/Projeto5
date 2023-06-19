@@ -11,18 +11,18 @@
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/eduardo-hos/">Eduardo Henrique Oliveira Santos</a>
 - <a href="https://www.linkedin.com/in/gabrielcolettosilva/">Gabriel Coletto Silva</a>
-- <a href="https://www.linkedin.com/in/andr%C3%A9-hutzler-60aa28277/?originalSubdomain=br">Andre Hutzler</a>
+- <a href="https://www.linkedin.com/in/andr%C3%A9-hutzler-60aa28277/?originalSubdomain=br">André Hutzler</a>
 - <a href="https://www.linkedin.com/in/mauro-das-chagas-junior-7306a71b9/">Mauro Das Chagas Junior</a>
 - <a href="https://www.linkedin.com/in/lucasdeluccas/">Lucas Nogueira Storelli de Luccas</a>
 - <a href="https://www.linkedin.com/in/patrick-savoia-4b26a126a/">Patrick Brett Savoia</a>
-- <a href="https://www.linkedin.com/in/leonardokalid/">Leonardo Kalid</a>
+- <a href="https://www.linkedin.com/in/leonardokalid/">Leonardo Kalid Guene</a>
 
 ## Profesorres: 
-- <a href="https://www.linkedin.com/in/eduardo-hos/">André Luiz Braga</a>
+- <a href="https://www.linkedin.com/in/andreluizbraga/">André Luiz Braga</a>
 - <a href="https://www.linkedin.com/in/egondaxbacher/?locale=pt_BR">Egon Daxbacher</a>
 - <a href="https://www.linkedin.com/in/filipe-gon%C3%A7alves-08a55015b/">Filipe Gonçalves</a>
 - <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>
-- <a href="https://www.linkedin.com/in/eduardo-hos/">Geraldo...</a>
+- <a href="https://www.linkedin.com/in/geraldo-magela-severino-vasconcelos-22b1b220/">Geraldo Vasconcelos</a>
 - <a href="https://www.linkedin.com/in/juliastateri/">Julia Stateri</a>
 - <a href="https://www.linkedin.com/in/sergio-venancio-a509b342/">Sergio Venancio</a>
 
