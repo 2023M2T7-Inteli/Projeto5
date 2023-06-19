@@ -51,11 +51,12 @@ function getDinamicFormsData() {
                   // console.log(res[i].name_field + res[i].id_field);
                   var div = $('<div>');
                   divCampos.append(div);
+
                   var label = $('<label>');
                   var input = $('<input>');
+
                   div.append(label);
                   label.attr('id', res[i].name_field + res[i].id_field)
-                  label.text(res[i].name_field);
                   if (res[i].description_field === 'image') {
                     let divImage = $('<div>');
                     divImage.attr('class', 'drop-zone');
@@ -70,18 +71,49 @@ function getDinamicFormsData() {
                     input.attr('accept', 'image/*');
                     input.attr('class', 'drop-zone__input');
                     input.attr('name', 'myFile');
-                    // divImage.click(() => {
-                    //   console.log('aiaiaii!');
-                    // })
                     AddDropImage()
+                    label.text(res[i].name_field);
                   } else if (res[i].description_field === 'number') {
                     div.append(input);
                     input.attr('type', 'number');
                     input.addClass('input-el');
+                    label.text(res[i].name_field);
+                  } else if (res[i].description_field === 'radio') {
+                    // turn the string into a json
+                    let jsonResponse = JSON.parse(res[i].name_field);
+                    console.log(jsonResponse);
+                    // store the question in a variable
+                    let question = jsonResponse.question;
+                    label.text(question);
+                    
+                    let listAlternatives = jsonResponse.listAlternatives;
+                    console.log(listAlternatives);
+                    // map each alternative in the list, create and add the elements to the html
+                    listAlternatives.map((alternative) => {
+                      console.log(alternative);
+                      // create a br element
+                      let br = $('<br>');
+                      // add the br to the html
+                      div.append(br);
+                      // select the div to add the elements
+                      const inputRadio = $('<input>');
+                      inputRadio.attr('type', 'radio');
+                      // put the text of the alternative
+                      const labelRadio = $('<label>');
+                      labelRadio.text(alternative);
+                      // set the value of the radio equals to the alternative
+                      inputRadio.attr('value', alternative);
+                      // add the name of the radio equals to the question
+                      inputRadio.attr('name', question + res[i].id_field);
+                      // add the elements to the html
+                      div.append(inputRadio, labelRadio);
+                    });
+                    
                   } else {
                     div.append(input);
                     input.attr('type', 'text');
                     input.addClass('input-el');
+                    label.text(res[i].name_field);
                   }
                   input.attr('id', res[i].id_field);
                 };
