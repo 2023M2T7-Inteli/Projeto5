@@ -18,8 +18,6 @@ function getResearcherProfile(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcher_profile.html'));
 };
 
-<<<<<<< Updated upstream
-=======
 function getNotificationsPage(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/notificacao_pesquisador.html'));
 };
@@ -32,17 +30,13 @@ function getProtocolsFinished(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcherProtocolsFinished.html'))
 };
 
->>>>>>> Stashed changes
 // Exporting modularized functions;
 module.exports = {
     getHome,
     getCreateProtocol,
-<<<<<<< Updated upstream
-    getResearcherProfile
-=======
+    getResearcherProfile,
     getResearcherProfile,
     getNotificationsPage,
     getProtocolsInProgress,
     getProtocolsFinished,
->>>>>>> Stashed changes
 };

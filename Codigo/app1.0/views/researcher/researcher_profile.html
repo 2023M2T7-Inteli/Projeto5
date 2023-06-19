@@ -8,43 +8,42 @@
     <title>Perfil Pesquisador</title>
 </head>
 <body>
-  <img width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png" alt="u-turn-to-left"/> 
-
-    <style>
-
-        .button {
-          border: none;
-          width: 250px;
-          color: white;
-          padding: 16px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          transition-duration: 0.4s;
-          cursor: pointer;
-          border-radius: 20px;
-        }
-        
-        .button1 {
-          background-color: white; 
-          color: black; 
-          border: 2px solid #f1d857;
-        }
-        
-        .button1:hover {
-          background-color: #f1d857;
-          color: white;
-        }
-        
-        </style>
+  <script>
+    function voltar() {
+      history.back();
+    }
+  </script>
+  <button  class="voltar_button" onclick="voltar()">
+    <img class="voltar" width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png" alt="u-turn-to-left"/> 
+  </button>
 
 </head>
 
+<nav id="mySidenav" class="sidenav">
+  <a href="/home_researcher" > <img class="icon_menu" src="logo_menu_inativa.png" alt="Apotich"></a>
+  <a href="/researcher_profile" > <img class="icon_menu" src="profile_icon_menu.png" alt="Perfil"></a>
+  <a href="/home_researcher" > <img class="icon_menu" src="home_icone_menu.png" alt="Home"></a>
+  <a href="/notificationsResearchers" > <img class="icon_menu" src="bell_icon_inativo_menu.png" alt="Notificações"></a>
+  <a href="/createProtocol" > <img class="icon_menu" src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
+  <p id="logo_fim_rodape">Apotich</p>
+</nav>
+
 <body>
     <main>
-    <img class="perfil" style="width: 10%;" src="https://img.icons8.com/material/96/null/user-male-circle--v1.png"/>
+      <section>
+        <img class="perfil" style="width: 20%;" src="https://img.icons8.com/material/96/null/user-male-circle--v1.png" alt="Perfil"> <br>
+        <img class="perfil" src="#" alt="Perfil">
+
+        <div>
+          <img class="perfil_icone" src="perfilUm.png" alt="Perfil Icone" onclick="">
+          <img class="perfil_icone" src="perfilDois.png" alt="Perfil Icone" onclick="">
+          <img class="perfil_icone" src="perfilTres.png" alt="Perfil Icone" onclick="">
+          <img class="perfil_icone" src="perfilQuatro.png" alt="Perfil Icone" onclick="">
+
+
+        </div>
+
+      </section>
     <br>
     <h3>Perfil Pesquisador</h3>
 <section style="margin-bottom: 15px;">

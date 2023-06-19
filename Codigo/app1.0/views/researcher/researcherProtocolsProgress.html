@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="index2.css" />
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <title>Protocols in progress</title>
+        <script>
+            function creatProtocol() {
+                window.location.href = "/createProtocol"
+            }
+        </script>
+    </head>
+
+    <nav id="mySidenav" class="sidenav">
+        <a href="/home_researcher" > <img class="icon_menu" src="logo_menu_inativa.png" alt="Apotich"></a>
+        <a href="/researcher_profile" > <img class="icon_menu" src="profile_icon_menu.png" alt="Perfil"></a>
+        <a href="/home_researcher" > <img class="icon_menu" src="home_icone_menu.png" alt="Home"></a>
+        <a href="/notificationsResearchers" > <img class="icon_menu" src="bell_icon_inativo_menu.png" alt="Notificações"></a>
+        <a href="/createProtocol" > <img class="icon_menu" src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
+        <p id="logo_fim_rodape">Apotich</p>
+    </nav>
+
+    <form class="busca_caixa">
+        <div class="barra_busca">
+            <input  id="espaco_busca" type="search" placeholder="     Busca">
+            <button  id="button_search" type="search"><img src="busca_icon.png" alt="Busca"></button>
+        </div>
+    </form>
+
+    <body>
+        <main id="main"></main>
+        <script src="inProgress.js"></script>
+    </body>
+</html>

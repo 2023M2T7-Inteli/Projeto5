@@ -1,57 +1,16 @@
+alert("Here you can see the protocol you created! (You can answer it, but nothing will happen. We are still working on data integration!)");
 getDinamicFormsData()
-
-function generateDynamicForm(elements) {
-    var form = document.getElementById("dynamic-form");
-    // Interaction with each element using for
-    for (var i = 0; i < elements.length; i++) {
-      // Creating a  div
-      var div = document.createElement("div");
-      div.setAttribute("class", "div-forms")
-
-      // Creating a label
-      var title = document.createElement("h3");
-      title.setAttribute("name", elements[i].name);
-      title.innerHTML = elements[i].name;
-      form.appendChild(title);
-
-      // Creating a input for the label
-      var input = document.createElement("input");
-      input.setAttribute("type", "text");
-      input.setAttribute("name", elements[i].name);
-      input.setAttribute("class", "input-el")
-      input.setAttribute("placeholder", elements[i].placeholder);
-
-      div.appendChild(title);
-      div.appendChild(input);
-      form.appendChild(div);
-    }
-  }
-
-var infoElements = [
-  { name: "NOME DO PROTOCOLO" }
-]
-
-  var elementsInput = [
-    { name: "NOME COMPLETO", placeholder: "Enter your nome" },
-    { name: "OBJETIVO", placeholder: "Enter your email" },
-    { name: "COLETOR RESPONSÁVEL", placeholder: "Enter your phone number" },
-    { name: "TESTE", placeholder: "Enter anything you want"}
-  ];
-  generateDynamicForm(elementsInput);
-
 
 // Criando a função para gerar os protocolos com base no banco de dados:
 function getDinamicFormsData() {
   document.addEventListener("DOMContentLoaded", function(event)  {
-    $.ajax({
+    $.ajax({ // Vai me retornar os dados do protocolo
       url: '/read_protocol-data',
       method: 'GET',
-      dataType: 'json'
+      dataType: 'json',
     }).done((res) => {
-<<<<<<< Updated upstream
       const nomeProtocoloElement = document.getElementById("nome-do-protocolo");
       nomeProtocoloElement.textContent = res.name;
-=======
       $('#nome-do-protocolo').text(res.name);
       $('#objetivo-protocolo').text(res.objective);
       $('#id-protocolo').text(res.id);
@@ -165,8 +124,66 @@ function getDinamicFormsData() {
           }, 'json');
         };
       }, 'json');
->>>>>>> Stashed changes
     });
   });
 };
+function typeImage(input) {
+  input.attr('type', 'file');
+};
 
+// function that add the listeners to the dropbox
+function AddDropImage(){
+  document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+    const dropZoneElement = inputElement.closest(".drop-zone");
+    dropZoneElement.addEventListener("click", (e) => {
+      inputElement.click();
+    });
+    inputElement.addEventListener("change", (e) => {
+      if (inputElement.files.length) {
+        updateThumbnail(dropZoneElement, inputElement.files[0]);
+      }
+    });
+    dropZoneElement.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZoneElement.classList.add("drop-zone--over");
+    });
+    ["dragleave", "dragend"].forEach((type) => {
+      dropZoneElement.addEventListener(type, (e) => {
+        dropZoneElement.classList.remove("drop-zone--over");
+      });
+    });
+    dropZoneElement.addEventListener("drop", (e) => {
+      e.preventDefault();
+      if (e.dataTransfer.files.length) {
+        inputElement.files = e.dataTransfer.files;
+        updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      }
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+}
+
+// Update the drop image to the image that was chosen
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  }
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
+  thumbnailElement.dataset.label = file.name;
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+};

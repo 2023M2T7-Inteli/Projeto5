@@ -19,15 +19,36 @@
                         <div class="formulario">
                             <h2>Sign in</h2>
                             <br>
-                            <form method="GET" action="/fazer_signin"></form>
-                                <label for="fname">Login:</label><br>
-                                <input type="text" id="fname" name="fname"><br>
-                                <label for="lname">Senha:</label><br>
-                                <input type="text" id="lname" name="lname"><br>
-                                <label for="lname">Corfirmar senha:</label><br>
-                                <input type="text" id="lname" name="lname"><br>
-                                <br><br>
-                                <input type="submit" class="envia" value="Cadastrar">
+                            <form method="POST" action="/registering">
+
+                                <fieldset>
+                                    <legend><label for="name_user"><strong> Login:</strong></label></legend><br>
+                                    <input type="text" id="name_user" name="name_user"><br>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend><label for="password_user"><strong>Senha:</strong> </label></legend><br>
+                                    <input type="text" id="password_user" name="password_user"><br>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend><label for="confirm_password_user"><strong> Corfirmar senha:</strong></label></legend><br>
+                                    <input type="password" id="confirm_password_user" name="confirm_password_user">
+                                </fieldset>
+
+                                <fieldset>
+                                    <input type="radio" name="type_user" value="Coletor">
+                                    <label for="type_user">Coletor</label><br>
+                                    <input type="radio" name="type_user" value="Pesquisador">
+                                    <label for="type_user">Pesquisador</label><br>
+                                </fieldset>
+                                    <br>
+                                    
+                                    <div class="button_login">
+                                        <button type="submit" class="envia">Register</button>
+                                    </div>
+
+                                </fieldset>
                             </form>
                         </div>
                     </div>

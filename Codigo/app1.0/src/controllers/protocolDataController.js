@@ -28,13 +28,13 @@ function getAllProtocolData(req, res) {
         const protocolData = {
             id: row.id_protocol,
             name: row.name_protocol,
+            objective: row.objective_protocol
         };
+
         res.json(protocolData);
     });
-}
+};
 
-<<<<<<< Updated upstream
-=======
 function getProtocolsInProgress(req, res) {
     // Getting the data to create the protocol table;
     db.all(`SELECT * FROM tbl_protocols WHERE status_protocol = "in_progress"`, (err, rows) => {
@@ -95,8 +95,8 @@ function getSamplesWithId(req, res) {
         } else {
             res.json(row);
         }
-    })
-}
+    });
+};
 
 function getStepWithId(req, res) {
     // Getting the data to create the samples table
@@ -176,14 +176,10 @@ function isObject(variable) {
     return typeof variable === 'object' && variable !== null && !Array.isArray(variable);
 };
 
->>>>>>> Stashed changes
-
 // Exporting modularized functions;
 module.exports = {
     getProtocolId,
-<<<<<<< Updated upstream
-    getAllProtocolData
-=======
+    getAllProtocolData,
     getAllProtocolData,
     getSamplesWithId,
     getStepWithId,
@@ -192,5 +188,4 @@ module.exports = {
     getProtocolsFinished,
     updateFields,
     updateStatus,
->>>>>>> Stashed changes
 };

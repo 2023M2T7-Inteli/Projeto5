@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+html {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1024px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    text-align: left;
+    background-color: #abb352;
+  }
+
+  body{
+    margin: auto;
+    margin: center;  
+    align-items: center;
+}
+
+.box_head_notificacao{
+    max-width: 750px;
+    margin: auto;
+}
+
+
+.head_notificacao{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.linha{
+    padding:10px 20px 30px 30px;
+    margin: auto;
+    max-width: 750px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
+}
+
+.divisoria_notificacao{
+    margin: 30px;
+}
+
+
+/* Menu */
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+}
+
+.sidenav a {
+  padding: 15px 15px 8px 15px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  opacity: 100%;
+}
+
+#logo_fim_rodape{
+  position: absolute;
+  bottom: 60px;
+  left: 16px;
+}
+
+
