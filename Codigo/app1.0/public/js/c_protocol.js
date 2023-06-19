@@ -19,13 +19,19 @@
 function sendDataProtocol() {
     const nameProtocolInput = document.getElementById('name_protocol');
     const objectiveProtocolInput = document.getElementById('objective_protocol');
+    const startDateProtocolInput = document.getElementById('startDate_protocol');
+    const endDateProtocolInput = document.getElementById('endDate_protocol');
 
     const nameProtocolValue = nameProtocolInput.value;
     const objectiveProtocolValue = objectiveProtocolInput.value;
+    const startDateProtocolValue = startDateProtocolInput.value;
+    const endDateProtocolValue = endDateProtocolInput.value;
 
     data = {
         name_protocol: nameProtocolValue,
-        objective_protocol: objectiveProtocolValue
+        objective_protocol: objectiveProtocolValue,
+        startDate_protocol: startDateProtocolValue,
+        endDate_protocol: endDateProtocolValue
     };
 
     $.post('/create-protocols', data, getIdProtocol, "text");
