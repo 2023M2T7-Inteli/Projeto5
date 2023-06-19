@@ -15,7 +15,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 startDate_protocol text,
                 endDate_protocol text,
                 status_protocol text,
-                coverImage_protocol blob)`,
+                coverImage_protocol text)`,
         (err) => {
             if (err) {
                 console.log('Erro ao criar tbl_protocols:', err.message);

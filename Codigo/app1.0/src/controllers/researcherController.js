@@ -26,11 +26,16 @@ function getProtocolsInProgress(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcherProtocolsProgress.html'))
 };
 
+function getProtocolsFinished(req, res) {
+    res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcherProtocolsFinished.html'))
+};
+
 // Exporting modularized functions;
 module.exports = {
     getHome,
     getCreateProtocol,
     getResearcherProfile,
     getNotificationsPage,
-    getProtocolsInProgress
+    getProtocolsInProgress,
+    getProtocolsFinished,
 };

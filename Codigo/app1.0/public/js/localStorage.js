@@ -47,6 +47,9 @@ function sendAnswers() {
     // take inputs
     let protocolInfo = JSON.parse(localStorage.getItem("protocolInfo"));
     // console.log(inputs);
+    let id_protocolElement = document.getElementById('id-protocolo');
+    let id_protocol = id_protocolElement.textContent;
+
     for (let i = 0; i < protocolInfo.input.length; i++) {
         let id_field = protocolInfo.input[i].id;
         let answer = protocolInfo.input[i].value;
@@ -55,8 +58,11 @@ function sendAnswers() {
         isConnected.then((response) => {
         if (response.ok) {
             $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
-            console.log("Status" + res);
-            // localStorage.clear(); -> Isso aqui faz os dados serem apagados, tenho que ver porque essas funções de callback não estão sendo chamadas;
+                console.log("Status" + res);
+                // localStorage.clear(); -> Isso aqui faz os dados serem apagados, tenho que ver porque essas funções de callback não estão sendo chamadas;
+            }, 'json');
+            $.post('/updateStatus', {id_protocol: id_protocol}, (res) => {
+                console.log("Status" + res);
             }, 'json');
         } else {
             console.log("Sem conexão, irmão");
