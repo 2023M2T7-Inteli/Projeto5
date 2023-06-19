@@ -65,15 +65,11 @@ app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgr
                         } else {
                             const modifiedHTML = data
                                 .replace('{{id_protocol}}', row.id_protocol)
+                                .replace('{{coverImage_protocol}}', row.coverImage_protocol)
                                 .replace('{{name_protocol}}', row.name_protocol)
                                 .replace('{{objective_protocol}}', row.objective_protocol);
                             res.set('Content-Type', 'text/html');
                             res.send(modifiedHTML);
-                            // fs.writeFile(path.join(__dirname + '/views/produtor/listingProtocols.html'), modifiedHTML, (err) => {
-                            //     if (err) throw err;
-
-                            //     res.sendFile(path.join(__dirname + '/views/produtor/listingProtocols.html'));
-                            // });
                         }
                     });
                 } else {

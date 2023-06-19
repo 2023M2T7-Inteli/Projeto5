@@ -11,7 +11,11 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         db.run(`CREATE TABLE IF NOT EXISTS tbl_protocols (
                 id_protocol INTEGER PRIMARY KEY,
                 name_protocol text, 
-                objective_protocol)`,
+                objective_protocol text,
+                startDate_protocol text,
+                endDate_protocol text,
+                status_protocol text,
+                coverImage_protocol blob)`,
         (err) => {
             if (err) {
                 console.log('Erro ao criar tbl_protocols:', err.message);
@@ -23,6 +27,8 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 id_sample INTEGER PRIMARY KEY AUTOINCREMENT,
                 name_sample integer, 
                 description_sample text,
+                startDate_sample text,
+                endDate_sample text,
                 id_protocol integer,
                 FOREIGN KEY ( id_protocol ) REFERENCES tbl_protocols( id_protocol ))`,
         (err) => {
@@ -74,6 +80,21 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
             } else {
                 console.log('A tbl_users foi criada com sucesso.');
             } 
+        });
+
+        // Table to list protocols with users (n x n relationship);
+        db.run(`CREATE TABLE IF NOT EXISTS tbl_users_x_protocols (
+                id_user INTEGER,
+                id_protocol INTEGER,
+                FOREIGN KEY (id_user) REFERENCES tbl_users(id_user),
+                FOREIGN KEY (id_protocol) REFERENCES tbl_protocols(id_protocol),
+                PRIMARY KEY (id_user, id_protocol))`,
+        (err) => {
+            if (err) {
+                console.log('Erro ao criar tbl_users_x_protocols:', err.message);
+            } else {
+                console.log('A tbl_users_x_protocols foi criada com sucesso.');
+            }
         });
     };
 });
