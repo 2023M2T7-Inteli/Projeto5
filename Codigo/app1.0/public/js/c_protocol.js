@@ -95,15 +95,33 @@ function getNamesAndDescsSamples() {
             const fieldContainers = stepContainer.querySelectorAll(".field-container");
 
             fieldContainers.forEach((fieldContainer) => {
-                const inputNameField = fieldContainer.querySelector("input[type='text'][id^='fieldNameID']");
                 const inputTypeField = fieldContainer.querySelector("[id^='fieldTypeID']");
+                const inputNameField = fieldContainer.querySelector("input[type='text'][id^='fieldNameID']");
+                let valueInput;
+                if (inputTypeField.value == "radio") {
+                    // take the inputs of the radio
+                    const nodeList = fieldContainer.querySelectorAll(".inputs-radio");
+                    // create a array to store the alternatives
+                    const listAlternatives = [];
+                    // for each input of the radio, push the value in the array
+                    nodeList.forEach((node) => {
+                        listAlternatives.push(node.value);
+                    });
+                    // create a variable to store the question and the alternatives in a object
+                    valueInput = { question: inputNameField.value, listAlternatives };
+                    valueInput = JSON.stringify(valueInput);
+                    console.log(valueInput);
 
-                console.log(inputNameField);
+                } else {
+                    valueInput = inputNameField.value;
+                }
+
+                console.log(valueInput);
                 console.log(inputTypeField);
 
                 const field = {
                     id_field: null,
-                    name_field: inputNameField.value,
+                    name_field: valueInput,
                     description_field: inputTypeField.value
                 }
 
@@ -300,6 +318,10 @@ function createNewField() {
         const fieldInputType = document.createElement("select");
         fieldInputType.id = "fieldTypeID" + fieldCount;
         fieldInputType.className = "inputs_creation";
+        // adding event listener to the select
+        fieldInputType.addEventListener("change", function() {
+            checkSelect(this);
+        });
 
         //Creating fieldInputType options
             const option1 = document.createElement("option");
@@ -313,12 +335,17 @@ function createNewField() {
             const option3 = document.createElement("option");
             option3.value = "number";
             option3.text = "Number";
+
+            const option4 = document.createElement("option");
+            option4.value = "radio";
+            option4.text = "Alternatives";
         //
     //
 
     fieldInputType.appendChild(option1);
     fieldInputType.appendChild(option2);
     fieldInputType.appendChild(option3);
+    fieldInputType.appendChild(option4);
 
     fieldFieldSet.appendChild(fieldLegend);
     fieldFieldSet.appendChild(fieldInputData);
@@ -329,3 +356,69 @@ function createNewField() {
     // running
     fieldsContainer.appendChild(divFieldContainer);
 };
+
+// check if the select is radio and if it is, create a button to add more alternatives
+function checkSelect(select) {
+    if (select.value === 'radio') {
+        console.log("radio");
+        // create a button to add more alternatives
+        const buttonAddAlternative = document.createElement("button");
+        // add text to the button
+        buttonAddAlternative.textContent = "Add alternative";
+        // add class to the button
+        buttonAddAlternative.className = "button_radio radio";
+        // take the fieldset outside the select
+        const fieldset = select.closest("fieldset");
+        // create a br element
+        const br = document.createElement("br");
+        // add the class radio to the br
+        br.className = "radio";
+        // add the button to the fieldset
+        fieldset.appendChild(buttonAddAlternative);
+        fieldset.appendChild(br);
+        // add event listener to the button
+        buttonAddAlternative.addEventListener("click", function() {
+            createNewAlternative(fieldset);
+        });
+    } else {
+        console.log("not radio");
+        try {
+            // take all the elements with the class "radio"
+            const radios = document.querySelectorAll(".radio");
+            // for each element, remove it
+            radios.forEach(radio => {
+                radio.remove();
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+function createNewAlternative(fieldset) {
+    // create a new input of type text
+    const inputAlternative = document.createElement("input");
+    // add a type to the input
+    inputAlternative.type = "text";
+    // add a class to the input
+    inputAlternative.className = "inputs-radio radio";
+    // append the input to the fieldset
+    fieldset.appendChild(inputAlternative);
+    // create a button to remove the input
+    const buttonRemoveAlternative = document.createElement("button");
+    // add text to the button
+    buttonRemoveAlternative.textContent = "remover";
+    // add class to the button
+    buttonRemoveAlternative.className = "button_radio radio";
+    // add event listener to the button
+    buttonRemoveAlternative.addEventListener("click", function() {
+        // remove the input
+        inputAlternative.remove();
+        // remove the button
+        buttonRemoveAlternative.remove();
+    });
+    // append the button to the fieldset
+    fieldset.appendChild(buttonRemoveAlternative);
+}
+
+
