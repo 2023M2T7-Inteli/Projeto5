@@ -34,6 +34,44 @@ app.get('/', (req, res) => {
 app.get('/home_researcher', researcherController.getHome);
 app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
+<<<<<<< Updated upstream
+=======
+app.get('/notificationsResearchers', researcherController.getNotificationsPage);
+app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
+app.get('/researcherProtocolsFinished', researcherController.getProtocolsFinished);
+
+// Working on this feature
+    app.get('/protocols/:id', (req, res) => {
+        const protocolId = req.params.id;
+
+        db.get('SELECT * FROM tbl_protocols WHERE id_protocol = ?', [protocolId], (err, row) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error getting info from db');
+            } else {
+                if (row) {
+                    fs.readFile(path.join(__dirname + '/views/produtor/listingProtocols.html'), 'utf8', (err, data) => {
+                        if (err) {
+                            console.error(err);
+                            res.status(500).send('Error reading HTML file');
+                        } else {
+                            const modifiedHTML = data
+                                .replace('{{id_protocol}}', row.id_protocol)
+                                .replace('{{coverImage_protocol}}', row.coverImage_protocol)
+                                .replace('{{name_protocol}}', row.name_protocol)
+                                .replace('{{objective_protocol}}', row.objective_protocol);
+                            res.set('Content-Type', 'text/html');
+                            res.send(modifiedHTML);
+                        }
+                    });
+                } else {
+                    res.status(404).send('Protocol not found');
+                }
+            }
+        });
+    });
+//
+>>>>>>> Stashed changes
 
 // Colectors endpoints;
 app.get('/colectorProtocol', collectorController.protocolGenerationPage);
@@ -47,6 +85,25 @@ app.post('/create-fields', protocolCreationController.creatingFields);
 // Reading protocol data;
 app.get('/read_id-protocols', protocolDataController.getProtocolId);
 app.get('/read_protocol-data', protocolDataController.getAllProtocolData);
+<<<<<<< Updated upstream
+=======
+app.get('/read_protocols-progress', protocolDataController.getProtocolsInProgress);
+app.get('/read_protocols-finished', protocolDataController.getProtocolsFinished);
+
+// Reading { samples, steps, field } data;
+app.post('/read_samples', protocolDataController.getSamplesWithId);
+app.post('/read_steps', protocolDataController.getStepWithId);
+app.post('/read_field', protocolDataController.getFieldWithId);
+
+// Updating input data
+app.post('/updateFields', protocolDataController.updateFields);
+
+// Updating status_protocol to "finished"
+app.post('/updateStatus', protocolDataController.updateStatus);
+
+// Route to check the internet connection
+app.get('/isConnected', isOnlineController.checkOnlineStatus);
+>>>>>>> Stashed changes
 
 // Server listening
 app.listen(8081, function(){

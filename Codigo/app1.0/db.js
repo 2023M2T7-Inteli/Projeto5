@@ -11,7 +11,15 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         db.run(`CREATE TABLE IF NOT EXISTS tbl_protocols (
                 id_protocol INTEGER PRIMARY KEY AUTOINCREMENT,
                 name_protocol text, 
+<<<<<<< Updated upstream
                 objective_protocol)`,
+=======
+                objective_protocol text,
+                startDate_protocol text,
+                endDate_protocol text,
+                status_protocol text,
+                coverImage_protocol text)`,
+>>>>>>> Stashed changes
         (err) => {
             if (err) {
                 console.log('Erro ao criar tbl_protocols:', err.message);
