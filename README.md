@@ -1,7 +1,7 @@
 # Inteli - Instituto de Tecnologia e Liderança 
 
 <p align="center">
-<a href= "https://www.inteli.edu.br/"><img src="[https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png](https://s3.amazonaws.com/gupy5/production/companies/26702/career/63484/images/2022-04-28_16-56_logo.png)" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
+<a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2022/04/28103439/Logo-Container.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
 # Apotich
@@ -31,7 +31,7 @@
 ## 📝 Descrição
 
 <br><br>
-Frase curta e de Impacto
+É do florescer que nascem os melhores frutos. Potich.
 <br><br>
 <p align="center">
 <img src="/Codigo/app1.0/public/img/LogoPotich.png"" alt="Logo Potich" border="0" width="200">
@@ -39,10 +39,10 @@ Frase curta e de Impacto
 
 <br><br>
 
-Descrição mais profunda
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus ultrices ligula, placerat fermentum lorem. Phasellus sagittis dignissim libero id euismod. Etiam et iaculis ex, at lacinia nisi. Suspendisse varius interdum enim id vestibulum. Aliquam molestie vehicula ullamcorper. Ut congue est ullamcorper nunc sollicitudin, posuere vulputate arcu efficitur. Nulla et semper sem. In massa mauris, ornare quis metus a, tristique volutpat eros. In placerat augue ac ornare convallis. Sed sagittis neque arcu. Donec a tortor vitae odio feugiat consequat. Duis non ante vel turpis laoreet eleifend. Suspendisse semper rhoncus sagittis.
-
-Nulla cursus nulla ut urna rhoncus convallis. Morbi sed elit pellentesque, ullamcorper sem sed, hendrerit metus. Duis quis convallis velit, eget ultricies turpis. In tincidunt, nulla id iaculis consequat, lectus neque eleifend urna, sed finibus elit felis a sapien. Duis ac orci metus. Vestibulum quis leo facilisis, egestas ante vitae, ultrices leo. In hac habitasse platea dictumst. Phasellus bibendum libero id risus consectetur laoreet. Ut sed tempus lacus. In rhoncus rhoncus felis eget sagittis. Nam eget augue interdum, imperdiet turpis sit amet, interdum ligula. Nulla rutrum risus id pellentesque porttitor. Aenean a ante vel nisi pretium dignissim vitae vitae magna. Nam pretium aliquam est.
+Nossa solução é uma aplicação web com duas rotas principais, cada uma delas focada em uma de nossas personas. 
+A primeira rota é destinada aos pesquisadores da Natura, ela terá a principal funcionalidade  de ser uma forma dinâmica e prática para que eles criem protocolos (formulários de preenchimento de pesquisa) de acordo com suas necessidades e desafios de pesquisa. Ademais, nessa parte, os pesquisadores  serão capazes de verificar quais os antigos protocolos que eles já fizeram, além de poderem baixar as informações dos mesmos.
+A segunda rota é destinada aos coletores de matéria-prima da Natura, ela terá a principal funcionalidade de conectar esses agricultores com os protocolos gerados pelos pesquisadores, além de garantir que eles possam preenchê-los com a maior praticidade e facilidade possível.
+Em suma, nossa solução é uma plataforma que vai conectar o trabalho de pesquisa dos coletores com a análise dos pesquisadores, fazendo com que o processo de compreensão das propriedades dos elementos da fauna brasileira sejam mais reconhecidos e melhor utilizados.
 
 ## 📁 Estrutura de pastas
 
