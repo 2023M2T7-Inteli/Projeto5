@@ -5,8 +5,9 @@ const db = require('../../db');
 
 function creatingProtocol(req, res) {
     // C - protocols
-    const { name_protocol, objective_protocol } = req.body;
-    db.run(`INSERT INTO tbl_protocols (name_protocol, objective_protocol) VALUES (?, ?)`, [ name_protocol, objective_protocol ], function(err) {
+    const { name_protocol, objective_protocol, startDate_protocol, endDate_protocol, coverImage_protocol } = req.body;
+    const status_protocol = "in_progress";
+    db.run(`INSERT INTO tbl_protocols (name_protocol, objective_protocol, startDate_protocol, endDate_protocol, status_protocol, coverImage_protocol) VALUES (?,?,?,?,?,?)`, [ name_protocol, objective_protocol, startDate_protocol, endDate_protocol, status_protocol, coverImage_protocol ], function(err) {
         if (err) {
             console.error(err);
             return res.status(500).send('Error creating protocol.');
