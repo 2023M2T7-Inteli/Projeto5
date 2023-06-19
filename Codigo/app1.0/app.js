@@ -47,6 +47,7 @@ app.get('/createProtocol', researcherController.getCreateProtocol);
 app.get('/researcher_profile', researcherController.getResearcherProfile);
 app.get('/notificationsResearchers', researcherController.getNotificationsPage);
 app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
+app.get('/researcherProtocolsFinished', researcherController.getProtocolsFinished);
 
 // Working on this feature
     app.get('/protocols/:id', (req, res) => {
@@ -99,6 +100,7 @@ app.post('/create-fields', protocolCreationController.creatingFields);
 app.get('/read_id-protocols', protocolDataController.getProtocolId);
 app.get('/read_protocol-data', protocolDataController.getAllProtocolData);
 app.get('/read_protocols-progress', protocolDataController.getProtocolsInProgress);
+app.get('/read_protocols-finished', protocolDataController.getProtocolsFinished);
 
 // Reading { samples, steps, field } data;
 app.post('/read_samples', protocolDataController.getSamplesWithId);
@@ -107,6 +109,9 @@ app.post('/read_field', protocolDataController.getFieldWithId);
 
 // Updating input data
 app.post('/updateFields', protocolDataController.updateFields);
+
+// Updating status_protocol to "finished"
+app.post('/updateStatus', protocolDataController.updateStatus);
 
 // Route to check the internet connection
 app.get('/isConnected', isOnlineController.checkOnlineStatus);
