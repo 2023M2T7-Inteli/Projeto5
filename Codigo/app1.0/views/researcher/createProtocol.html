@@ -18,8 +18,6 @@
         <a href="/createProtocol" > <img class="icon_menu" src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
         <p id="logo_fim_rodape">Apotich</p>
     </nav>
-
-
     
     <section class="icones_usabilidade">
         <img class="usabilidade_icone" src="export_icon.png" alt="Usabilidade Icone" onclick="">
@@ -40,6 +38,15 @@
                     <br>
                     <label for="objective_protocol"><strong>Objective:</strong> </label>
                     <input type="text" class="inputs_creation" name="objective_protocol" id="objective_protocol" required>
+                    <br>
+                    <label for="startDate_protocol"><strong>Start date:</strong> </label>
+                    <input type="date" class="inputs_creation" name="startDate_protocol" id="startDate_protocol" required>
+                    <br>
+                    <label for="endDate_protocol"><strong>End date:</strong> </label>
+                    <input type="date" class="inputs_creation" name="endDate_protocol" id="endDate_protocol" required>
+                    <br>
+                    <label for="coverImage_protocol"><strong>Cover image:</strong> </label>
+                    <input type="file" class="inputs_creation" name="coverImage_protocol" id="coverImage_protocol" accept="image/png, image/jpeg" required>
                     <br>
                     <button type="button" class="button_sample" onclick="createSamples()">Add sample</button>
                         <div class="samples-container">
