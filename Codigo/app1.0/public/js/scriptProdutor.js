@@ -9,6 +9,8 @@ function getDinamicFormsData() {
       method: 'GET',
       dataType: 'json',
     }).done((res) => {
+      const nomeProtocoloElement = document.getElementById("nome-do-protocolo");
+      nomeProtocoloElement.textContent = res.name;
       $('#nome-do-protocolo').text(res.name);
       $('#objetivo-protocolo').text(res.objective);
       $('#id-protocolo').text(res.id);

@@ -35,6 +35,7 @@ module.exports = {
     getHome,
     getCreateProtocol,
     getResearcherProfile,
+    getResearcherProfile,
     getNotificationsPage,
     getProtocolsInProgress,
     getProtocolsFinished,

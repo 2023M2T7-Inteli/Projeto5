@@ -33,7 +33,7 @@ function getAllProtocolData(req, res) {
 
         res.json(protocolData);
     });
-}
+};
 
 function getProtocolsInProgress(req, res) {
     // Getting the data to create the protocol table;
@@ -95,8 +95,8 @@ function getSamplesWithId(req, res) {
         } else {
             res.json(row);
         }
-    })
-}
+    });
+};
 
 function getStepWithId(req, res) {
     // Getting the data to create the samples table
@@ -176,10 +176,10 @@ function isObject(variable) {
     return typeof variable === 'object' && variable !== null && !Array.isArray(variable);
 };
 
-
 // Exporting modularized functions;
 module.exports = {
     getProtocolId,
+    getAllProtocolData,
     getAllProtocolData,
     getSamplesWithId,
     getStepWithId,
