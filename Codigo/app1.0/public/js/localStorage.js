@@ -27,6 +27,16 @@ function getFieldsAnswers() {
                 }
                 reader.readAsDataURL(input.files[0]);
             }
+        } else if(input.type === 'radio') {
+            // take the checked radio button
+            if (input.checked) {
+                const inputObj = {
+                    type: input.type,
+                    value: input.value,
+                    id: input.id
+                };
+                protocolInfo.input.push(inputObj); 
+            }
         } else {
             const inputObj = {
                 type: input.type,
