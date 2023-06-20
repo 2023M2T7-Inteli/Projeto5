@@ -31,7 +31,7 @@
 ## 📝 Descrição
 
 <br><br>
-É do florescer que nascem os melhores frutos. Potich.
+Somos a flor que pode te proporcionar os melhores fruto.
 <br><br>
 <p align="center">
 <img src="/Codigo/app1.0/public/img/LogoPotich.png"" alt="Logo Potich" border="0" width="200">
