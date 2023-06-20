@@ -58,7 +58,7 @@ function clickCard() {
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener('click', () => {
             const protocolId = cards[i].getAttribute('data-id');
-            window.location.href = `/protocols/${protocolId}`;
+            window.location.href = `/protocolsFinished/${protocolId}`;
         });
     };
 };
