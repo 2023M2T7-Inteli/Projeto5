@@ -1,4 +1,4 @@
-/* Researchers' view */
+/* Producers' view */
 * {
     margin: 0;
   }
@@ -10,7 +10,7 @@
     align-items: center;
     align-content: center;
     margin: auto;
-    background-color: #abb352;
+    background-color: #52B362;
   }
 
   body{
@@ -181,7 +181,7 @@ main{
   }
 
   .card:hover{
-    box-shadow: 0 10px 10px 0 rgba(175, 177, 37, 0.518), 0 6px 20px 0 rgba(175, 177, 37, 0.518);
+    box-shadow: 0 10px 10px 0 rgba(77, 133, 86);
 
   }
 
@@ -197,39 +197,6 @@ div.card{
 
 .icon_home {
   margin-left: 1em;
-}
-
-/* Botão Criar Protocolo */
-
-
-.botao_criar{
-  max-width: 315px;
-  max-height: 70px;
-  padding: 20px;
-  background-color: white;
-  transition-duration: 0.4s;
-  display: flex;
-  font-size: 16px;
-  color: black;
-  border: #ced746;
-  border-style: solid;
-  border-radius: 15px;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  text-align: center;
-  margin: auto;
-}
-
-.botao_criar p{
-  margin-left: 10px;
-}
-
-.botao_criar:hover{
-  background-color: #AD961D;
-  color: white;
-  border-color: #AD961D;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -271,7 +238,7 @@ strong{
 }
 
 .button_sample{
-  background-color:#abb352;
+  background-color:#52B362;
   transition-duration: 0.4s;
   font-size: 16px;
   color: black;
@@ -284,7 +251,7 @@ strong{
 }
 
 .button_sample:hover{
-  background-color: #AD961D;
+  background-color: #4D8556;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -295,14 +262,14 @@ strong{
   font-size: 14px;
   color: black;
   width: 100px;
-  border:#abb352;
+  border:#52B362;
   border-style: solid;
   height: 25px;
   border-radius: 15px;
   margin: 10px;
 }
 .button_step:hover{
-  background-color: #F1D857;
+  background-color: #63D776;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   border: none;
@@ -319,7 +286,7 @@ form{
 legend{
     text-align: left;
     color: white;
-    background-color: #abb352;
+    background-color: #52B362;
     border-radius: 15px;
     font-size: 16px;
     margin-top: 5px;
@@ -410,11 +377,11 @@ input{
 .button1 {
   background-color: white; 
   color: black; 
-  border: 2px solid #f1d857;
+  border: 2px solid #63D776;
 }
 
 .button1:hover {
-  background-color: #f1d857;
+  background-color: #63D776;
   color: white;
 }
 
@@ -466,13 +433,13 @@ input{
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #AD961D; 
+  background: #4D8556; 
   border-radius: 15px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:#F1D857; 
+  background:#63D776; 
 }
 
 
@@ -480,7 +447,7 @@ input{
 
 .voltar_button{
   border-style: none;
-  background-color: #abb352;
+  background-color: #52B362;
 }
 .voltar{
   position: absolute;
