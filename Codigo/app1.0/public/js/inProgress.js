@@ -64,3 +64,34 @@ function clickCard() {
 };
 
 getAllProtocols();
+
+// Filter part
+
+// add a event listener to the button search
+const searchButton = document.getElementById('button_search');
+searchButton.addEventListener('click', () => {
+    // get the value of the input
+    const searchInput = document.getElementById('espaco_busca').value;
+
+    // get all the cards names
+    const cards = document.getElementsByClassName('card');
+    console.log(cards);
+
+    // loop through all the cards and reset their display style
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = 'block';
+    }
+
+    // filter the cards based on the search input
+    Array.from(cards).map(card => {
+        // get the card title
+        const cardTitle = card.getElementsByTagName('h3')[0].textContent;
+        console.log(cardTitle);
+        // if the card title includes the search input, show the card
+        if (cardTitle.includes(searchInput)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
