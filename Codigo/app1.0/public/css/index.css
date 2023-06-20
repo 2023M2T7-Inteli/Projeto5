@@ -1,25 +1,11 @@
+/* View of the first screens (Log in, Sign in and error) */
 * {
-<<<<<<< Updated upstream
-    margin: 0;
-  }
-  
-  html {
-    font-family: 'Poppins', sans-serif;
-    max-width: 1080px;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-    background-color: #52B362;
-  }
-=======
   margin: 0;
 }
->>>>>>> Stashed changes
 
 html {
   font-family: 'Poppins', sans-serif;
-  max-width: 1024px;
+  max-width: 1080px;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -27,585 +13,136 @@ html {
   background-color: #52B362;
 }
 
-<<<<<<< Updated upstream
-  picture{
-    margin: 25px;
-  }
-
-  h1{
-    margin: 25px;
-  }
-
-  h2,h3{
-    margin: 15px;
-  }
-
-
-  body{
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin: 15px;
-    margin-left: 300px;
-    margin-right: 300px;
-  }
-=======
-body{
-  margin-bottom: 30px;
+div{
+  margin: 15px;
 }
 
-
-/* Menu */
-.sidenav {
-  height: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: white;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 50px;
-}
->>>>>>> Stashed changes
-
-.sidenav a {
-  padding: 15px 15px 8px 15px;
-  text-decoration: none;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  opacity: 100%;
-}
-
-#logo_fim_rodape{
-  position: absolute;
-  bottom: 60px;
-  left: 16px;
-}
-
-.icon_menu:hover{
-  scale: 1.1;
-}
-
-
-
-/* Barra busca */
-
-.busca_caixa{
-margin-top: 15px;
-margin-bottom: 15px;
-align-items: center;
-
-}
-
-.barra_busca{
-max-width: 785px;
-margin: auto;
-display: flex;
-border-style: none;
-border-radius: 15px;
-padding-top: 10px;
-padding-bottom: 10px;
-}
-
-#button_search{
-border-style: none;
-border-radius: 0px 15px 15px 0px;
-background-color: white;
-width: 10%;
-
-}
-
-.barra_busca input{
-width: 735px;
-height: 37px;
-border-radius: 15px 0px 0px 15px;
-}
-
-#espaco_busca{
-border-style: none;
-background-color: white;
-}
-
-.busca_icon {
-width: 40%;
-}
-
-main{
-max-width: 785px;
-background-color: white;
-border-radius: 15px;
-padding-top: 25px;
-padding-bottom: 25px;
-align-items: center;
-align-content: center;
-align-self: center;
-margin: auto;
-}
-
-
-/* Barra Usabilidade */
-.icones_usabilidade{
-position: absolute;
-top: 8px;
-display: flex;
-flex-direction: column;
-right: 16px;
-z-index: 1;
-background-color: white;
-padding-top: 30px;
-padding-bottom: 30px;
-border-radius: 15px;
-padding-inline: 15px;
-}
-
-.usabilidade_icone{
-margin-top: 15px;
-margin-bottom: 15px;
-}
-
-.usabilidade_icone:hover{
-scale: 1.1;
-}
-
-/* Cabeçalho inicial*/
-.head_home{
-  margin: 30px;
-}
-
-.caixa_maior{
-  display: flex;
-  max-width: 645px;
-  justify-content: space-between;
-  color: #ced746;
-  align-items: center;
-  margin: auto;
-}
-
-.coletor {
-  color: #52B362
+picture{
+  margin: 10px;
 }
 
 h1{
-  text-align: left;
-  font-size: 2em;
-
+  margin-top: 10px;
+  margin-bottom: 10PX;
 }
 
-/* Tipos de protocolo  */
+h2,h3{
+  margin: 15px;
+}
 
-.tipos_protocolo{
+body{
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 15px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+nav{
+  /* background-color: #52B362; */
+  border: #4D8556;
+  border-style: dashed;
+  width: 70%;
+  border-radius: 15px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
-  margin: 30px;
-  max-width: 750px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }
 
-.protocolo_opcao{
-  width: 100%;
-  border-radius: 15px 15px 0px 0px;
-
+.notificacao, .home, .perfil{
+  width: 30%;
 }
 
-.card{
-  width: 250px;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+.notificacao:hover, .home:hover, .perfil:hover{
+  width: 40%;
 }
-
-.card:hover{
-  box-shadow: 0 10px 10px 0 rgba(77, 133, 86, 100%);
-
-}
-
-div.container {
-  padding: 10px;
-}
-
-div.card{
-width: 300px;
-margin-left: 35px;
-margin-right: 45px;
-}
-
-.icon_home {
-margin-left: 1em;
-}
-
-/* Creat Protocol */
-
-.main_creat_protocol{
-overflow:auto;
-height: 70vh;
-min-width: 70%;
-margin: auto; 
-}
-
-.body_creat_protocol{
-max-width: 730px;
-margin: auto;
-}
-
-.titulo_creat_protocolo{
-margin: 30px;
-display: flex;
-justify-content: space-between;
-color: white;
-}
-
-.main_creation{
-max-width: 380px;
-margin: auto;
-align-content: flex-start;
-}
-
-strong{
-text-align: left;
-}
-
-.inputs_creation{
-display: flex;
-flex-direction: column;
-margin: auto;
-}
-
-/* .button_sample{
-background-color:#52B362;
-transition-duration: 0.4s;
-font-size: 16px;
-color: black;
-width: 150px;
-border: none;
-height: 30px;
-margin: 15px;
-border-radius: 15px;
-
-}
-
-.button_sample:hover{
-background-color: #4D8556;
-color: white;
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.button_step{
-background-color: white;
-transition-duration: 0.4s;
-font-size: 14px;
-color: black;
-width: 100px;
-border:#52B362;
-border-style: solid;
-height: 25px;
-border-radius: 15px;
-margin: 10px;
-}
-.button_step:hover{
-background-color: #63D776;
-color: white;
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-border: none;
-} */
-
 
 form{
-margin: 20px;
-border-radius: 15px;
-text-align: left;
-font-weight: 400;
-}
+  margin: 20px;
+  border-radius: 15px;
+  /* border: #73FC8A;
+  border-style: dashed; */
+  text-align: left;
+  font-weight: 400;
+  }
 
 legend{
-  text-align: left;
-  color: white;
-  background-color: #52B362;
-  border-radius: 15px;
-  font-size: 16px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+    text-align: left;
+    color: white;
+    background-color: #52B362;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 
 fieldset{
-/* border-color:#BDBDBD; */
-border: 0;
-border-color: transparent;
-border-radius: 15px ;
-margin-bottom: 10px;
-}
-
-#sampleFieldset{
-background-color: #e0e88a;
-
-}
-
-#stepFieldset{
-background-color: #dee3a5;
-}
-
-#fieldFieldset{
-background-color: #f4f7d2;
+  border-color:#BDBDBD;
+  border-radius: 15px ;
+  margin-bottom: 10px;
 }
 
 legend{
-margin-left: 10px;
-padding: 5px;
+  margin-left: 10px;
+  padding: 5px;
 }
 
 input{
-font-family: Georgia, 'Times New Roman', Times, serif;
-border-radius: 15px;
-border-color: white;
-border-style: solid;
-background: #dfdfdf;
-padding: 10px;
-font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px;
+  border-color: white;
+  border-style: solid;
+  background: #dfdfdf;
+  padding: 10px;
+  font-size: 14px;
 }
 
-/* Options of form  */
-.icons_options{
-background-color: #dfdfdf;
-border-radius: 15px;
-padding: 15px;
-margin-bottom: 2em;
+.button_login{
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }
 
-.form_type_icons{
-margin-inline: 10px;
-margin-top: 15px;
+.envia{
+  background-color: #52B362;
+  transition-duration: 0.4s;
+  font-size: 16px;
+  color: white;
+  width: 175px;
+  border: none;
+  height: 50px;
+  border-radius: 15px;
 }
 
-.form_type_icons:hover{
-scale: 1.1;
+.envia:hover{
+  background-color: #4D8556;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-
-/* Perfil aba */
-.perfil_icone{
-margin-inline: 15px;
-margin-top: 15px;
-border-radius: 15px;
-
-}
-
-.perfil_icone:hover{
-scale: 1.1;
-box-shadow:0 10px 10px 0 rgba(77, 133, 86, 100%);
-}
-
-.button {
-border: none;
-width: 250px;
-color: white;
-padding: 16px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 10px 2px;
-transition-duration: 0.4s;
-cursor: pointer;
-border-radius: 20px;
-}
-
-.button1 {
-background-color: white; 
-color: black; 
-border: 2px solid #63D776;
-}
-
-.button1:hover {
-background-color: #63D776;
-color: white;
-}
-
-/* Notificação */
-
-.main_notificacao{
-max-height: 500px;
-overflow: auto;
-}
-
-.box_head_notificacao{
-max-width: 750px;
-margin: auto;
-}
-
-
-.head_notificacao{
-display: flex;
-justify-content: space-between;
-margin-top: 40px;
-margin-bottom: 20px;
-color: white;
-}
-
-.linha{
-padding:10px 20px 30px 30px;
-margin: auto;
-max-width: 750px;
-background-color: white;
-border-radius: 15px;
-box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
-}
-
-.divisoria_notificacao{
-margin: 30px;
-}
-
-/* overflow mini page */
-/* width */
-::-webkit-scrollbar {
-width: 10px;
-border-radius: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-border-radius: 15px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-background: #4D8556; 
-border-radius: 15px;
-
-
-
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-background:#63D776; 
-
-}
-
-
-/* Back */
-
-.voltar_button{
-border-style: none;
-background-color: #52B362;
-}
-.voltar{
+.volta_button{
 position: absolute;
-top: 8px;
-right: 16px;
-}
-
-  /* .notificacao, .home, .perfil{
-    width: 30%;
-  }
-
-  .notificacao:hover, .home:hover, .perfil:hover{
-    width: 40%;
-  } */
-
-<<<<<<< Updated upstream
-  form{
-    margin: 25px;
-=======
-
-  /* Outras partes ja coloadas */
-  /* form{
-    margin: 20px;
->>>>>>> Stashed changes
-    border-radius: 15px;
-    border: #73FC8A;
-    border-style: dashed;
-    padding: 15px;
-    }
-
-  input{
-    border-radius: 15px;
-<<<<<<< Updated upstream
-    border-color: black;
-=======
-    border-color: white;
-    border-style: solid;
-    background: #dfdfdf;
-    padding: 10px;
-    font-size: 14px;
-  } */
-
-  /* Main part */
-
-  .button_login{
-    text-align: center;
-    align-items: center;
-    align-self: center;
-    align-content: center;
->>>>>>> Stashed changes
-  }
-
-  .envia{
-    background-color: #52B362;
-    transition-duration: 0.4s;
-    font-size: 16px;
-    color: white;
-    width: 175px;
-    border: none;
-    height: 50px;
-    border-radius: 15px;
-  }
-
-  .envia:hover{
-    background-color: #4D8556;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-
-  .volta_button{
-  position: absolute;
-  top: 25px;
-  left: 550px;
+top: 25px;
+left: 550px;
 }
 
 .verde{
-  background-color: #4D8556;
-  color: white;
-  border-radius: 15px;
-  padding: 15px;
+background-color: #4D8556;
+color: white;
+border-radius: 15px;
+padding: 15px;
 } 
 
-<<<<<<< Updated upstream
-input{
-  border-radius: 15px;
-  border-color: #4D8556;
-=======
 footer{
-  display: block;
-  }
-
-  /* Drop image */
-
-.drop-zone {
-  max-width: 200px;
-  height: 200px;
-  padding: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  cursor: pointer;
-  color: #CCCCCC;
-  border: 4px dashed #009578;
-  border-radius: 10px;
-  margin: auto;
+display: block;
 }
-.drop-zone--over {
->>>>>>> Stashed changes
-  border-style: solid;
-}
-
-footer{
-  display: block;
-  }
+  
+  
+  
+  
