@@ -69,7 +69,6 @@ function sendAnswers() {
         if (response.ok) {
             $.post('/updateFields', {answer:answer,id_field:id_field}, (res) => {
                 console.log("Status" + res);
-                // localStorage.clear(); -> Isso aqui faz os dados serem apagados, tenho que ver porque essas funções de callback não estão sendo chamadas;
             }, 'json');
             $.post('/updateStatus', {id_protocol: id_protocol}, (res) => {
                 console.log("Status" + res);
@@ -78,7 +77,9 @@ function sendAnswers() {
             console.log("Sem conexão, irmão");
         }
         }).catch((error) => {
-        console.log("Error checking connection: " + error);
+            console.log("Error checking connection: " + error);
         });
     }
+    alert('Form response sent successfully!');
+    window.location.href = '/researcherProtocolsFinished';
 };
