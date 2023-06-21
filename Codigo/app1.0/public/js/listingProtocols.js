@@ -101,6 +101,36 @@ function getDinamicFormsData() {
                                     div.append(inputRadio, labelRadio);
                                     });
                     
+                                } else if(res[i].description_field === 'checkbox') {
+                                    // turn the string into a json
+                                  let jsonResponse = JSON.parse(res[i].name_field);
+                                  console.log(jsonResponse);
+                                  // store the question in a variable
+                                  let question = jsonResponse.question;
+                                  label.text(question);
+                                  
+                                  let listAlternatives = jsonResponse.listAlternatives;
+                                  console.log(listAlternatives);
+                                  // map each alternative in the list, create and add the elements to the html
+                                  listAlternatives.map((alternative) => {
+                                    console.log(alternative);
+                                    // create a br element
+                                    let br = $('<br>');
+                                    // add the br to the html
+                                    div.append(br);
+                                    // select the div to add the elements
+                                    const inputCheck = $('<input>');
+                                    inputCheck.attr('type', 'checkbox');
+                                    // put the text of the alternative
+                                    const labelCheck = $('<label>');
+                                    labelCheck.text(alternative);
+                                    // set the value of the radio equals to the alternative
+                                    inputCheck.attr('value', alternative);
+                                    // add the name of the radio equals to the question
+                                    inputCheck.attr('name', question + res[i].id_field);
+                                    // add the elements to the html
+                                    div.append(inputCheck, labelCheck);
+                                  });
                                 } else {
                                     div.append(input);
                                     input.attr('type', 'text');
