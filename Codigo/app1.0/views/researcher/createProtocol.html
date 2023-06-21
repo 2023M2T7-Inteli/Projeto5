@@ -105,6 +105,28 @@
                             display: block;
                         }
                     </style>
+                    <!-- Esse style de baixo eu adicionei para o botão de deletar elementos -->
+                    <style>
+                        .delete{
+                            background-color: white;
+                            border-radius: 15px;
+                            border: 2px solid #52b362;
+                            width: 72px;
+                            height: 72px;
+                        }
+                
+                        .delete:hover{
+                            background-color: #52b362;
+                            transition-duration: 0.4s;
+                        }
+                
+                        .trash-natura-icon:hover{
+                            transition-duration: 0.4s;
+                            filter: invert(100%);
+                            width: 45px;
+                            height: 45px;
+                        }
+                    </style>
                     <script>
                         document.addEventListener('click', function(e) {
                             const selectContainer = document.querySelector('.custom-select');
