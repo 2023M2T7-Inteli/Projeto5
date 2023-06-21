@@ -37,7 +37,7 @@ function getAllProtocolData(req, res) {
 
 function getProtocolsInProgress(req, res) {
     // Getting the data to create the protocol table;
-    db.all(`SELECT * FROM tbl_protocols WHERE status_protocol = "in_progress"`, (err, rows) => {
+    db.all(`SELECT * FROM tbl_protocols WHERE status_protocol = "in_progress" ORDER BY id_protocol DESC`, (err, rows) => {
         if (err) {
             console.error(err);
             res.status(500).send('Error reading protocols data');
@@ -47,7 +47,8 @@ function getProtocolsInProgress(req, res) {
         const protocolData = rows.map(row => ({
             id: row.id_protocol,
             name: row.name_protocol,
-            objective: row.objective_protocol
+            objective: row.objective_protocol,
+            coverImage: row.coverImage_protocol,
         }));
         
         console.log(protocolData);
@@ -57,7 +58,7 @@ function getProtocolsInProgress(req, res) {
 
 function getProtocolsFinished(req, res) {
     // Getting the data to create the protocol table;
-    db.all(`SELECT * FROM tbl_protocols WHERE status_protocol = "finished"`, (err, rows) => {
+    db.all(`SELECT * FROM tbl_protocols WHERE status_protocol = "finished" ORDER BY id_protocol DESC`, (err, rows) => {
         if (err) {
             console.error(err);
             res.status(500).send('Error reading protocols data');
@@ -67,7 +68,8 @@ function getProtocolsFinished(req, res) {
         const protocolData = rows.map(row => ({
             id: row.id_protocol,
             name: row.name_protocol,
-            objective: row.objective_protocol
+            objective: row.objective_protocol,
+            coverImage: row.coverImage_protocol,
         }));
         
         console.log(protocolData);

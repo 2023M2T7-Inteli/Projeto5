@@ -177,7 +177,7 @@ function sendDataField(id_step, field) {
         field.id_field = res.id_field;
         console.log("Aqui está o res da criação de field: " + field.id_field);
         alert('Creation of protocols done successfully!');
-        window.location.href = '/collectorProtocol';
+        window.location.href = '/researcherProtocolsProgress';
     }, "json");
 };
 
