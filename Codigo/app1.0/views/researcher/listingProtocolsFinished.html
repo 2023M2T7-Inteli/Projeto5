@@ -5,9 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"/>
-        <link rel="stylesheet" href="/index.css" />
+        <link rel= 'stylesheet' href="/index2.css"/>
+        <link rel="stylesheet" href="/index.css"/>
         <title>Protocolo</title>
     </head>
+    <section class="icones_usabilidade">
+        <button id="download-pdf">
+            <img class="usabilidade_icone" src="/export_icon.png" alt="Usabilidade Icone">
+        </button>
+        <img class="usabilidade_icone" src="/trash_icon.png" alt="Usabilidade Icone" onclick="">
+    </section>
+    <script src="https://unpkg.com/pdf-lib"></script>
     <body>
         <header></header>
         <section id="" class="main-section">
@@ -20,9 +28,6 @@
                 <div id="objetivo-protocolo">{{objective_protocol}}</div>
             </div>
             <section id="dynamic-form"></section>
-            <!-- <div style="display: flex; justify-content: center;">
-                <button id="send-button"">Enviar</button>
-            </div> -->
         </section>
         <footer></footer>
         <script src="/listingProtocolsFinished.js" defer></script>
