@@ -98,7 +98,7 @@ function getNamesAndDescsSamples() {
                 const inputTypeField = fieldContainer.querySelector("[id^='fieldTypeID']");
                 const inputNameField = fieldContainer.querySelector("input[type='text'][id^='fieldNameID']");
                 let valueInput;
-                if (inputTypeField.value == "radio") {
+                if (inputTypeField.value === "radio") {
                     // take the inputs of the radio
                     const nodeList = fieldContainer.querySelectorAll(".inputs-radio");
                     // create a array to store the alternatives
@@ -112,6 +112,19 @@ function getNamesAndDescsSamples() {
                     valueInput = JSON.stringify(valueInput);
                     console.log(valueInput);
 
+                } else if(inputTypeField.value === 'checkbox') {
+                    // take the inputs of the checkbox
+                    const nodeList = fieldContainer.querySelectorAll(".inputs-check");
+                    // create a array to store the alternatives
+                    const listAlternatives = [];
+                    // for each input of the radio, push the value in the array
+                    nodeList.forEach((node) => {
+                        listAlternatives.push(node.value);
+                    });
+                    // create a variable to store the question and the alternatives in a object
+                    valueInput = { question: inputNameField.value, listAlternatives };
+                    valueInput = JSON.stringify(valueInput);
+                    console.log(valueInput);
                 } else {
                     valueInput = inputNameField.value;
                 }
@@ -234,6 +247,7 @@ function createSamples() {
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.ariaHidden = "true";
+    deleteButton.textContent = 'Delete';
     deleteButton.onclick = deleteElement;
 
     const imgButtonDelete = document.createElement('img');
@@ -298,6 +312,7 @@ function createNewStep() {
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.ariaHidden = "true";
+    deleteButton.textContent = 'Delete';
     deleteButton.onclick = deleteElement;
 
     const imgButtonDelete = document.createElement('img');
@@ -416,6 +431,10 @@ function createNewField() {
             const option4 = document.createElement("option");
             option4.value = "radio";
             option4.text = "Alternatives";
+
+            const option5 = document.createElement("option");
+            option5.value = "checkbox";
+            option5.text = "Checkboxes";
         //
     //
 
@@ -423,11 +442,13 @@ function createNewField() {
     fieldInputType.appendChild(option2);
     fieldInputType.appendChild(option3);
     fieldInputType.appendChild(option4);
+    fieldInputType.appendChild(option5);
 
     const deleteButton = document.createElement("button");
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.ariaHidden = "true";
+    deleteButton.textContent = 'Delete';
     deleteButton.onclick = deleteElement;
 
     const imgButtonDelete = document.createElement('img');
@@ -473,6 +494,27 @@ function checkSelect(select) {
         buttonAddAlternative.addEventListener("click", function() {
             createNewAlternative(fieldset);
         });
+    } else if(select.value === 'checkbox') {
+        console.log("checkbox");
+        // create a button to add more alternatives
+        const buttonAddCheck = document.createElement("button");
+        // add text to the button
+        buttonAddCheck.textContent = "Add checkbox";
+        // add class to the button
+        buttonAddCheck.className = "button_check check";
+        // take the fieldset outside the select
+        const fieldset = select.closest("fieldset");
+        // create a br element
+        const br = document.createElement("br");
+        // add the class radio to the br
+        br.className = "check";
+        // add the button to the fieldset
+        fieldset.appendChild(buttonAddCheck);
+        fieldset.appendChild(br);
+        // add event listener to the button
+        buttonAddCheck.addEventListener("click", function() {
+            createNewCheckbox(fieldset);
+        });
     } else {
         console.log("not radio");
         try {
@@ -512,6 +554,32 @@ function createNewAlternative(fieldset) {
     });
     // append the button to the fieldset
     fieldset.appendChild(buttonRemoveAlternative);
+}
+
+function createNewCheckbox(fieldset) {
+    // create a new input of type text
+    const inputCheck = document.createElement("input");
+    // add a type to the input
+    inputCheck.type = "text";
+    // add a class to the input
+    inputCheck.className = "inputs-check check";
+    // append the input to the fieldset
+    fieldset.appendChild(inputCheck);
+    // create a button to remove the input
+    const buttonRemoveCheck = document.createElement("button");
+    // add text to the button
+    buttonRemoveCheck.textContent = "remover";
+    // add class to the button
+    buttonRemoveCheck.className = "button_radio radio";
+    // add event listener to the button
+    buttonRemoveCheck.addEventListener("click", function() {
+        // remove the input
+        inputCheck.remove();
+        // remove the button
+        buttonRemoveCheck.remove();
+    });
+    // append the button to the fieldset
+    fieldset.appendChild(buttonRemoveCheck);
 }
 
 // quando o html estiver carregado
