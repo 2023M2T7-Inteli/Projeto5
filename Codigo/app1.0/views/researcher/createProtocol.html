@@ -46,7 +46,11 @@
                     <input type="date" class="inputs_creation" name="endDate_protocol" id="endDate_protocol" required>
                     <br>
                     <label for="coverImage_protocol"><strong>Cover image:</strong> </label>
-                    <input type="file" class="inputs_creation" name="coverImage_protocol" id="coverImage_protocol" accept="image/png, image/jpeg" required>
+                    <div class="drop-zone">
+                        <button class="btn"></button>
+                        <span class="drop-zone__prompt"></span>
+                        <input type="file" class="inputs_creation" name="coverImage_protocol" id="coverImage_protocol" accept="image/png, image/jpeg" required>
+                    </div>
                     <br>
                     <button type="button" class="button_sample" onclick="createSamples()">Add sample</button>
                         <div class="samples-container">
