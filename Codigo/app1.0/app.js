@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
+const PDFDocument = require('pdf-lib');
 
 const app = express();
 
@@ -81,6 +82,38 @@ app.get('/researcherProtocolsFinished', researcherController.getProtocolsFinishe
     });
 //
 
+// Working on this feature
+    app.get('/protocolsFinished/:id', (req, res) => {
+        const protocolId = req.params.id;
+
+        db.get('SELECT * FROM tbl_protocols WHERE id_protocol = ?', [protocolId], (err, row) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error getting info from db');
+            } else {
+                if (row) {
+                    fs.readFile(path.join(__dirname + '/views/researcher/listingProtocolsFinished.html'), 'utf8', (err, data) => {
+                        if (err) {
+                            console.error(err);
+                            res.status(500).send('Error reading HTML file');
+                        } else {
+                            const modifiedHTML = data
+                                .replace('{{id_protocol}}', row.id_protocol)
+                                .replace('{{coverImage_protocol}}', row.coverImage_protocol)
+                                .replace('{{name_protocol}}', row.name_protocol)
+                                .replace('{{objective_protocol}}', row.objective_protocol);
+                            res.set('Content-Type', 'text/html');
+                            res.send(modifiedHTML);
+                        }
+                    });
+                } else {
+                    res.status(404).send('Protocol not found');
+                }
+            }
+        });
+    });
+//
+
 // Colectors endpoints;
 app.get('/home_collector', collectorController.getHome);
 app.get('/collectorProtocol', collectorController.protocolGenerationPage);
@@ -110,10 +143,10 @@ app.post('/read_field', protocolDataController.getFieldWithId);
 // Updating input data
 app.post('/updateFields', protocolDataController.updateFields);
 
-// Updating status_protocol to "finished"
+// Updating status_protocol to "finished";
 app.post('/updateStatus', protocolDataController.updateStatus);
 
-// Route to check the internet connection
+// Route to check the internet connection;
 app.get('/isConnected', isOnlineController.checkOnlineStatus);
 
 // Server listening
