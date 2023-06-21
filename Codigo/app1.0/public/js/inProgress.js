@@ -3,17 +3,25 @@ let getProtocolDesc;
 
 function getAllProtocols() {
     $.get('/read_protocols-progress', (res) => {
+        const main = document.getElementById("main")
+        const columnWrapper = document.createElement('div');
+        columnWrapper.className = 'column-wrapper';
+
         res.forEach(protocol => {
             const getProtocolId = protocol.id;
             const getProtocolTitle = protocol.name;
             const getProtocolDesc = protocol.objective;
-            createCard(getProtocolId, getProtocolTitle, getProtocolDesc);
+            createCard(columnWrapper, getProtocolId, getProtocolTitle, getProtocolDesc);
         });
+
+        main.appendChild(columnWrapper);
+        addPagination();
     });
 };
 
-function createCard(id, title, description) {
-    const main = document.getElementById("main")
+function createCard(columnWrapper, id, title, description) {
+    const column = document.createElement("div");
+    column.className = 'column';
 
     const divCard = document.createElement("div");
     divCard.className = "card";
@@ -46,20 +54,57 @@ function createCard(id, title, description) {
     divContainer.appendChild(protocolDesc);
 
     divCard.appendChild(divContainer);
-
-    main.appendChild(divCard);
-
-    clickCard();
+    column.appendChild(divCard);
+    columnWrapper.appendChild(divCard);
+    
+    clickCard(columnWrapper.querySelectorAll('.card'));
 };
 
-function clickCard() {
-    let cards = document.getElementsByClassName('card');
-
+function clickCard(cards) {
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener('click', () => {
             const protocolId = cards[i].getAttribute('data-id');
             window.location.href = `/protocols/${protocolId}`;
         });
+    };
+};
+
+function addPagination() {
+    const cards = document.getElementsByClassName('card');
+    const cardsPerPage = 6;
+    const numPages = Math.ceil(cards.length / cardsPerPage);
+
+    const pagination = document.createElement("div");
+    pagination.className = "pagination";
+
+    for (let i = 1; i <= numPages; i++) {
+        const pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = ` ${i} `;
+        pageLink.addEventListener('click', () => {
+            showPage(i);
+        });
+        pagination.appendChild(pageLink);
+    }
+
+    main.appendChild(pagination);
+
+    showPage(1);
+};
+
+function showPage(pageNum) {
+    const cards = document.getElementsByClassName('card');
+    const cardsPerPage = 6;
+
+    const startIndex = (pageNum - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+
+    for (let i = 0; i < cards.length; i++) {
+        if (i >= startIndex && i < endIndex) {
+            cards[i].style.display = 'block';
+        } else {
+            cards[i].style.display = 'none';
+        }
     };
 };
 
