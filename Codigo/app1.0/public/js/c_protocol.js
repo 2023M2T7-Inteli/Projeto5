@@ -190,6 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // --> dynamicHTMLcreation <-- //
 
+// Function to delete elements
+function deleteElement() {
+    const element = this.parentNode.parentNode; // Obtain the "grandfather" (div.sample-container)
+    element.remove(); // Remove the father element (div.sample-container)
+};
+
 function createSamples() {
     sampleCount++;
 
@@ -224,18 +230,31 @@ function createSamples() {
         createNewSampleButton.textContent = "Add step";
     //
 
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "delete";
+    deleteButton.ariaHidden = "true";
+    deleteButton.onclick = deleteElement;
+
+    const imgButtonDelete = document.createElement('img');
+    imgButtonDelete.className = "trash-natura-icon";
+    imgButtonDelete.src = "/icons/trash-natura-icon.png";
+    imgButtonDelete.height = "40px";
+
+    deleteButton.appendChild(imgButtonDelete);
+
     sampleFieldSet.appendChild(sampleLegend);
     sampleFieldSet.appendChild(inputNameSample);
     sampleFieldSet.appendChild(inputDescriptionSample);
     sampleFieldSet.appendChild(createNewSampleButton);
+    sampleFieldSet.appendChild(deleteButton);
 
     divSampleContainer.appendChild(sampleFieldSet);
 
     // FIELD - Just to separete the things
-        const divStepContainer = document.createElement("div");
-        divStepContainer.className = "steps-container";
-        sampleFieldSet.appendChild(divStepContainer);
-    //
+    const divStepContainer = document.createElement("div");
+    divStepContainer.className = "steps-container";
+    sampleFieldSet.appendChild(divStepContainer);
 
     // running
     samplesContainer.appendChild(divSampleContainer);
@@ -275,10 +294,24 @@ function createNewStep() {
         createNewFieldButton.textContent = "Add field";
     //
 
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "delete";
+    deleteButton.ariaHidden = "true";
+    deleteButton.onclick = deleteElement;
+
+    const imgButtonDelete = document.createElement('img');
+    imgButtonDelete.className = "trash-natura-icon";
+    imgButtonDelete.src = "/icons/trash-natura-icon.png";
+    imgButtonDelete.height = "40px";
+
+    deleteButton.appendChild(imgButtonDelete);
+
     stepFieldSet.appendChild(stepLegend);
     stepFieldSet.appendChild(inputNameStep);
     stepFieldSet.appendChild(inputDescriptionStep);
     stepFieldSet.appendChild(createNewFieldButton);
+    stepFieldSet.appendChild(deleteButton);
 
     divStepContainer.appendChild(stepFieldSet);
 
@@ -391,11 +424,25 @@ function createNewField() {
     // fieldInputType.appendChild(option3);
     // fieldInputType.appendChild(option4);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "delete";
+    deleteButton.ariaHidden = "true";
+    deleteButton.onclick = deleteElement;
+
+    const imgButtonDelete = document.createElement('img');
+    imgButtonDelete.className = "trash-natura-icon";
+    imgButtonDelete.src = "/icons/trash-natura-icon.png";
+    imgButtonDelete.height = "40px";
+
+    deleteButton.appendChild(imgButtonDelete);
+
     divFieldContainer.appendChild(divCustomSelect);
 
     fieldFieldSet.appendChild(fieldLegend);
     fieldFieldSet.appendChild(fieldInputData);
     fieldFieldSet.appendChild(fieldInputType);
+    fieldFieldSet.appendChild(deleteButton);
 
     divFieldContainer.appendChild(fieldFieldSet);
     
