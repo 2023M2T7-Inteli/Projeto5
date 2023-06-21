@@ -25,8 +25,135 @@
                     <button type="button" onclick="createNewSample()">Add sample</button>
                     <div class="samples-container"></div>
                     <br>
+<<<<<<< Updated upstream
                     <button id="submitButton" type="submit">Create protocol</button>
                 </form>
+=======
+                    <label for="endDate_protocol"><strong>End date:</strong> </label>
+                    <input type="date" class="inputs_creation" name="endDate_protocol" id="endDate_protocol" required>
+                    <br>
+                    <label for="coverImage_protocol"><strong>Cover image:</strong> </label>
+                    <div class="drop-zone">
+                        <button class="btn"></button>
+                        <span class="drop-zone__prompt"></span>
+                        <input type="file" class="inputs_creation" name="coverImage_protocol" id="coverImage_protocol" accept="image/png, image/jpeg" required>
+                    </div>
+                    <br>
+                    <button type="button" class="button_sample" onclick="createSamples()">Add sample</button>
+                        <div class="samples-container">
+                            <!-- Where inserts the html dynamic -->
+                        </div>
+                    <br>
+                    <style>
+                        .custom-select {
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .select-selected {
+                            background-color: #fff;
+                            padding: 8px 20px;
+                            border-radius: 4px;
+                            border: 1px solid #ccc;
+                            cursor: pointer;
+                        }
+
+                        .select-selected:after {
+                            content: '';
+                            background: url(right-natur-icon.png) no-repeat;
+                            background-size: cover;
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            top: 50%;
+                            right: 10px;
+                            transform: translateY(-50%);
+                            pointer-events: none;
+                        }
+
+                        .select-options {
+                            display: none;
+                            position: absolute;
+                            background-color: #fff;
+                            border-radius: 4px;
+                            border: 1px solid #ccc;
+                            margin-top: 5px;
+                            list-style: none;
+                            overflow-y: auto;
+                        }
+
+                        .select-options li {
+                            padding: 8px 20px;
+                            cursor: pointer;
+                        }
+
+                        .select-options li:hover {
+                            background-color: #f2f2f2;
+                        }
+
+                        .custom-select.open .select-options {
+                            display: block;
+                        }
+                    </style>
+                    <!-- Esse style de baixo eu adicionei para o botão de deletar elementos -->
+                    <style>
+                        .delete{
+                            background-color: white;
+                            border-radius: 15px;
+                            border: 2px solid #52b362;
+                            width: 72px;
+                            height: 72px;
+                        }
+                
+                        .delete:hover{
+                            background-color: #52b362;
+                            transition-duration: 0.4s;
+                        }
+                
+                        .trash-natura-icon:hover{
+                            transition-duration: 0.4s;
+                            filter: invert(100%);
+                            width: 45px;
+                            height: 45px;
+                        }
+                    </style>
+                    <script>
+                        document.addEventListener('click', function(e) {
+                            const selectContainer = document.querySelector('.custom-select');
+                        
+                            if (selectContainer.contains(e.target)) {
+                                selectContainer.classList.toggle('open');
+                            } else {
+                                selectContainer.classList.remove('open');
+                            }
+                        });
+
+                        document.querySelectorAll('.select-options li').forEach(function(option) {
+                            option.addEventListener('click', function() {
+                                const value = this.dataset.value;
+                                const text = this.textContent;
+                                
+                                const selectedOption = document.querySelector('.select-selected');
+                                selectedOption.textContent = text;
+                                
+                                const selectContainer = document.querySelector('.custom-select');
+                                selectContainer.classList.remove('open');
+                            });
+                        });
+                    </script>
+                        <!-- <div class="icons_options">
+                            <img class="form_type_icons" src="text_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="check_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="alternatives_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="local_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="images_icon.png" alt="Forms tipos Icone" onclick="">
+                            <img class="form_type_icons" src="amplitude_icon.png" alt="Forms tipos Icone" onclick="">
+                        </div> -->
+                    <div class="botao_criar_protocolo">
+                        <button class="botao_criar" id="submitButton" type="submit"><img  width="20%" src="add_protocolo_pesquisador.png" alt="criar protocolo"><p> Criar Protocolo</p></button>
+                    </div>
+                </div>
+>>>>>>> Stashed changes
             </section>
         </main>
     </body>

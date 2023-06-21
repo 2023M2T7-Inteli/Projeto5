@@ -315,7 +315,11 @@ function createNewField() {
         fieldInputData.placeholder = "Enter the desired data";
         divFieldContainer.appendChild(fieldInputData);
 
+<<<<<<< Updated upstream
         const fieldInputType = document.createElement("select");
+=======
+        const fieldInputType = document.createElement("select"); // Qualquer coisa muda pra select
+>>>>>>> Stashed changes
         fieldInputType.id = "fieldTypeID" + fieldCount;
         fieldInputType.className = "inputs_creation";
         // adding event listener to the select
@@ -323,6 +327,7 @@ function createNewField() {
             checkSelect(this);
         });
 
+<<<<<<< Updated upstream
         //Creating fieldInputType options
             const option1 = document.createElement("option");
             option1.value = "image";
@@ -336,6 +341,65 @@ function createNewField() {
             option3.value = "number";
             option3.text = "Number";
 
+=======
+        // // Trying something new
+        //     const divCustomSelect = document.createElement('div');
+        //     divCustomSelect.className = 'custom-select';
+
+        //     const divSelectSelected = document.createElement('div');
+        //     divSelectSelected.className = 'select-selected';
+
+        //     const ulSelectOptions = document.createElement('ul');
+        //     ulSelectOptions.className = 'select-options';
+
+        //     const liTextOption = document.createElement('li');
+        //     liTextOption.setAttribute("data-value", "text");
+        //     liTextOption.textContent = "Text";
+        //     const liTextImg = document.createElement('img');
+        //     liTextImg.src = "images_icon.png";
+        //     liTextImg.alt = "Text";
+        //     liTextOption.appendChild(liTextImg);
+
+        //     const liImageOption = document.createElement('li');
+        //     liImageOption.setAttribute("data-value", "img");
+        //     liImageOption.textContent = "Image";
+        //     const liImageImg = document.createElement('img');
+        //     liImageImg.src = "images_icon.png";
+        //     liImageImg.alt = "Image";
+        //     liImageOption.appendChild(liImageImg);
+
+        //     const liNumberOption = document.createElement('li');
+        //     liNumberOption.setAttribute("data-value", "number");
+        //     liNumberOption.textContent = "Number";
+        //     const liNumberImg = document.createElement('img');
+        //     liNumberImg.src = "images_icon.png";
+        //     liNumberImg.alt = "Number";
+        //     liNumberOption.appendChild(liNumberImg);
+
+        //     ulSelectOptions.appendChild(liTextOption);
+        //     ulSelectOptions.appendChild(liImageOption);
+        //     ulSelectOptions.appendChild(liNumberOption);
+
+        //     divSelectSelected.appendChild(ulSelectOptions);
+
+        //     divCustomSelect.appendChild(divSelectSelected);
+        // //
+
+        //Creating fieldInputType options
+            const option1 = document.createElement("option");
+            option1.value = "image";
+            option1.text = "Image"; 
+
+            const option2 = document.createElement("option");
+            option2.value = "text";
+            option2.text = "Text";
+
+
+            const option3 = document.createElement("option");
+            option3.value = "number";
+            option3.text = "Number";
+
+>>>>>>> Stashed changes
             const option4 = document.createElement("option");
             option4.value = "radio";
             option4.text = "Alternatives";
@@ -346,6 +410,24 @@ function createNewField() {
     fieldInputType.appendChild(option2);
     fieldInputType.appendChild(option3);
     fieldInputType.appendChild(option4);
+<<<<<<< Updated upstream
+=======
+
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "delete";
+    deleteButton.ariaHidden = "true";
+    deleteButton.onclick = deleteElement;
+
+    const imgButtonDelete = document.createElement('img');
+    imgButtonDelete.className = "trash-natura-icon";
+    imgButtonDelete.src = "/icons/trash-natura-icon.png";
+    imgButtonDelete.height = "40px";
+
+    deleteButton.appendChild(imgButtonDelete);
+
+    divFieldContainer.appendChild(fieldInputType);
+>>>>>>> Stashed changes
 
     fieldFieldSet.appendChild(fieldLegend);
     fieldFieldSet.appendChild(fieldInputData);
