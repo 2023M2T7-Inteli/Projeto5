@@ -279,6 +279,7 @@ strong{
   display: flex;
   flex-direction: column;
   margin: auto;
+  margin-bottom: 10px;
 }
 
 .button_sample{
@@ -415,6 +416,19 @@ input[type="date"]::-webkit-calendar-day {
   color: orangered;
   background-color: orange;
 }
+
+select{
+  border-radius: 15px;
+  margin-bottom: 15px;
+  border-style: none;
+  outline: #52B362;
+}
+
+option:hover{
+  background-color: #009578;
+  color: white;
+}
+
 
 
 /* Options of form  */
