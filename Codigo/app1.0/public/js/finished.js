@@ -11,7 +11,8 @@ function getAllProtocols() {
             const getProtocolId = protocol.id;
             const getProtocolTitle = protocol.name;
             const getProtocolDesc = protocol.objective;
-            createCard(columnWrapper, getProtocolId, getProtocolTitle, getProtocolDesc);
+            const getProtocolCoverImage = protocol.coverImage;
+            createCard(columnWrapper, getProtocolId, getProtocolTitle, getProtocolDesc, getProtocolCoverImage);
         });
 
         main.appendChild(columnWrapper);
@@ -19,7 +20,7 @@ function getAllProtocols() {
     });
 };
 
-function createCard(columnWrapper, id, title, description) {
+function createCard(columnWrapper, id, title, description, coverImage) {
     const column = document.createElement("div");
     column.className = 'column';
 
@@ -30,7 +31,7 @@ function createCard(columnWrapper, id, title, description) {
     const imageCapaProtocol = document.createElement("img");
     imageCapaProtocol.className = "protocolo_opcao";
     imageCapaProtocol.style = "width: 100%;";
-    imageCapaProtocol.src = "banana.jpg";
+    imageCapaProtocol.src = coverImage;
     imageCapaProtocol.alt = "imagem_protocolo_em_progresso";
 
     divCard.appendChild(imageCapaProtocol);
