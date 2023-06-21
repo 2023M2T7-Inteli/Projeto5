@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
+const PDFDocument = require('pdf-lib');
 
 const app = express();
 
@@ -142,10 +143,10 @@ app.post('/read_field', protocolDataController.getFieldWithId);
 // Updating input data
 app.post('/updateFields', protocolDataController.updateFields);
 
-// Updating status_protocol to "finished"
+// Updating status_protocol to "finished";
 app.post('/updateStatus', protocolDataController.updateStatus);
 
-// Route to check the internet connection
+// Route to check the internet connection;
 app.get('/isConnected', isOnlineController.checkOnlineStatus);
 
 // Server listening

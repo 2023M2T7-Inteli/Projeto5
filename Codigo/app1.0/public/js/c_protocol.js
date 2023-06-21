@@ -315,7 +315,7 @@ function createNewField() {
         fieldInputData.placeholder = "Enter the desired data";
         divFieldContainer.appendChild(fieldInputData);
 
-        const fieldInputType = document.createElement("select");
+        const fieldInputType = document.createElement("div"); // Qualquer coisa muda pra select
         fieldInputType.id = "fieldTypeID" + fieldCount;
         fieldInputType.className = "inputs_creation";
         // adding event listener to the select
@@ -323,29 +323,75 @@ function createNewField() {
             checkSelect(this);
         });
 
-        //Creating fieldInputType options
-            const option1 = document.createElement("option");
-            option1.value = "image";
-            option1.text = "Image";
+        // Trying something new
+            const divCustomSelect = document.createElement('div');
+            divCustomSelect.className = 'custom-select';
 
-            const option2 = document.createElement("option");
-            option2.value = "text";
-            option2.text = "Text";
+            const divSelectSelected = document.createElement('div');
+            divSelectSelected.className = 'select-selected';
 
-            const option3 = document.createElement("option");
-            option3.value = "number";
-            option3.text = "Number";
+            const ulSelectOptions = document.createElement('ul');
+            ulSelectOptions.className = 'select-options';
 
-            const option4 = document.createElement("option");
-            option4.value = "radio";
-            option4.text = "Alternatives";
+            const liTextOption = document.createElement('li');
+            liTextOption.setAttribute("data-value", "text");
+            liTextOption.textContent = "Text";
+            const liTextImg = document.createElement('img');
+            liTextImg.src = "images_icon.png";
+            liTextImg.alt = "Text";
+            liTextOption.appendChild(liTextImg);
+
+            const liImageOption = document.createElement('li');
+            liImageOption.setAttribute("data-value", "img");
+            liImageOption.textContent = "Image";
+            const liImageImg = document.createElement('img');
+            liImageImg.src = "images_icon.png";
+            liImageImg.alt = "Image";
+            liImageOption.appendChild(liImageImg);
+
+            const liNumberOption = document.createElement('li');
+            liNumberOption.setAttribute("data-value", "number");
+            liNumberOption.textContent = "Number";
+            const liNumberImg = document.createElement('img');
+            liNumberImg.src = "images_icon.png";
+            liNumberImg.alt = "Number";
+            liNumberOption.appendChild(liNumberImg);
+
+            ulSelectOptions.appendChild(liTextOption);
+            ulSelectOptions.appendChild(liImageOption);
+            ulSelectOptions.appendChild(liNumberOption);
+
+            divSelectSelected.appendChild(ulSelectOptions);
+
+            divCustomSelect.appendChild(divSelectSelected);
         //
-    //
 
-    fieldInputType.appendChild(option1);
-    fieldInputType.appendChild(option2);
-    fieldInputType.appendChild(option3);
-    fieldInputType.appendChild(option4);
+    //     //Creating fieldInputType options
+    //         const option1 = document.createElement("option");
+    //         option1.value = "image";
+    //         option1.text = "Image";
+
+    //         const option2 = document.createElement("option");
+    //         option2.value = "text";
+    //         option2.text = "Text";
+
+
+    //         const option3 = document.createElement("option");
+    //         option3.value = "number";
+    //         option3.text = "Number";
+
+    //         const option4 = document.createElement("option");
+    //         option4.value = "radio";
+    //         option4.text = "Alternatives";
+    //     //
+    // //
+
+    // fieldInputType.appendChild(option1);
+    // fieldInputType.appendChild(option2);
+    // fieldInputType.appendChild(option3);
+    // fieldInputType.appendChild(option4);
+
+    divFieldContainer.appendChild(divCustomSelect);
 
     fieldFieldSet.appendChild(fieldLegend);
     fieldFieldSet.appendChild(fieldInputData);

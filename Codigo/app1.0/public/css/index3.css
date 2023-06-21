@@ -157,6 +157,11 @@ main{
 
   }
 
+  .imagem_ilustrativa{
+    width: 55%; 
+    border-radius: 15px;
+  }
+
 /* Tipos de protocolo  */
 
   .tipos_protocolo{
@@ -348,6 +353,11 @@ input{
 
 
 /* Perfil aba */
+
+.perfil{
+  width: 20%;
+}
+
 .perfil_icone{
   margin-inline: 15px;
   margin-top: 15px;
@@ -454,3 +464,196 @@ input{
   top: 8px;
   right: 16px;
 }
+
+  /*seletores para tablets*/
+  @media screen and (max-width: 768px) {
+    body{
+	    width: 50%;
+        margin: auto;
+	}
+	aside{ 
+	  width: 100%;
+    float: none;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+
+	}
+    section{
+        margin-right: 15px;
+    }
+    .aside{
+        padding: 10px;
+        margin: auto;
+    }
+
+    .formacao, .experiencia, .realizacoes{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #user_part{
+      width: 200px; 
+      margin-left: 20%;
+    }
+}
+
+/*seletores para celurares*/
+@media screen and (max-width: 380px) {
+
+	body{ 
+	   width: 100%;
+      float: none;
+      height: auto;
+      text-align: center;
+	}
+
+  main{
+    max-width: 320px; 
+    padding-bottom: 70px;
+  }
+
+	aside{ 
+	   width: 70%;
+	   float: none;
+       height: auto;
+       align-content: center;
+       align-items: center;
+       align-self: center;
+       padding-right: 15px;
+       margin-left: 60px;
+       padding-left: 15px;
+	}
+    section{
+        margin-left: 15px;
+        margin-right: 15px;
+        
+    }
+    #user_part{
+      width: 150px; 
+      margin-left: 34%;
+    }
+
+    /* Menu */
+  .sidenav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    color: transparent;
+    padding: 20px;
+    top: 35em;
+    width: 100%;
+  }
+ 
+  .sidenav a {
+    float: left;
+    display: inline;
+    text-align: center;
+    scale: 0.9;
+  }
+
+
+  /* Search input */
+
+.barra_busca{
+  max-width: 320px;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#button_search{
+  width: 10%;
+}
+
+.barra_busca input{
+  width: 300px;
+  height: 30px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.busca_icon {
+  width: 90%;
+}
+
+  /* Begin of the Page */
+
+  .caixa_maior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem_ilustrativa{
+  margin-top: 15px;
+  width: 80%;
+}
+
+/* Types of Protocol */
+.tipos_protocolo{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    max-width: 320px;
+  }
+
+  .protocolo_opcao{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+
+  }
+
+  .card{
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+div.card{
+  width: 200px;
+}
+
+.icon_home {
+  margin-left: 1em;
+}
+
+
+/* Colector Profile */
+.perfil{
+  width: 30%;
+}
+
+.perfil_caixa{
+  max-width: 230px;
+  margin: auto;
+}
+.perfil_icone{
+  display: inline; 
+}
+
+.button{
+ scale: 0.8;
+}
+
+/* Back Button */
+.voltar{
+  top: 30px;
+  right: 28px;
+  scale: 0.7;
+}
+
+/* Notificcation */
+
+.head_notificacao{
+  max-width: 320px;
+  margin: auto;
+  scale: 0.8;
+  padding: 10px;
+}
+.main_notificacao {
+  max-height: 325px;
+}
+
+
+}
+
+ 
