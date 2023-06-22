@@ -48,17 +48,30 @@ Somos a flor que pode te proporcionar os melhores fruto.
 <br>
 ## 📁 Estrutura de pastas
 
--Raiz<br>
+raiz<br>
 |<br>
-|-->Documentos<br>
-  &emsp;|-->Antigos<br>
-  &emsp;|WAD_Sprint3.docx<br>
-  &emsp;|WAD_Sprint3.pdf<br>
-|-->Codigo<br>
-  &emsp;|-->app1.0<br>
-  &emsp;|db.sqlite<br>
-|license.txt<br>
-|readme.md<br>
+|--> 📂 Documentos<br>
+  &emsp;|--> 📂 Antigos<br>
+  &emsp;| 📄 WAD_Sprint5.docx<br>
+  &emsp;| 📄 WAD_Sprint5.pdf<br>
+|--> 📂 src<br>
+  &emsp;|--> 📂 backend<br>
+  &emsp; &emsp;|--> 📂 app-source<br>
+  &emsp; &emsp; &emsp;|--> 📂 controllers<br>
+  &emsp; &emsp; &emsp;|--> 📂 security<br>
+  &emsp;|--> 📂 data<br>
+  &emsp;|--> 📂 frontend<br>
+  &emsp; &emsp;|--> 📂 public<br>
+  &emsp; &emsp; &emsp;|--> 📂 css<br>
+  &emsp; &emsp; &emsp;|--> 📂 img<br>
+  &emsp; &emsp; &emsp; &emsp;|--> 📂 icons<br>
+  &emsp; &emsp; &emsp;|--> 📂 js<br>
+  &emsp; &emsp;|--> 📂 views<br>
+  &emsp; &emsp; &emsp;|--> 📂 main<br>
+  &emsp; &emsp; &emsp;|--> 📂 produtor<br>
+  &emsp; &emsp; &emsp;|--> 📂 researcher<br>
+| 📄 LICENSE.txt<br>
+| 📄 README.md<br>
 
 ## 💻 Configuração para desenvolvimento
 
