@@ -57,10 +57,12 @@ async function getDinamicFormsData() {
                                 if (res[i].answer_field.includes("data:image")) {
                                     let img = $('<img>');
                                     div.append(img); // Substituição do elemento input por img
-                                    img.addClass('input-el');
+                                    // img.addClass('input-el');
                                     img.addClass('protocolo_opcao');
+                                    // img.setAttribute('style', 'border-radius: 15px'); // border-radius
                                     img.attr('id', "answer");
-                                    img.attr('src', res[i].answer_field); // Deixe o span vazio para exibir a informação do número
+                                    img.attr('src', res[i].answer_field);
+                                    img.attr('style', 'border-radius: 15px'); // Deixe o span vazio para exibir a informação do número
                                 } else if (res[i].description_field === 'number') {
                                     label.text(res[i].name_field);
                                     div.append(span); // Substituição do elemento input por span

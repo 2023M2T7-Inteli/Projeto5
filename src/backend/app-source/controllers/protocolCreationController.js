@@ -1,5 +1,5 @@
 // Importing node modules;
-const db = require('../../db');
+const db = require('../../../data/db');
 
 // Function to create a new protocol (Researcher is creating a protocol)
 function creatingProtocol(req, res) {

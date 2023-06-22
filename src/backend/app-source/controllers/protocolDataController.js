@@ -1,5 +1,5 @@
 // Importing node modules;
-const db = require('../../db');
+const db = require('../../../data/db');
 
 // Function to get the last inserted protocol ID
 function getProtocolId(req, res) {

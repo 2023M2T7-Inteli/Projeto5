@@ -61,7 +61,12 @@ function getIdProtocol() {
 };
 
 function getNamesAndDescsSamples() {
+    const numberSamples = parseInt(document.getElementsByClassName('main-menos-samples').textContent);
     const sampleContainers = document.querySelectorAll(".sample-container");
+
+    for (let i = 0; i < numberSamples; i++) {
+
+    }
 
     sampleContainers.forEach((container) => {
         const inputName = container.querySelector("input[type='text'][id^='nameToFunc']");
@@ -209,6 +214,10 @@ function deleteElement() {
     element.remove(); // Remove the father element (div.sample-container)
 };
 
+function copyElement() {
+    
+};
+
 function createSamples() {
     sampleCount++;
 
@@ -250,6 +259,23 @@ function createSamples() {
     deleteButton.textContent = 'Delete';
     deleteButton.onclick = deleteElement;
 
+    const copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.className = "copy";
+    copyButton.ariaHidden = "true";
+    copyButton.textContent = 'Copy';
+    // colocando o onclick no botão de copiar
+
+    copyButton.addEventListener('click', function() {
+        const copySample = this.parentNode.parentNode; // Obtain the "grandfather" (div.sample-container)
+        console.log(copySample);
+        const samplesContainer = document.querySelector(".samples-container"); // Obtain the "father" (div.samples-container)
+        const duplcateContainer = copySample.cloneNode(true); // Clone the "father" (div.samples-container)
+        console.log(duplcateContainer);
+        samplesContainer.appendChild(duplcateContainer);
+        console.log(samplesContainer);
+    });
+
     const imgButtonDelete = document.createElement('img');
     imgButtonDelete.className = "trash-natura-icon";
     imgButtonDelete.src = "/icons/trash-natura-icon.png";
@@ -262,6 +288,7 @@ function createSamples() {
     sampleFieldSet.appendChild(inputDescriptionSample);
     sampleFieldSet.appendChild(createNewSampleButton);
     sampleFieldSet.appendChild(deleteButton);
+    sampleFieldSet.appendChild(copyButton);
 
     divSampleContainer.appendChild(sampleFieldSet);
 
@@ -648,17 +675,33 @@ document.addEventListener("DOMContentLoaded", function () {
             thumbnailElement.style.backgroundImage = null;
         }
     }
-});
-
-document.querySelectorAll('.select-options li').forEach(function(option) {
-    option.addEventListener('click', function() {
-        const value = this.dataset.value;
-        const text = this.textContent;
-        
-        const selectedOption = document.querySelector('.select-selected');
-        selectedOption.textContent = text;
-        
-        const selectContainer = document.querySelector('.custom-select');
-        selectContainer.classList.remove('open');
+    
+    const btnMenos = document.querySelector(".menos");
+    const btnMais = document.querySelector(".mais");
+    btnMenos.addEventListener("click", function() {
+        console.log("menos");
+        menosUm();
     });
+    btnMais.addEventListener("click", function() {
+        console.log("mais");
+        maisUm();
+    });
+
+    function maisUm() {
+        const input = document.querySelector(".num-samples");
+        let numberSamples = parseInt(input.textContent);
+        console.log(numberSamples);
+        numberSamples++;
+        input.textContent = numberSamples;
+    }
+    function menosUm() {
+        const input = document.querySelector(".num-samples");
+        let numberSamples = parseInt(input.textContent);
+        if(numberSamples > 1) {
+            numberSamples--;
+            input.textContent = numberSamples;
+        } else {
+            alert("O número de amostras não pode ser menor que 1");
+        }
+    } 
 });

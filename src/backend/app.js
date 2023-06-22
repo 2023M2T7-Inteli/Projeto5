@@ -9,18 +9,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Importing controllers;
-const researcherController = require('./src/controllers/researcherController.js');
-const protocolCreationController = require('./src/controllers/protocolCreationController.js');
-const collectorController = require('./src/controllers/collectorController.js');
-const protocolDataController = require('./src/controllers/protocolDataController.js');
-const loginRegisterController = require('./src/controllers/loginRegisterController.js');
-const isOnlineController = require('./src/controllers/isOnlineController.js');
-const dinamicProtocolsIdController = require('./src/controllers/dinamicProtocolsIdController.js');
+const researcherController = require('./app-source/controllers/researcherController.js');
+const protocolCreationController = require('./app-source/controllers/protocolCreationController.js');
+const collectorController = require('./app-source/controllers/collectorController.js');
+const protocolDataController = require('./app-source/controllers/protocolDataController.js');
+const loginRegisterController = require('./app-source/controllers/loginRegisterController.js');
+const isOnlineController = require('./app-source/controllers/isOnlineController.js');
+const dinamicProtocolsIdController = require('./app-source/controllers/dinamicProtocolsIdController.js');
 
 // Serving static files
 const staticDirs = ['img', 'css', 'js'];
 staticDirs.forEach(dir => {
-    app.use(express.static(`./public/${dir}`));
+    app.use(express.static(`./frontend/public/${dir}`));
 });
 
 // Analisar o corpo da requisição
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // Main endpoint
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/views/main/index.html'));
+    res.sendFile(path.join(__dirname, '..' + '/frontend/views/main/index.html'));
 });
 
 // login / register endpoints;

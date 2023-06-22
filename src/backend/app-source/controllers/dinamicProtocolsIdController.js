@@ -1,5 +1,5 @@
 // Importing Node.js modules
-const db = require('../../db'); // Module for interacting with the database
+const db = require('../../../data/db'); // Module for interacting with the database
 const fs = require('fs'); // Module for working with the file system
 const path = require('path'); // Module for handling file paths
 
@@ -17,7 +17,7 @@ function dinamicProtocolId(req, res) {
         } else {
             if (row) {
                 // If a protocol is found, read the HTML file for listing in-progress protocols
-                fs.readFile(path.join(__dirname, '..', '..' + '/views/produtor/listingProtocols.html'), 'utf8', (err, data) => {
+                fs.readFile(path.join(__dirname, '..', '..', '..' + '/frontend/views/produtor/listingProtocols.html'), 'utf8', (err, data) => {
                     if (err) {
                         // If there's an error reading the HTML file, log the error to the console and send a 500 (Internal Server Error) response
                         console.error(err);
@@ -57,7 +57,7 @@ function dinamicProtocolFinishedId(req, res) {
         } else {
             if (row) {
                 // If a protocol is found, read the HTML file for listing finished protocols
-                fs.readFile(path.join(__dirname, '..', '..' + '/views/researcher/listingProtocolsFinished.html'), 'utf8', (err, data) => {
+                fs.readFile(path.join(__dirname, '..', '..', '..' + '/frontend/views/researcher/listingProtocolsFinished.html'), 'utf8', (err, data) => {
                     if (err) {
                         // If there's an error reading the HTML file, log the error to the console and send a 500 (Internal Server Error) response
                         console.error(err);
