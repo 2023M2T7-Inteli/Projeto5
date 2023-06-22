@@ -97,87 +97,74 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-0.1.0 - 8/05/2023 
--  ADD página de notificações
--  ADD Logo Potich
--  ADD Home Pesquisador
--  ADD Home Produtor
+1.0.0 - 05/05/2023
+  - NEW: WAD v1
+  - NEW: Back-end
+  - NEW: Front-end
+  - NEW: Database
 
-0.1.1 - 9/05/2023 
--  ADD Join
+1.1.0 - 12/05/2023
+  - UPDATE: Integração Back e Front-end
+  - UPDATE: Comentário Código Back-end
+  - UPDATE: Criação do Método JOIN
+  - UPDATE: Front-end
+  - UPDATE: Readme.md
+  - UPDATE: Modularização da Funções de CRUD
 
-0.1.2 - 10/05/2023 
--  Comentário do Código
--  Atualização do UPDATE
-- Colocou o método POST na requisição
+1.2.0 - 19/05/2023
+  - UPDATE: Database
+  - NEW: Protocol Creation feature
 
-0.1.3 - 11/05/2023 
-- Modularização das funções de CRUD 
-- Melhorar a estrutura no futuro
+ 2.0.0 - 26/05/2023
+   - NEW: Front-end Coletor
+   - UPDATE: Protocol Creation feature
+   - NEW: Paleta de cores
+   - UPDATE: CSS Main e Coletor
+   - UPDATE: Routes to Express Default
 
-0.1.4 - 15/05/2023
-- Update SqLite
+2.1.0 - 02/06/2023
+  - NEW: CSS Pesquisador
+  - NEW: Dynamic Generation of Protocols
+  - UPDATE: Refactoring Endpoints
+  - UPDATE: Folder Structure
+  - UPDATE: Readme.md
+  - UPDATE: CSS Main e Coletor
 
-0.1.5 - 15/05/2023   
-- Atualização do documento WAD
-- Documentação Aplicação 2.0
+3.0.0 - 09/06/2023
+  - NEW: Dynamic Step Creation
+  - NEW: Dynamic FIeld Creation
+  - NEW: Login System
+  - UPDATE: Major Changes in DB
+  - UPDATE: Modularizing Cryptography
+  - UPDATE: CSS Pesquisadores
+  - NEW: Notifications HTML
 
-0.1.6 - 16/05/2023  
-- ADD feature de criação de formulario
+4.0.0 - 16/06/2023
+  - UPDATE: Integration of Protocols in Progress
+  - NEW: Internet Checking Feature
+  - UPDATE: Securing Data Integrity
+  - UPDATE: Front-end Coletores
+  - NEW: Dynamic Protocol Displaying
+  - NEW: Local Storage Feature!!!
 
-0.2.0 - 16/05/2023 
--  Backend with Jeronimo
-- Update e desenvolver a criação de usuários
-
-0.2.1 - 21/05/2023 
-- Melhorar a estrutura dos forms criados
-- Melhorar a database
-
-0.2.2 - 22/05/2023 
-- Commit frontend
-
-0.2.3 - 23/05/2023 
-- Paleta de cores
-- Merge branch
-- ADD de design e altercates nas paginas principais pensando em questões heuristicas
-
-0.3.0 - 23/05/2023 
-- Melhorou a ferramenta de criações do protocolo
-- Integrou com a database
-- Arquitetura de software da parte do coletor
-- Arrumar o merge
-- Fazer a ligação dos samples, steps e fields
-
-0.3.1 - 25/05/2023 
-- Implementações de CSS 
-- pequenas alterações de HTML
-
-0.4.0 - 29/05/2023 
-- CSS novo
-- Implementação de dois HTML
-
-0.4.1 - 30/05/2023  
-- Fazendo ajustamento do código, para fazer a padronização
-- Desenvolver a dinâmica de protocolos no collector size
-
-0.4.2 - 30/05/2023  
-- refatorando os endpoints e a estrutura de pastas 
-- Criando a refatoração do protocolo de criação
-
-0.4.3 - 01/06/2023  
-- Alterações no CSS e HTML
-- Adicionando formatações em gerais
-- E design
-
-0.4.4 - 01/06/2023 
--Apagar as pastas que não estão sendo usadas
- 
-0.5.0 - 05/06.2023
- - Implementacao da criação de passos
- - Finalizacao do protocolo de criação
- - Uplode da tela de login
- 
-
+5.0.0 - 23/06/2023
+  - UPDATE: Database Refactoring
+  - UPDATE: It is possible to send images
+  - UPDATE: Readme.md
+  - UPDATE: Index.html
+  - UPDATE: Folder Refactoring
+  - UPDATE: Status Integration
+  - UPDATE: Radio Buttons in HTML and Database
+  - UPDATE: Answers Integration
+  - NEW: Protocol Filtering
+  - NEW: CSS Responsivity
+  - UPDATE: Major Changes in Front-end
+  - UPDATE: Dynamic Card Image Integration
+  - UPDATE: Radio Buttons
+  - UPDATE: Login Page
+  - UPDATE: Modularization of Dynamic Protocol Functions
+  - UPDATE: Comentários no Código
+  - UPDATE: Major Changes in Back-end
 
 
 ## 📋 Licença/License
