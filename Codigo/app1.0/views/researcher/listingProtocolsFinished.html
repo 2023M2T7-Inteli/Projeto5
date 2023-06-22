@@ -6,33 +6,55 @@
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"/>
         <link rel= 'stylesheet' href="/index2.css"/>
-        <link rel="stylesheet" href="/index.css"/>
+        <!-- <link rel="stylesheet" href="/index.css"/> -->
         <!-- Link de Google Tradutor -->
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <title>Protocolo</title>
     </head>
+
+    <nav id="mySidenav" class="sidenav">
+        <a href="/home_researcher" > <img class="icon_menu" src="/logo_menu_inativa.png" alt="Apotich"></a>
+        <a href="/researcher_profile" > <img class="icon_menu" src="/profile_icon_menu.png" alt="Perfil"></a>
+        <a href="/home_researcher" > <img class="icon_menu" src="/home_icone_menu.png" alt="Home"></a>
+        <a href="/notificationsResearchers" > <img class="icon_menu" src="/bell_icon_inativo_menu.png" alt="Notificações"></a>
+        <a href="/createProtocol" > <img class="icon_menu" src="/add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
+        <p id="logo_fim_rodape">Apotich</p>
+    </nav>
+
     <section class="icones_usabilidade">
         <button id="download-pdf">
             <img class="usabilidade_icone" src="/export_icon.png" alt="Usabilidade Icone">
         </button>
         <img class="usabilidade_icone" src="/trash_icon.png" alt="Usabilidade Icone" onclick="">
     </section>
+    <section class="titulo_creat_protocolo">
+        <h1>View Protocol</h1>
+        <img src="/protocolo_pesquisador.png" alt="view protocol">
+    </section>
+
     <script src="https://unpkg.com/pdf-lib"></script>
-    <body>
+
+
+    <body class="main_creat_protocol">
         <header></header>
-        <section id="" class="main-section">
-            <p id="id-protocolo" hidden>{{id_protocol}}</p>
-            <div class="image-section">
-                <picture>
-                    <img src="{{coverImage_protocol}}" style="width: 50%; border-radius: 15px" alt="">
-                </picture>
-                <div id="nome-do-protocolo">{{name_protocol}}</div>
-                <div id="objetivo-protocolo">{{objective_protocol}}</div>
-            </div>
-            <section id="dynamic-form"></section>
-        </section>
+
+        <main cclass="main_creation">
+            <section id="formProtocol" class="main_creation">
+                <p id="id-protocolo" hidden>{{id_protocol}}</p>
+                <div class="image-section">
+                    <picture>
+                        <img src="{{coverImage_protocol}}" style="width: 50%; border-radius: 15px" alt="">
+                    </picture>
+                    <div id="nome-do-protocolo">{{name_protocol}}</div>
+                    <div id="objetivo-protocolo">{{objective_protocol}}</div>
+                </div>
+                <section id="dynamic-form" class="samples-container"></section>
+                
+            </section>
+        </main>
+
         <footer></footer>
         <script src="/listingProtocolsFinished.js" defer></script>
-        <script src="translate.js"></script>
+        <script src="/translate.js"></script>
     </body>
 </html>

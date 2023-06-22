@@ -14,20 +14,23 @@
     </head>
     <body>
         <header></header>
-        <section id="" class="main-section">
-            <p id="id-protocolo" hidden>{{id_protocol}}</p>
-            <div class="image-section">
-                <picture>
-                    <img src="{{coverImage_protocol}}" style="width: 50%; border-radius: 15px" alt="">
-                </picture>
-                <div id="nome-do-protocolo">{{name_protocol}}</div>
-                <div id="objetivo-protocolo">{{objective_protocol}}</div>
-            </div>
+        <main id="" class="main_creat_protocol">
+            <section class="main_creation">
+                <p id="id-protocolo" hidden>{{id_protocol}}</p>
+                <div class="image-section">
+                    <picture>
+                        <img src="{{coverImage_protocol}}" style="width: 50%; border-radius: 15px" alt="">
+                    </picture>
+                    <div id="nome-do-protocolo">{{name_protocol}}</div>
+                    <div id="objetivo-protocolo">{{objective_protocol}}</div>
+                </div>
             <section id="dynamic-form"></section>
             <div style="display: flex; justify-content: center;">
-                <button id="send-button">Enviar</button>
+                <button id="send-button" class="button_sample">Enviar</button>
             </div>
-        </section>
+            </section>
+            
+        </main>
         <footer></footer>
         <script src="/listingProtocols.js" defer></script>
         <script src="/localStorage.js"></script>
