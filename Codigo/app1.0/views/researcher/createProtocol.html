@@ -6,8 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel= 'stylesheet' href="index2.css">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <!-- Link de Google Tradutor -->
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <!-- <script src="createProtocol.js"></script> -->
         <title>Create protocol</title>
+
     </head>
 
     <nav id="mySidenav" class="sidenav">
@@ -48,8 +51,10 @@
                     <label for="coverImage_protocol"><strong>Cover image:</strong> </label>
                     <div class="drop-zone">
                         <button class="btn"></button>
-                        <span class="drop-zone__prompt"></span>
-                        <input type="file" class="inputs_creation" name="coverImage_protocol" id="coverImage_protocol" accept="image/png, image/jpeg" required>
+                        <p class="drop-zone__prompt">Clique aqui<br>Max 50KB</p><br>
+                        <!-- <p class="drop-zone__prompt">Max 50KB</p> -->
+
+                        <input type="file" class="drop-zone__input" name="coverImage_protocol" id="coverImage_protocol" accept="image/png, image/jpeg" required>
                     </div>
                     <br>
                     <button type="button" class="button_sample" onclick="createSamples()">Add sample</button>
@@ -57,80 +62,7 @@
                             <!-- Where inserts the html dynamic -->
                         </div>
                     <br>
-                    <style>
-                        .custom-select {
-                            position: relative;
-                            display: inline-block;
-                        }
 
-                        .select-selected {
-                            background-color: #fff;
-                            padding: 8px 20px;
-                            border-radius: 4px;
-                            border: 1px solid #ccc;
-                            cursor: pointer;
-                        }
-
-                        .select-selected:after {
-                            content: '';
-                            background: url(right-natur-icon.png) no-repeat;
-                            background-size: cover;
-                            width: 20px;
-                            height: 20px;
-                            position: absolute;
-                            top: 50%;
-                            right: 10px;
-                            transform: translateY(-50%);
-                            pointer-events: none;
-                        }
-
-                        .select-options {
-                            display: none;
-                            position: absolute;
-                            background-color: #fff;
-                            border-radius: 4px;
-                            border: 1px solid #ccc;
-                            margin-top: 5px;
-                            width: 100%;
-                            max-height: 200px;
-                            overflow-y: auto;
-                        }
-
-                        .select-options li {
-                            padding: 8px 20px;
-                            cursor: pointer;
-                        }
-
-                        .select-options li:hover {
-                            background-color: #f2f2f2;
-                        }
-
-                        .custom-select.open .select-options {
-                            display: block;
-                        }
-                    </style>
-                    <!-- Esse style de baixo eu adicionei para o botão de deletar elementos -->
-                    <style>
-                        .delete{
-                            background-color: white;
-                            border-radius: 15px;
-                            border: 2px solid #52b362;
-                            width: 72px;
-                            height: 72px;
-                        }
-                
-                        .delete:hover{
-                            background-color: #52b362;
-                            transition-duration: 0.4s;
-                        }
-                
-                        .trash-natura-icon:hover{
-                            transition-duration: 0.4s;
-                            filter: invert(100%);
-                            width: 45px;
-                            height: 45px;
-                        }
-                    </style>
                     <script>
                         document.addEventListener('click', function(e) {
                             const selectContainer = document.querySelector('.custom-select');
@@ -170,5 +102,7 @@
             </section>
         </main>
         <script src="c_protocol.js"></script>
+        <script src="translate.js"></script>
+
     </body>
 </html>

@@ -11,6 +11,7 @@ async function getDinamicFormsData() {
             let forms = $('#dynamic-form');
             for (k = 0; k < response.length; k++) {
                 let fieldsetAmostra = $('<fieldset>');
+                fieldsetAmostra.attr('id', 'sampleFieldset');
                 forms.append(fieldsetAmostra);
                 let legendAmostra = $('<legend>').attr('id', 'sample_name');
                 let idAmostra = $('<p>');
@@ -24,6 +25,7 @@ async function getDinamicFormsData() {
                     console.log(response);
                     for (j = 0; j < response.length; j++) {
                         let fieldsetStep = $('<fieldset>');
+                        fieldsetStep.attr('id', 'stepFieldset');
                         fieldsetAmostra.append(fieldsetStep);
                         let legendStep = $('<legend>').attr('id', 'step_name');
                         let idStep = $('<p>');
@@ -60,13 +62,41 @@ async function getDinamicFormsData() {
                                     img.attr('id', "answer");
                                     img.attr('src', res[i].answer_field); // Deixe o span vazio para exibir a informação do número
                                 } else if (res[i].description_field === 'number') {
+                                    label.text(res[i].name_field);
                                     div.append(span); // Substituição do elemento input por span
                                     span.addClass('input-el');
                                     span.text(res[i].answer_field); // Deixe o span vazio para exibir a informação do número
+                                } else if (res[i].description_field === 'radio') {
+                                    const radioObj = JSON.parse(res[i].name_field);
+                                    const question = radioObj.question;
+                                    const arrayOptions = radioObj.listAlternatives;
+                                    console.log(arrayOptions);
+                                    // mapear a array de opções e criar os inputs
+                                    arrayOptions.map((option) => {
+                                        console.log(option);
+                                        span.addClass('input-el');
+                                        span.text(option);
+                                        div.append(span);
+                                    });
+                                    label.text(question);
+                                } else if(res[i].description_field === 'checkbox') {
+                                    const checkboxObj = JSON.parse(res[i].name_field);
+                                    const question = checkboxObj.question;
+                                    const arrayOptions = checkboxObj.listAlternatives;
+                                    console.log(arrayOptions);
+                                    // mapear a array de opções e criar os inputs
+                                    arrayOptions.map((option) => {
+                                        console.log(option);
+                                        const checkbox = $('<ul>');
+                                        checkbox.text(option);
+                                        div.append(checkbox);
+                                    });
+                                    label.text(question);
                                 } else {
                                     div.append(span); // Substituição do elemento input por span
                                     span.addClass('input-el');
-                                    span.text(res[i].answer_field); // Deixe o span vazio para exibir a informação do texto
+                                    span.text(res[i].answer_field);
+                                    label.text(res[i].name_field); // Deixe o span vazio para exibir a informação do texto
                                 }
                                 span.attr('id', "answer");
                             }
