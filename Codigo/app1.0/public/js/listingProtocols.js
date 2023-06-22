@@ -97,6 +97,8 @@ function getDinamicFormsData() {
                                     inputRadio.attr('value', alternative);
                                     // add the name of the radio equals to the question
                                     inputRadio.attr('name', question + res[i].id_field);
+                                    // add the id equal to the id of the field
+                                    inputRadio.attr('id', res[i].id_field);
                                     // add the elements to the html
                                     div.append(inputRadio, labelRadio);
                                     });
@@ -128,6 +130,8 @@ function getDinamicFormsData() {
                                     inputCheck.attr('value', alternative);
                                     // add the name of the radio equals to the question
                                     inputCheck.attr('name', question + res[i].id_field);
+                                    // add the id equals to the id of the field
+                                    inputCheck.attr('id', res[i].id_field);
                                     // add the elements to the html
                                     div.append(inputCheck, labelCheck);
                                   });
