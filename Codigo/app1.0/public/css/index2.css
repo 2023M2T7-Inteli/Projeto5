@@ -200,15 +200,45 @@ div.container {
   padding: 10px;
 }
 
-div.card{
-width: 300px;
-margin-left: 35px;
-margin-right: 45px;
+div.card {
+  width: 18em;
+  margin-left: 55px;
+  margin-right: 45px;
+}
+
+.pagination{
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination a{
+  padding: 5px;
+  padding-inline: 10px;
+  border: #828282;
+  border-style: solid;
+  text-decoration: black;
+  color: black;
+  border-width: 1px;
+  border-radius: 15px;
+  margin-inline: 10px;
+  transition: 0,4s;
+}
+
+.pagination a:hover{
+  background: #52B362;
+  color: white;
 }
 
 .icon_home {
 margin-left: 1em;
 }
+.column-wrapper{
+  margin: auto;
+}
+/* #cardVisual{
+  margin: ;
+} */
 
 /* Botão Criar Protocolo */
 
@@ -259,8 +289,11 @@ margin: auto;
 }
 
 .titulo_creat_protocolo{
-margin: 30px;
 display: flex;
+margin: auto;
+scale: 0.8;
+padding-top: 3em;
+padding-bottom: 1em;
 justify-content: space-between;
 color: white;
 }
@@ -345,6 +378,11 @@ border: 0;
 border-color: transparent;
 border-radius: 15px ;
 margin-bottom: 10px;
+}
+
+.samples-container{
+  margin: auto;
+  scale: 0.9;
 }
 
 #sampleFieldset{
@@ -694,6 +732,10 @@ main{
   padding-bottom: 70px;
 }
 
+#main{
+  padding-bottom: 80px;
+}
+
 aside{ 
    width: 70%;
    float: none;
@@ -722,7 +764,7 @@ aside{
   bottom: 0;
   color: transparent;
   padding: 20px;
-  top: 36em;
+  top: 35em;
   width: 100%;
 }
 
@@ -765,6 +807,7 @@ border-radius: 15px 0px 0px 15px;
 width: 90%;
 }
 
+
 /* Begin of the Page */
 
 .caixa_maior {
@@ -798,13 +841,27 @@ width: 80%;
 }
 
 div.card{
-width: 200px;
+  width: 18em;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+#card_finished{
+ width: 11em;
+
+}
+
+#card_inProgress{
+  width: 11em;
 }
 
 .icon_home {
 margin-left: 1em;
 }
 
+.containerImageView{
+  margin-left: 10px;
+}
 
 /* Colector Profile */
 .perfil{
@@ -821,6 +878,7 @@ display: inline;
 
 .button{
 scale: 0.8;
+margin: 0px 2px;
 }
 
 /* Back Button */
@@ -849,8 +907,11 @@ position: absolute;
 top: 70px;
 display: flex;
 right: 9px;
-scale: 0.6; 
+scale: 0.5; 
 padding-inline: 15px;
+border-style: solid;
+border-color: #abb352 ;
+border-width: 1px;
 }
 
 }

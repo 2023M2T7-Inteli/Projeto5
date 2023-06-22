@@ -26,6 +26,7 @@ function createCard(columnWrapper, id, title, description, coverImage) {
 
     const divCard = document.createElement("div");
     divCard.className = "card";
+    divCard.id = "cardVisual";
     divCard.setAttribute('data-id', id);
 
     const imageCapaProtocol = document.createElement("img");
@@ -43,10 +44,11 @@ function createCard(columnWrapper, id, title, description, coverImage) {
     protocolTitle.textContent = title.toString();
 
     const imageProtocol = document.createElement("img");
+    imageProtocol.className = "containerImageView";
     imageProtocol.src = "protocolo_pesquisador.png";
     imageProtocol.alt = "Protocolos em andamento";
 
-    protocolTitle.appendChild(imageProtocol);
+    divContainer.appendChild(imageProtocol);
 
     const protocolDesc = document.createElement("p");
     protocolDesc.textContent = description.toString();
