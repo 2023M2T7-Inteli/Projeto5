@@ -471,11 +471,44 @@ color: white;
   background-color: #f2f2f2;
 }
 
-#nome-do-protocolo{
-  font-weight: bolder;
-  font-size: 16px;
+.samples-container{
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#nome-do-protocolo{
+  font-weight: bolder;
+  font-size: 28px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#step_desc{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* .protocolo_opcao{
+  margin: 10px;
+  scale: 0.8;
+} */
+
+#sample_name{
+  font-size: 18px;
+  font-family: Poppins;
+
+}
+
+#step_name{
+  font-size: 18px;
+  font-family: Poppins;
+}
+
+.field_name{
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 /* Export */
 #download-pdf{
   border-style: none;
@@ -695,6 +728,13 @@ right: 16px;
 	font-size: 14px;
 	text-align: center;
 }
+
+.main-menos-samples {
+  display: inline-flex;
+  gap: 10px;
+  margin: 10px;
+}
+
 /*seletores para tablets*/
 @media screen and (max-width: 768px) {
   body{
@@ -730,6 +770,10 @@ aside{
 
 /*seletores para celurares*/
 @media screen and (max-width: 380px) {
+
+html{
+  width: auto;
+}
 
 body{ 
    width: 100%;
@@ -972,4 +1016,3 @@ input[type="date"] {
   color: orangered;
   background-color: orange;
   }
-
