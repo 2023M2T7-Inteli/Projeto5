@@ -2,15 +2,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const fs = require('fs');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// Importing built-in modules;
-const db = require('./db.js');
 
 // Importing controllers;
 const researcherController = require('./src/controllers/researcherController.js');
@@ -19,6 +15,7 @@ const collectorController = require('./src/controllers/collectorController.js');
 const protocolDataController = require('./src/controllers/protocolDataController.js');
 const loginRegisterController = require('./src/controllers/loginRegisterController.js');
 const isOnlineController = require('./src/controllers/isOnlineController.js');
+const dinamicProtocolsIdController = require('./src/controllers/dinamicProtocolsIdController.js');
 
 // Serving static files
 const staticDirs = ['img', 'css', 'js'];
@@ -49,69 +46,9 @@ app.get('/notificationsResearchers', researcherController.getNotificationsPage);
 app.get('/researcherProtocolsProgress', researcherController.getProtocolsInProgress);
 app.get('/researcherProtocolsFinished', researcherController.getProtocolsFinished);
 
-// Working on this feature
-    app.get('/protocols/:id', (req, res) => {
-        const protocolId = req.params.id;
-
-        db.get('SELECT * FROM tbl_protocols WHERE id_protocol = ?', [protocolId], (err, row) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error getting info from db');
-            } else {
-                if (row) {
-                    fs.readFile(path.join(__dirname + '/views/produtor/listingProtocols.html'), 'utf8', (err, data) => {
-                        if (err) {
-                            console.error(err);
-                            res.status(500).send('Error reading HTML file');
-                        } else {
-                            const modifiedHTML = data
-                                .replace('{{id_protocol}}', row.id_protocol)
-                                .replace('{{coverImage_protocol}}', row.coverImage_protocol)
-                                .replace('{{name_protocol}}', row.name_protocol)
-                                .replace('{{objective_protocol}}', row.objective_protocol);
-                            res.set('Content-Type', 'text/html');
-                            res.send(modifiedHTML);
-                        }
-                    });
-                } else {
-                    res.status(404).send('Protocol not found');
-                }
-            }
-        });
-    });
-//
-
-// Working on this feature
-    app.get('/protocolsFinished/:id', (req, res) => {
-        const protocolId = req.params.id;
-
-        db.get('SELECT * FROM tbl_protocols WHERE id_protocol = ?', [protocolId], (err, row) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error getting info from db');
-            } else {
-                if (row) {
-                    fs.readFile(path.join(__dirname + '/views/researcher/listingProtocolsFinished.html'), 'utf8', (err, data) => {
-                        if (err) {
-                            console.error(err);
-                            res.status(500).send('Error reading HTML file');
-                        } else {
-                            const modifiedHTML = data
-                                .replace('{{id_protocol}}', row.id_protocol)
-                                .replace('{{coverImage_protocol}}', row.coverImage_protocol)
-                                .replace('{{name_protocol}}', row.name_protocol)
-                                .replace('{{objective_protocol}}', row.objective_protocol);
-                            res.set('Content-Type', 'text/html');
-                            res.send(modifiedHTML);
-                        }
-                    });
-                } else {
-                    res.status(404).send('Protocol not found');
-                }
-            }
-        });
-    });
-//
+// Endpoints to show dinamically protocol data;
+app.get('/protocols/:id', dinamicProtocolsIdController.dinamicProtocolId);
+app.get('/protocolsFinished/:id', dinamicProtocolsIdController.dinamicProtocolFinishedId);
 
 // Colectors endpoints;
 app.get('/home_collector', collectorController.getHome);

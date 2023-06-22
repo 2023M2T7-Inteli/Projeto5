@@ -650,16 +650,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.addEventListener('click', function(e) {
-    const selectContainer = document.querySelector('.custom-select');
-
-    if (selectContainer.contains(e.target)) {
-        selectContainer.classList.toggle('open');
-    } else {
-        selectContainer.classList.remove('open');
-    }
-});
-
 document.querySelectorAll('.select-options li').forEach(function(option) {
     option.addEventListener('click', function() {
         const value = this.dataset.value;
