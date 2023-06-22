@@ -107,6 +107,9 @@ function getDinamicFormsData() {
                       inputRadio.attr('value', alternative);
                       // add the name of the radio equals to the question
                       inputRadio.attr('name', question + res[i].id_field);
+                      // add the id of the radio equals to id of the field
+                      inputRadio.attr('id', res[i].id_field);
+                      console.log("id da pergunta: ", res[i].id_field);
                       // add the elements to the html
                       div.append(inputRadio, labelRadio);
                     });
