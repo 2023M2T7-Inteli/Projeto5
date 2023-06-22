@@ -52,10 +52,13 @@ async function getDinamicFormsData() {
                                 div.append(br);
                                 label.attr('id', "name_field")
                                 label.text(res[i].name_field);
-                                if (res[i].description_field === 'image') {
+                                if (res[i].answer_field.includes("data:image")) {
+                                    let img = $('<img>');
                                     div.append(img); // Substituição do elemento input por img
                                     img.addClass('input-el');
-                                    img.src(res[i].answer_field); // Deixe o span vazio para exibir a informação do número
+                                    img.addClass('protocolo_opcao');
+                                    img.attr('id', "answer");
+                                    img.attr('src', res[i].answer_field); // Deixe o span vazio para exibir a informação do número
                                 } else if (res[i].description_field === 'number') {
                                     div.append(span); // Substituição do elemento input por span
                                     span.addClass('input-el');
