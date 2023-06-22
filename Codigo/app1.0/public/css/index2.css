@@ -472,6 +472,13 @@ color: white;
   background-color: #f2f2f2;
 }
 
+/* Export */
+#download-pdf{
+  border-style: none;
+  background-color: transparent;
+}
+
+
 .custom-select.open .select-options {
   display: block;
 }
