@@ -1,5 +1,5 @@
 // Importing node modules;
-const db = require('../../db');
+const db = require('../../../data/db');
 const path = require('path');
 
 // Importing controllers;

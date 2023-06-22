@@ -1,5 +1,5 @@
 // Importing Node.js modules
-const db = require('../../db'); // Module for interacting with the database
+const db = require('../../../data/db'); // Module for interacting with the database
 const fs = require('fs'); // Module for working with the file system
 const path = require('path'); // Module for handling file paths
 
