@@ -8,11 +8,6 @@
     <!-- Link de Google Tradutor -->
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <title>Home pesquisa</title>
-    <script>
-      function creatProtocol() {
-        window.location.href = "/createProtocol"
-      }
-    </script>
   </head>
 
   <nav id="mySidenav" class="sidenav">
@@ -22,7 +17,7 @@
     <a href="/notificationsResearchers" > <img class="icon_menu" src="bell_icon_inativo_menu.png" alt="Notificações"></a>
     <a href="/createProtocol" > <img class="icon_menu" src="add_protocolo_pesquisador.png" alt="Criar Protocolo"></a>
     <p id="logo_fim_rodape">Apotich</p>
-</nav>
+  </nav>
 
   <form class="busca_caixa">
     <div class="barra_busca">
@@ -53,12 +48,6 @@
           <div class="container">
             <p> Finalizados <img class="icon_home" src="protocolo_finalizado_pesquisador.png" alt="Protocolos finalizados"></p>
           </div>
-          <script>
-            let card_finished = document.getElementById('card_finished');
-            card_finished.addEventListener('click', () => {
-              window.location.href = '/researcherProtocolsFinished';
-            });
-          </script>
         </div>
 
         <div class="card" id="card_inProgress">
@@ -66,12 +55,6 @@
           <div class="container">
             <p> Em andamento <img class="icon_home" src="protocolo_pesquisador.png" alt="Protocolos em andamento"></p>
           </div>
-          <script>
-            let card_inProgress = document.getElementById('card_inProgress');
-            card_inProgress.addEventListener('click', () => {
-              window.location.href = '/researcherProtocolsProgress';
-            });
-          </script>
         </div>
 
       </section>
@@ -86,5 +69,6 @@
     </main>
 
     <script src="translate.js"></script>
+    <script src="home_researcher.js"></script>
   </body>
 </html>

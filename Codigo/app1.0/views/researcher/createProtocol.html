@@ -8,7 +8,6 @@
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <!-- Link de Google Tradutor -->
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <!-- <script src="createProtocol.js"></script> -->
         <title>Create protocol</title>
 
     </head>
@@ -62,39 +61,6 @@
                             <!-- Where inserts the html dynamic -->
                         </div>
                     <br>
-
-                    <script>
-                        document.addEventListener('click', function(e) {
-                            const selectContainer = document.querySelector('.custom-select');
-                        
-                            if (selectContainer.contains(e.target)) {
-                                selectContainer.classList.toggle('open');
-                            } else {
-                                selectContainer.classList.remove('open');
-                            }
-                        });
-
-                        document.querySelectorAll('.select-options li').forEach(function(option) {
-                            option.addEventListener('click', function() {
-                                const value = this.dataset.value;
-                                const text = this.textContent;
-                                
-                                const selectedOption = document.querySelector('.select-selected');
-                                selectedOption.textContent = text;
-                                
-                                const selectContainer = document.querySelector('.custom-select');
-                                selectContainer.classList.remove('open');
-                            });
-                        });
-                    </script>
-                        <!-- <div class="icons_options">
-                            <img class="form_type_icons" src="text_icon.png" alt="Forms tipos Icone" onclick="">
-                            <img class="form_type_icons" src="check_icon.png" alt="Forms tipos Icone" onclick="">
-                            <img class="form_type_icons" src="alternatives_icon.png" alt="Forms tipos Icone" onclick="">
-                            <img class="form_type_icons" src="local_icon.png" alt="Forms tipos Icone" onclick="">
-                            <img class="form_type_icons" src="images_icon.png" alt="Forms tipos Icone" onclick="">
-                            <img class="form_type_icons" src="amplitude_icon.png" alt="Forms tipos Icone" onclick="">
-                        </div> -->
                     <div class="botao_criar_protocolo">
                         <button class="botao_criar" id="submitButton" type="submit"><img  width="20%" src="add_protocolo_pesquisador.png" alt="criar protocolo"><p> Criar Protocolo</p></button>
                     </div>
@@ -103,6 +69,5 @@
         </main>
         <script src="c_protocol.js"></script>
         <script src="translate.js"></script>
-
     </body>
 </html>
