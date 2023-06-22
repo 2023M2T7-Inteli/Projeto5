@@ -113,8 +113,7 @@ align-items: center;
 align-content: center;
 align-self: center;
 margin: auto;
-}
-
+} 
 
 /* Barra Usabilidade */
 .icones_usabilidade{
@@ -470,6 +469,11 @@ color: white;
 
 .select-options li:hover {
   background-color: #f2f2f2;
+}
+
+#nome-do-protocolo{
+  font-weight: bolder;
+  font-size: 16px;
 }
 
 /* Export */
