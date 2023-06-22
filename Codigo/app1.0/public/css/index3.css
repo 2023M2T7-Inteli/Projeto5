@@ -109,6 +109,7 @@ main{
   }
 
 
+
 /* Barra Usabilidade */
 .icones_usabilidade{
   position: absolute;
@@ -187,7 +188,6 @@ main{
 
   .card:hover{
     box-shadow: 0 10px 10px 0 rgba(77, 133, 86);
-
   }
 
   div.container {
@@ -196,8 +196,15 @@ main{
 
 div.card{
   width: 300px;
-  margin-left: 35px;
+  margin-left: 45px;
   margin-right: 45px;
+}
+
+.column-wrapper{
+  margin: auto;
+}
+#cardVisual{
+  margin: 10px;
 }
 
 .icon_home {
@@ -307,16 +314,16 @@ fieldset{
 }
 
 #sampleFieldset{
-  background-color: #e0e88a;
+  background-color: #6fdb81;
   
 }
 
 #stepFieldset{
-  background-color: #dee3a5;
+  background-color: #7fd88e;
 }
 
 #fieldFieldset{
- background-color: #f4f7d2;
+ background-color: #baf0c3;
 }
 
 legend{
@@ -541,7 +548,7 @@ input{
     bottom: 0;
     color: transparent;
     padding: 20px;
-    top: 35em;
+    top: 84%;
     width: 100%;
   }
  
@@ -632,6 +639,8 @@ div.card{
 
 .button{
  scale: 0.8;
+ margin: 0px 2px;
+
 }
 
 /* Back Button */
