@@ -143,6 +143,74 @@ footer{
 display: block;
 }
   
-  
+/*seletores para tablets*/
+@media screen and (max-width: 768px) {
+  body{
+    width: 50%;
+      margin: auto;
+}
+aside{ 
+  width: 100%;
+  float: none;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+
+}
+  section{
+      margin-right: 15px;
+  }
+  .aside{
+      padding: 10px;
+      margin: auto;
+  }
+
+  .formacao, .experiencia, .realizacoes{
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  #user_part{
+    width: 200px; 
+    margin-left: 20%;
+  }
+}
+
+/*seletores para celurares*/
+@media screen and (max-width: 380px) {
+
+html{
+  width: auto;
+}
+
+body{ 
+  width: 80%;
+  margin-top: 20px;
+  float: none;
+  height: auto;
+  text-align: center;
+}
+
+main{
+  max-width: 320px; 
+}
+
+h1{
+  font-size: 20px;
+}
+h2{
+  font-size: 12px;
+}
+
+input{
+  width: 10em;
+}
+  section{
+      margin-left: 15px;
+      margin-right: 15px;
+      
+  }
+
+}
   
   
