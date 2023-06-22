@@ -215,7 +215,15 @@ function deleteElement() {
 };
 
 function copyElement() {
-    
+    const copySample = this.parentNode.parentNode; // Obtain the "grandfather" (div.sample-container)
+    console.log(copySample);
+    const samplesContainer = document.querySelector(".samples-container"); // Obtain the "father" (div.samples-container)
+    const duplcateContainer = copySample.cloneNode(true); // Clone the "father" (div.samples-container)
+    console.log(duplcateContainer);
+    duplcateContainer.querySelector(".copy").addEventListener("click", copyElement); // Add the event listener to the copy button
+    duplcateContainer.querySelector(".delete").addEventListener("click", deleteElement); // Add the event listener to the delete button
+    samplesContainer.appendChild(duplcateContainer);
+    console.log(samplesContainer);
 };
 
 function createSamples() {
@@ -248,7 +256,8 @@ function createSamples() {
         const createNewSampleButton = document.createElement("button");
         createNewSampleButton.type = "button";
         createNewSampleButton.className = "button_step";
-        createNewSampleButton.onclick = createNewStep;
+        // createNewSampleButton.onclick = createNewStep;
+        createNewSampleButton.addEventListener('click', createNewStep);
         createNewSampleButton.textContent = "Add step";
     //
 
@@ -256,7 +265,7 @@ function createSamples() {
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.ariaHidden = "true";
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'x';
     deleteButton.onclick = deleteElement;
 
     const copyButton = document.createElement("button");
@@ -266,15 +275,7 @@ function createSamples() {
     copyButton.textContent = 'Copy';
     // colocando o onclick no botão de copiar
 
-    copyButton.addEventListener('click', function() {
-        const copySample = this.parentNode.parentNode; // Obtain the "grandfather" (div.sample-container)
-        console.log(copySample);
-        const samplesContainer = document.querySelector(".samples-container"); // Obtain the "father" (div.samples-container)
-        const duplcateContainer = copySample.cloneNode(true); // Clone the "father" (div.samples-container)
-        console.log(duplcateContainer);
-        samplesContainer.appendChild(duplcateContainer);
-        console.log(samplesContainer);
-    });
+    copyButton.addEventListener('click', copyElement);
 
     const imgButtonDelete = document.createElement('img');
     imgButtonDelete.className = "trash-natura-icon";
@@ -287,8 +288,8 @@ function createSamples() {
     sampleFieldSet.appendChild(inputNameSample);
     sampleFieldSet.appendChild(inputDescriptionSample);
     sampleFieldSet.appendChild(createNewSampleButton);
-    sampleFieldSet.appendChild(deleteButton);
     sampleFieldSet.appendChild(copyButton);
+    sampleFieldSet.appendChild(deleteButton);
 
     divSampleContainer.appendChild(sampleFieldSet);
 
@@ -302,6 +303,7 @@ function createSamples() {
 };
 
 function createNewStep() {
+    console.log("createNewStep");
     stepCount++;
 
     const stepsContainer = this.closest(".sample-container").querySelector(".steps-container");
@@ -339,7 +341,7 @@ function createNewStep() {
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.ariaHidden = "true";
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'x';
     deleteButton.onclick = deleteElement;
 
     const imgButtonDelete = document.createElement('img');
@@ -475,7 +477,7 @@ function createNewField() {
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.ariaHidden = "true";
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'x';
     deleteButton.onclick = deleteElement;
 
     const imgButtonDelete = document.createElement('img');
@@ -501,6 +503,16 @@ function createNewField() {
 // check if the select is radio and if it is, create a button to add more alternatives
 function checkSelect(select) {
     if (select.value === 'radio') {
+        try {
+            // take all the elements with the class "radio"
+            const check = document.querySelectorAll(".check");
+            // for each element, remove it
+            check.forEach(check => {
+                check.remove();
+            });
+        } catch (error) {
+            console.log(error);
+        }
         console.log("radio");
         // create a button to add more alternatives
         const buttonAddAlternative = document.createElement("button");
@@ -522,6 +534,16 @@ function checkSelect(select) {
             createNewAlternative(fieldset);
         });
     } else if(select.value === 'checkbox') {
+        try {
+            // take all the elements with the class "radio"
+            const radios = document.querySelectorAll(".radio");
+            // for each element, remove it
+            radios.forEach(radio => {
+                radio.remove();
+            });
+        } catch (error) {
+            console.log(error);
+        }
         console.log("checkbox");
         // create a button to add more alternatives
         const buttonAddCheck = document.createElement("button");
@@ -550,6 +572,16 @@ function checkSelect(select) {
             // for each element, remove it
             radios.forEach(radio => {
                 radio.remove();
+            });
+        } catch (error) {
+            console.log(error);
+        }
+        try {
+            // take all the elements with the class "radio"
+            const check = document.querySelectorAll(".check");
+            // for each element, remove it
+            check.forEach(check => {
+                check.remove();
             });
         } catch (error) {
             console.log(error);
@@ -597,7 +629,7 @@ function createNewCheckbox(fieldset) {
     // add text to the button
     buttonRemoveCheck.textContent = "remover";
     // add class to the button
-    buttonRemoveCheck.className = "button_radio radio";
+    buttonRemoveCheck.className = "button_check check";
     // add event listener to the button
     buttonRemoveCheck.addEventListener("click", function() {
         // remove the input
@@ -676,32 +708,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     
-    const btnMenos = document.querySelector(".menos");
-    const btnMais = document.querySelector(".mais");
-    btnMenos.addEventListener("click", function() {
-        console.log("menos");
-        menosUm();
-    });
-    btnMais.addEventListener("click", function() {
-        console.log("mais");
-        maisUm();
-    });
+    // const btnMenos = document.querySelector(".menos");
+    // const btnMais = document.querySelector(".mais");
+    // btnMenos.addEventListener("click", function() {
+    //     console.log("menos");
+    //     menosUm();
+    // });
+    // btnMais.addEventListener("click", function() {
+    //     console.log("mais");
+    //     maisUm();
+    // });
 
-    function maisUm() {
-        const input = document.querySelector(".num-samples");
-        let numberSamples = parseInt(input.textContent);
-        console.log(numberSamples);
-        numberSamples++;
-        input.textContent = numberSamples;
-    }
-    function menosUm() {
-        const input = document.querySelector(".num-samples");
-        let numberSamples = parseInt(input.textContent);
-        if(numberSamples > 1) {
-            numberSamples--;
-            input.textContent = numberSamples;
-        } else {
-            alert("O número de amostras não pode ser menor que 1");
-        }
-    } 
+    // function maisUm() {
+    //     const input = document.querySelector(".num-samples");
+    //     let numberSamples = parseInt(input.textContent);
+    //     console.log(numberSamples);
+    //     numberSamples++;
+    //     input.textContent = numberSamples;
+    // }
+    // function menosUm() {
+    //     const input = document.querySelector(".num-samples");
+    //     let numberSamples = parseInt(input.textContent);
+    //     if(numberSamples > 1) {
+    //         numberSamples--;
+    //         input.textContent = numberSamples;
+    //     } else {
+    //         alert("O número de amostras não pode ser menor que 1");
+    //     }
+    // } 
 });
