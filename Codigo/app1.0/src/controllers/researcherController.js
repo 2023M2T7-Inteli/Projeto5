@@ -18,14 +18,17 @@ function getResearcherProfile(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcher_profile.html'));
 };
 
+// Researcher notifications page;
 function getNotificationsPage(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/notificacao_pesquisador.html'));
 };
 
+// Page to see the protocols that are in progress;
 function getProtocolsInProgress(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcherProtocolsProgress.html'))
 };
 
+// Page to see the finished protocols;
 function getProtocolsFinished(req, res) {
     res.sendFile(path.join(__dirname, '..', '..' + '/views/researcher/researcherProtocolsFinished.html'))
 };

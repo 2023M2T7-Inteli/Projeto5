@@ -1,5 +1,5 @@
 // Importing node modules;
-const path = require('path');
+const path = require('path'); // Module for handling file paths
 
 // Collectors endpoints //
 

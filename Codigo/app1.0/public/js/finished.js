@@ -143,3 +143,7 @@ searchButton.addEventListener('click', () => {
         }
     });
 });
+
+function creatProtocol() {
+    window.location.href = "/createProtocol"
+}

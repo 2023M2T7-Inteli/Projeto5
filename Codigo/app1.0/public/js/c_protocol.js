@@ -648,7 +648,17 @@ document.addEventListener("DOMContentLoaded", function () {
             thumbnailElement.style.backgroundImage = null;
         }
     }
-    
-    
-    
+});
+
+document.querySelectorAll('.select-options li').forEach(function(option) {
+    option.addEventListener('click', function() {
+        const value = this.dataset.value;
+        const text = this.textContent;
+        
+        const selectedOption = document.querySelector('.select-selected');
+        selectedOption.textContent = text;
+        
+        const selectContainer = document.querySelector('.custom-select');
+        selectContainer.classList.remove('open');
+    });
 });

@@ -10,11 +10,6 @@
     <title>Perfil Pesquisador</title>
 </head>
 <body>
-  <script>
-    function voltar() {
-      history.back();
-    }
-  </script>
   <button  class="voltar_button" onclick="voltar()">
     <img class="voltar" width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/u-turn-to-left.png" alt="u-turn-to-left"/> 
   </button>
@@ -34,36 +29,34 @@
     <main>
       <section>
         <img class="perfil" src="https://img.icons8.com/material/96/null/user-male-circle--v1.png" alt="Perfil"> <br>
-        <img class="perfil" src="#" alt="Perfil">
 
         <div class="perfil_caixa">
-          <img class="perfil_icone" src="perfilUm.png" alt="Perfil Icone" onclick="">
-          <img class="perfil_icone" src="perfilDois.png" alt="Perfil Icone" onclick="">
-          <img class="perfil_icone" src="perfilTres.png" alt="Perfil Icone" onclick="">
-          <img class="perfil_icone" src="perfilQuatro.png" alt="Perfil Icone" onclick="">
-
-
+          <img class="perfil_icone" src="perfilUm.png" alt="Perfil Icone" onclick="changeSrc(this)">
+          <img class="perfil_icone" src="perfilDois.png" alt="Perfil Icone" onclick="changeSrc(this)"">
+          <img class="perfil_icone" src="perfilTres.png" alt="Perfil Icone" onclick="changeSrc(this)"">
+          <img class="perfil_icone" src="perfilQuatro.png" alt="Perfil Icone" onclick="changeSrc(this)"">
         </div>
 
       </section>
     <br>
     <h3>Perfil Pesquisador</h3>
-<section style="margin-bottom: 15px;">
+  <section style="margin-bottom: 15px;">
 
 
-    <button class="button button1" >Nº de Lavouras</button>
-    <br>
-    <button class="button button1">Produtos</button>
-    <br>
-    <button class="button button1">Protocolos</button>
-    <br>
-    <button class="button button1">Outros</button>
+      <button class="button button1" >Nº de Lavouras</button>
+      <br>
+      <button class="button button1">Produtos</button>
+      <br>
+      <button class="button button1">Protocolos</button>
+      <br>
+      <button class="button button1">Outros</button>
 
-    </main>
+      </main>
 
-</section>
+  </section>
     
-<script src="translate.js"></script>
+  <script src="translate.js"></script>
+  <script src="changeImageProfile.js"></script>
 
 </body>
 </html>
