@@ -33,17 +33,30 @@ function sendDataProtocol() {
     const reader = new FileReader();
 
     reader.onloadend = () => {
-        const base64Image = reader.result;
+        const img = new Image();
+        img.src = reader.result;
 
-        const data = {
-            name_protocol: nameProtocolValue,
-            objective_protocol: objectiveProtocolValue,
-            startDate_protocol: startDateProtocolValue,
-            endDate_protocol: endDateProtocolValue,
-            coverImage_protocol: base64Image
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = img.width * 0.5; // change the scale factor according to your needs
+            canvas.height = img.height * 0.5;
+
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            const base64Image = canvas.toDataURL('image/jpeg', 0.5); // change the quality factor according to your needs
+
+            const data = {
+                name_protocol: nameProtocolValue,
+                objective_protocol: objectiveProtocolValue,
+                startDate_protocol: startDateProtocolValue,
+                endDate_protocol: endDateProtocolValue,
+                coverImage_protocol: base64Image
+            };
+
+            $.post('/create-protocols', data, getIdProtocol, "text");
         };
-
-        $.post('/create-protocols', data, getIdProtocol, "text");
     };
 
     if (file) {

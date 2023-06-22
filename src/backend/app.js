@@ -86,6 +86,6 @@ app.post('/updateStatus', protocolDataController.updateStatus);
 app.get('/isConnected', isOnlineController.checkOnlineStatus);
 
 // Server listening
-app.listen(8081, function(){
-    console.log("Servidor rodando na URL: http://localhost:8081");
+app.listen(1234, function(){
+    console.log("Servidor rodando na URL: http://localhost:1234");
 });
