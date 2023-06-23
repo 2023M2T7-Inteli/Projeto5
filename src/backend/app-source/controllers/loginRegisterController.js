@@ -7,7 +7,7 @@ const cryptographyController = require('../security/cryptographyController');
 
 // Register
 function getRegisterPage(req, res) {
-    res.sendFile(path.join(__dirname, '..', '..' + '/views/main/register.html'));
+    res.sendFile(path.join(__dirname, '..', '..', '..' + '/frontend/views/main/register.html'));
 }
 
 function registering(req, res) {

@@ -184,7 +184,7 @@ function AddDropImage() {
             dropZoneElement.classList.remove("drop-zone--over");
         });
     });
-}
+};
 
 // Update the drop image to the image that was chosen
 function updateThumbnail(dropZoneElement, file) {
