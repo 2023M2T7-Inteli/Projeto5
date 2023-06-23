@@ -45,7 +45,7 @@ function sendDataProtocol() {
 
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-            const base64Image = canvas.toDataURL('image/jpeg', 0.09); // change the quality factor according to your needs
+            const base64Image = canvas.toDataURL('image/jpeg', 0.03); // change the quality factor according to your needs
 
             const data = {
                 name_protocol: nameProtocolValue,
