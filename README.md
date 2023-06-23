@@ -41,7 +41,9 @@ Somos a flor que pode te proporcionar os melhores fruto.
 &emsp; A segunda rota é destinada aos coletores de matéria-prima da Natura, ela terá a principal funcionalidade de conectar esses agricultores com os protocolos gerados pelos pesquisadores, além de garantir que eles possam preenchê-los com a maior praticidade e facilidade possível. <br>
 &emsp; Em suma, nossa solução é uma plataforma que vai conectar o trabalho de pesquisa dos coletores com a análise dos pesquisadores, fazendo com que o processo de compreensão das propriedades dos elementos da fauna brasileira sejam mais reconhecidos e melhor utilizados. <br>
 <br>
-<a href="youtube.com">Vídeo Demo (Subir no youtube)</a>
+<a href="https://drive.google.com/file/d/1y5twVObPMynvEfEhBS8afPb2C2SilHI6/view?usp=sharing">Link no drive</a>
+<br><br>
+<a href="https://youtu.be/b8mn7YEY-Zg">Vídeo Demo</a>
 <br>
 ## 📁 Estrutura de pastas
 
@@ -90,6 +92,10 @@ npm start
 
 5. Agora você pode acessar a aplicação através do link http://localhost:1234/
 6. O servidor está online.
+
+## 💻 Link do deploy
+
+Para acessar o projeto rodando no servidor do codesandbox: https://w9myhr-1234.csb.app/
 
 ## 🗃 Histórico de lançamentos
 
