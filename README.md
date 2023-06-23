@@ -91,6 +91,10 @@ npm start
 5. Agora você pode acessar a aplicação através do link http://localhost:1234/
 6. O servidor está online.
 
+## 💻 Link do deploy
+
+Para acessar o projeto rodando no servidor do codesandbox: https://w9myhr-1234.csb.app/
+
 ## 🗃 Histórico de lançamentos
 
 1.0.0 - 05/05/2023
