@@ -505,8 +505,14 @@ aside{
   }
 }
 
+@media screen and (min-width: 415px) {
+  .sidenav {
+   top: 0;
+  }
+ }
+
 /*seletores para celurares*/
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 414px) {
 
 body{ 
    width: 100%;
@@ -542,22 +548,27 @@ aside{
   }
 
   /* Menu */
-.sidenav {
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  color: transparent;
-  padding: 20px;
-  top: 84%;
-  width: 100%;
-}
-
-.sidenav a {
-  float: left;
-  display: inline;
-  text-align: center;
-  scale: 0.9;
-}
+  .sidenav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    color: transparent;
+    padding: 15px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+  }
+  
+  .sidenav a {
+    float: left;
+    padding: 3px 6px 4px 1px;
+    display: block;
+    scale: 0.9;
+    text-align: center;
+  }
 
 
 /* Search input */
